@@ -7,7 +7,6 @@ $josefin: "Josefin Sans", "Glacial Indifference", sans-serif;
 $metropolis: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
-  
 
 $dark: #1b2429;
 $dark: #222d31;
@@ -149,14 +148,14 @@ $larger-desktop-height: 850px;
 // }
 
 body {
-  border-top: $accent 7px solid;
+  border-top: $accent 6.3px solid;
   overflow-x: hidden;
 
   display: flex;
   flex-direction: column;
 
   div.full-page-wrapper {
-    border-top: $text-light 7px solid;
+    border-top: $text-light 6.3px solid;
 
     background-color: $light;
     background-image: -webkit-linear-gradient(
