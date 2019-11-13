@@ -1,0 +1,423 @@
+$link-color: #1b2429;
+
+$ibm-sans: "IBM Plex Sans", "Inter", "Public Sans", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$ibm-mono: "Space Mono", "IBM Plex Mono", monospace;
+$ibm-condensed: "IBM Plex Sans Condensed", sans-serif;
+$josefin: "Glacial Indifference", "Josefin Sans", sans-serif;
+$metropolis: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+
+$dark: #1d282e;
+$dark: #222d31;
+$lighter: #ffffff;
+$light: #e7e7e7;
+$light: #f1f1f1;
+$light: #e1e5e9;
+$light-outline: #e6e6e6;
+$text-light: #a7a7a7;
+$text-light-2: #424242;
+$bg-grey: #d8d8d8;
+$accent: #ffc64a;
+
+$desktop-width-1: 950px;
+
+@mixin desktop-width-1 {
+  @media (min-width: #{$desktop-width-1}) {
+    @content;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.scrollbar-white.enlarged-card {
+  //* scrollbar styling begins
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: $dark;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $dark;
+    border: 0.5px solid $lighter;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $lighter;
+  }
+  //* scrollbar styling ends
+}
+
+.scrollbar-black.enlarged-card {
+  //* scrollbar styling begins
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: $light;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $lighter;
+    border: 0.5px solid $dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $dark;
+  }
+  //* scrollbar styling ends
+}
+
+.ina-timeline-container {
+  @include desktop-width-1 {
+    height: 280px;
+    overflow-y: scroll;
+    width: 85%;
+    margin: auto;
+
+    // @media only screen and (max-height: 829px) {
+    //   height: 290.15px;
+    // }
+  }
+}
+
+// div.time-wrapper {
+//   @include desktop-width-1 {
+//     overflow-y: scroll;
+//     height: 35vh;
+//   }
+// }
+
+.timeline-title {
+  padding: 0 2px 10px;
+}
+
+.timeline {
+  // border-top: 3px $accent solid;
+  // border-bottom: 3px $accent solid;
+
+  background: $light;
+  color: rgb(50, 50, 50);
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 105%;
+  line-height: 1.6em;
+
+  position: relative;
+  width: 860px;
+  margin: 0px auto;
+  padding: 20px;
+  list-style-type: none;
+  @media (max-width: 7500px) {
+    width: 89%;
+    padding: 2em 0 1em 0;
+
+    @include desktop-width-1 {
+      width: 90%;
+    }
+  }
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    content: " ";
+    display: block;
+    width: 6px;
+    height: 100%;
+    margin-left: -3px;
+    background: $dark;
+    z-index: 5;
+  }
+  li {
+    padding: 65px 0;
+    @include desktop-width-1 {
+      padding: 45px 0;
+    }
+    // @media (max-width: 7500px) {
+    //   padding: 4em 0;
+    // }
+    &::after {
+      content: "";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden;
+    }
+  }
+}
+
+.direction-l {
+  position: relative;
+  width: 400px;
+  float: left;
+  text-align: right;
+  @media (max-width: 7500px) {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .flag {
+    box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+    &:after {
+      //* removed due to inability to control pseudoselector in JS
+      display: none;
+
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      height: 0;
+      width: 0;
+      margin-top: -8px;
+      border: solid transparent;
+      border-left-color: white;
+      border-width: 8px;
+      pointer-events: none;
+      @media (max-width: 7500px) {
+        //* removed due to inability to control pseudoselector in JS
+        display: none;
+
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -8px;
+        height: 0;
+        width: 0;
+        margin-left: -8px;
+        border: solid transparent;
+        border-bottom-color: rgb(255, 255, 255);
+        border-width: 8px;
+        pointer-events: none;
+      }
+    }
+  }
+  .time-wrapper {
+    float: left;
+    margin-right: 1px;
+    @media (max-width: 7500px) {
+      float: none;
+      margin-right: none;
+      margin-top: 3px;
+    }
+  }
+}
+
+.direction-r {
+  position: relative;
+  width: 400px;
+  float: right;
+  @media (max-width: 7500px) {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+  .flag {
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
+    &:after {
+      //* removed due to inability to control pseudoselector in JS
+      display: none;
+
+      content: "";
+      position: absolute;
+      right: 100%;
+      top: 50%;
+      height: 0;
+      width: 0;
+      margin-top: -8px;
+      border: solid transparent;
+      border-right-color: white;
+      border-width: 8px;
+      pointer-events: none;
+      @media (max-width: 7500px) {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -8px;
+        height: 0;
+        width: 0;
+        margin-left: -8px;
+        border: solid transparent;
+        border-bottom-color: rgb(255, 255, 255);
+        border-width: 8px;
+        pointer-events: none;
+      }
+    }
+    &:before {
+      left: -40px;
+    }
+  }
+  .time-wrapper {
+    float: right;
+    margin-left: 1px;
+    @media (max-width: 7500px) {
+      float: none;
+      margin-right: none;
+      margin-top: 3px;
+    }
+  }
+}
+
+.flag-wrapper {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  @media (max-width: 7500px) {
+    text-align: center;
+  }
+  .flag {
+    font-size: 0.93em;
+    font-family: $metropolis, sans-serif;
+
+    position: relative;
+    display: inline;
+    background: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: 500;
+    text-align: left;
+    @media (max-width: 7500px) {
+      background: rgb(255, 255, 255);
+      z-index: 15;
+    }
+  }
+}
+
+.direction-l .flag:before,
+.direction-r .flag:before {
+  position: absolute;
+  top: 50%;
+  right: -40px;
+  content: " ";
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin-top: -10px;
+  background: #fff;
+  border-radius: 10px;
+  border: 4px solid $link-color;
+  z-index: 10;
+  @media (max-width: 7500px) {
+    position: absolute;
+    top: -30px;
+    //*added to reduce space between dots and the flags
+    top: -16px;
+    left: 50%;
+    content: " ";
+    display: block;
+    margin-left: -10px;
+  }
+}
+
+.time-wrapper {
+  display: inline;
+  line-height: 1em;
+  font-size: 0.8em;
+  color: $link-color;
+  vertical-align: middle;
+  @media (max-width: 7500px) {
+    display: block;
+    position: relative;
+    margin: 4px 0 0 0;
+    z-index: 14;
+  }
+  .time {
+    display: inline-block;
+    padding: 4px 6px;
+    background: white;
+
+    border-radius: 5px;
+
+    @media (max-width: 7500px) {
+      border-radius: 5px;
+    }
+  }
+}
+
+.desc {
+  margin: 1em 0.75em 0 0;
+  font-size: 0.7em;
+  // font-style: italic;
+  line-height: 1.5em;
+
+  span {
+    // margin: 3px 0;
+    display: block;
+  }
+
+  @media (max-width: 7500px) {
+    position: relative;
+    margin: 1em 1em 0 1em;
+    margin-top: 3px;
+    padding: 5px;
+    background: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    z-index: 15;
+    width: 210px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+  }
+  @media (max-width: 336px) {
+    width: 170px;
+  }
+}
+
+//* my additions
+.direction-l {
+  .flag {
+    background-color: $dark;
+    color: #fff;
+
+    //* entire bit copied for light off arrows
+    &:after {
+      //* removed due to inability to control pseudoselector in JS
+      display: none;
+
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      height: 0;
+      width: 0;
+      margin-top: -8px;
+      border: solid transparent;
+      border-left-color: $dark;
+      border-width: 8px;
+      pointer-events: none;
+      @media (max-width: 7500px) {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: -8px;
+        height: 0;
+        width: 0;
+        margin-left: -8px;
+        border: solid transparent;
+        border-bottom-color: $dark;
+        border-width: 8px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  // .flag:before {
+  //   //* removed due to inability to control pseudoselector in JS
+  //   // background-color: $dark;
+  // }
+
+  .time {
+    background-color: $dark;
+    color: #fff;
+  }
+
+  .desc {
+    // background-color: $dark;
+    span {
+      color: #fff;
+    }
+    @media (max-width: 7500px) {
+      background-color: $dark;
+      color: #fff;
+    }
+  }
+}

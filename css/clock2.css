@@ -1,0 +1,124 @@
+div.frame {
+  width: 28px;
+  height: 28px;
+  border: #222d31 solid 1px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #ffc64a;
+  background: -webkit-gradient(linear, right top, left top, from(#ffc64a), color-stop(#456f96a2), color-stop(#ffc64a), to(#456f96a2));
+  background: linear-gradient(270deg, #ffc64a, #456f96a2, #ffc64a, #456f96a2);
+  background-size: 500% 500%;
+  -webkit-animation: AnimationName 40s linear infinite;
+  animation: AnimationName 40s linear infinite;
+}
+
+@-webkit-keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes AnimationName {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+div.frame div.centre-circle {
+  position: absolute;
+  width: 2.54545px;
+  height: 2.54545px;
+  border-radius: 50%;
+  border: #222d31 solid 1px;
+  background-color: white;
+  z-index: 5;
+}
+
+div.frame div.container {
+  width: 23.33333px;
+  height: 23.33333px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+div.frame div.hour-hand {
+  width: 1px;
+  height: 25%;
+  background: #222d31;
+  position: absolute;
+  bottom: 50%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  outline: 1px solid transparent;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+
+div.frame div.minute-hand {
+  width: 1px;
+  height: 40%;
+  background: #222d31;
+  position: absolute;
+  bottom: 50%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  outline: 1px solid transparent;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+
+div.frame div.second-hand {
+  width: 1px;
+  height: 50%;
+  background: #960000;
+  position: absolute;
+  bottom: 50%;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  outline: 1px solid transparent;
+  -webkit-transform-origin: 50% 100%;
+          transform-origin: 50% 100%;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotateZ(360deg);
+            transform: rotateZ(360deg);
+  }
+}
+/*# sourceMappingURL=clock2.css.map */

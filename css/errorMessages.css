@@ -1,0 +1,76 @@
+div.error-message {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-top: 30%;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 950px) {
+  div.error-message {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+div.error-message div.error-message-image-wrapper {
+  width: 98px;
+  height: 98px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+div.error-message div.error-message-image-wrapper img.error-message-image {
+  height: 100%;
+  -webkit-filter: invert(13%) sepia(31%) saturate(401%) hue-rotate(150deg) brightness(97%) contrast(91%);
+          filter: invert(13%) sepia(31%) saturate(401%) hue-rotate(150deg) brightness(97%) contrast(91%);
+}
+
+div.error-message div.error-message-image-wrapper img.error-message-image.ogas-key {
+  width: 99px;
+}
+
+div.error-message div.error-message-image-wrapper.eyes-wrapper {
+  background-color: #212c30;
+  border-radius: 50%;
+}
+
+div.error-message div.error-message-image-wrapper.eyes-wrapper img.error-message-image {
+  height: 40px;
+  -webkit-filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(77deg) brightness(111%) contrast(115%);
+          filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(77deg) brightness(111%) contrast(115%);
+}
+
+div.error-message div.error-message-text h2 {
+  font-size: 18px;
+  font-weight: 500;
+  padding: 0 10px;
+  margin-bottom: 10px;
+  font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+  color: #6d8faf;
+}
+
+div.error-message div.error-message-text h2 a {
+  color: #ffae00;
+}
+
+div.error-message div.error-message-text h2.multiple-h2s {
+  margin-bottom: 0;
+}
+
+div.error-message div.error-message-text p {
+  font-size: 14px;
+  font-weight: 400;
+  padding: 0 10px;
+}
+/*# sourceMappingURL=errorMessages.css.map */

@@ -1,0 +1,101 @@
+$dark: #212c30;
+$footer: #d0d9d8;
+$light: #e1e5e9;
+$lighter: #eaf3f8;
+$lighter-2: #f4fbfd;
+$bg-grey: #c2ced4;
+$light-outline: #cadbdf;
+$text-light: #6d8faf;
+
+$text-light-2: #1d354b;
+$accent: #ffae00;
+$accent-2: #ffffff;
+
+$desktop-width-1: 950px;
+
+@mixin desktop-width-1 {
+  @media (min-width: #{$desktop-width-1}) {
+    @content;
+  }
+}
+
+$ibm-sans: "IBM Plex Sans", "Inter", "Public Sans", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$ibm-mono: "Space Mono", "IBM Plex Mono", monospace;
+$ibm-condensed: "IBM Plex Sans Condensed", sans-serif;
+$josefin: "Glacial Indifference", "Josefin Sans", sans-serif;
+$metropolis: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+
+div.error-message {
+  width: 90%;
+
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+  margin-top: 30%;
+  margin-bottom: 30px;
+
+  @include desktop-width-1 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  div.error-message-image-wrapper {
+    width: 98px;
+    height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 30px;
+
+    img.error-message-image {
+      height: 100%;
+
+      filter: invert(13%) sepia(31%) saturate(401%) hue-rotate(150deg)
+        brightness(97%) contrast(91%);
+
+      &.ogas-key {
+        width: 99px;
+      }
+    }
+
+    &.eyes-wrapper {
+      background-color: $dark;
+      border-radius: 50%;
+
+      img.error-message-image {
+        height: 40px;
+
+        filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(77deg)
+          brightness(111%) contrast(115%);
+      }
+    }
+  }
+
+  div.error-message-text {
+    h2 {
+      font-size: 18px;
+      font-weight: 500;
+      padding: 0 10px;
+      margin-bottom: 10px;
+      font-family: $metropolis;
+      color: $text-light;
+
+      a {
+        color: $accent;
+      }
+
+      &.multiple-h2s {
+        margin-bottom: 0;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      padding: 0 10px;
+    }
+  }
+}

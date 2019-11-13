@@ -1,0 +1,1171 @@
+$ibm-sans: "IBM Plex Sans", "Inter", "Public Sans", -apple-system,
+  BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$ibm-mono: "Space Mono", "IBM Plex Mono", monospace;
+$ibm-condensed: "IBM Plex Sans Condensed", sans-serif;
+$josefin: "Josefin Sans", "Glacial Indifference", sans-serif;
+//* probably use lack and lack line later
+// $metropolis: "Lack", "Metropolis", "Raleway", sans-serif;
+$metropolis: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+
+$dark: #1b2429;
+$dark: #222d31;
+$dark: #1f2a2e;
+$dark: #191e22;
+$light: #bdd1db;
+// $light: #eff5f8;
+$white: #ffffff;
+$whitish: #ffffffcc;
+
+$footer: #d0d9d8;
+
+$bg-grey: #a8bdc756;
+$bg-grey-1: #a8bdc7;
+$bg-grey-2: #8da2ad;
+$bg-grey-usa: #dbe8f0;
+
+$light-2: #d1f8ff;
+$text-light: #456f96;
+$text-light: #6d8faf;
+$text-light-gradient: #9ab8d43a;
+$text-light-2: #1d354b;
+$text-light-2: #325372;
+$text-light-3: #1e2e3d;
+$accent: #fff48f;
+$accent: #ffc64a;
+// $accent: #f2d357;
+// $accent: #ffbd2f;
+$accent-3: #ff8e6f;
+$accent-3: #ff6a35;
+
+$accent-2: #ffd884;
+
+$mob-filter-colour: #d6e4dd;
+
+$small-phones-height: 800px;
+$longer-viewports-height: 1000px;
+$midscreen-width-1: 650px;
+$midscreen-width-2: 849px;
+$desktop-width: 1025px;
+$big-desktop-width: 1350px;
+$smaller-desktop-height: 773px;
+$smaller-desktop-2-height: 714px;
+$smaller-desktop-3-height: 670px;
+$smaller-desktop-4-height: 615px;
+$smaller-desktop-5-height: 549px;
+$larger-desktop-height: 850px;
+
+@mixin small-phones-height {
+  @media (max-height: #{$small-phones-height}) {
+    @content;
+  }
+}
+
+@mixin longer-viewports-height {
+  @media (min-height: #{$longer-viewports-height}) {
+    @content;
+  }
+}
+
+@mixin midscreen-width-1 {
+  @media (min-width: #{$midscreen-width-1}) {
+    @content;
+  }
+}
+
+@mixin midscreen-width-2 {
+  @media (min-width: #{$midscreen-width-2}) {
+    @content;
+  }
+}
+
+@mixin desktop-width {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+//* Same as above but max used instead of min
+@mixin desktop-width-max {
+  @media (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin big-desktop-width {
+  @media (min-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+//* bit added to prevent tangled bulbs photo from entering footer on smaller screens
+@mixin smaller-desktop-height {
+  @media (max-height: #{$smaller-desktop-height}) {
+    @content;
+  }
+}
+@mixin smaller-desktop-2-height {
+  @media (max-height: #{$smaller-desktop-2-height}) {
+    @content;
+  }
+}
+@mixin smaller-desktop-3-height {
+  @media (max-height: #{$smaller-desktop-3-height}) {
+    @content;
+  }
+}
+@mixin smaller-desktop-4-height {
+  @media (max-height: #{$smaller-desktop-4-height}) {
+    @content;
+  }
+}
+@mixin smaller-desktop-5-height {
+  @media (max-height: #{$smaller-desktop-5-height}) {
+    @content;
+  }
+}
+
+@mixin larger-desktop-height {
+  @media (min-height: #{$larger-desktop-height}) {
+    @content;
+  }
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: $ibm-sans;
+  color: $dark;
+  border-color: $dark;
+  list-style-type: none;
+
+  transition: background-color 0.4s linear, fill 0.4s linear, color 0.4s linear;
+}
+
+// html {
+//   border-bottom: $accent-3 6px solid;
+// }
+
+body {
+  border-top: $accent 7px solid;
+  overflow-x: hidden;
+
+  display: flex;
+  flex-direction: column;
+
+  div.full-page-wrapper {
+    border-top: $text-light 7px solid;
+
+    background-color: $light;
+    background-image: -webkit-linear-gradient(
+      200deg,
+      $text-light-gradient 0%,
+      $bg-grey 100%
+    );
+    background-image: -moz-linear-gradient(
+      200deg,
+      $text-light-gradient 0%,
+      $bg-grey 100%
+    );
+    background-image: -o-linear-gradient(
+      200deg,
+      $text-light-gradient 0%,
+      $bg-grey 100%
+    );
+    background-image: linear-gradient(
+      200deg,
+      $text-light-gradient 0%,
+      $bg-grey 100%
+    );
+
+    background-color: $accent-2;
+    background-image: -webkit-linear-gradient(
+      180deg,
+      $white 0%,
+      $bg-grey-2 100%
+    );
+    background-image: -moz-linear-gradient(180deg, $white 0%, $bg-grey-2 100%);
+    background-image: -o-linear-gradient(180deg, $white 0%, $bg-grey-2 100%);
+    background-image: linear-gradient(180deg, $white 0%, $bg-grey-2 100%);
+
+    @include desktop-width {
+      background-color: $accent-2;
+      background-image: -webkit-linear-gradient(180deg, #1b2429 0%, $dark 100%);
+      background-image: -moz-linear-gradient(180deg, #1b2429 0%, $dark 100%);
+      background-image: -o-linear-gradient(180deg, #1b2429 0%, $dark 100%);
+      background-image: linear-gradient(180deg, #2e333a 0%, $dark 100%);
+
+      background: $dark;
+      // background: #131d22;
+
+      // background-color: #485461;
+      // background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+    }
+  }
+
+  background: $accent-2;
+}
+
+@include desktop-width {
+  div.full-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    // border-left: $dark 10px solid;
+    // border-right: $dark 10px solid;
+
+    min-height: 108vh;
+    // height: 115vh;
+
+    @include larger-desktop-height {
+      min-height: 100vh;
+    }
+  }
+}
+
+.background-wrapper {
+  // display: none;
+  position: absolute;
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  // background: white;
+
+  background-image: url(../images/landing-illustration-grey.svg);
+  background-repeat: no-repeat;
+  //todo Optimise position of background to fit in fram properly for (most) mobile screeens.
+  background-position: -10vw -10vh;
+  background-size: 800px, 800px;
+
+  // -webkit-animation: mobFilterAnimation 9s ease infinite;
+  // -moz-animation: mobFilterAnimation 9s ease infinite;
+  // animation: mobFilterAnimation 9s ease infinite;
+
+  // @keyframes mobFilterAnimation {
+  //   0% {
+  //     filter: invert(93%) sepia(11%) saturate(155%) hue-rotate(98deg)
+  //       brightness(96%) contrast(92%);
+  //   }
+  //   50% {
+  //     filter: invert(95%) sepia(14%) saturate(64%) hue-rotate(96deg)
+  //       brightness(98%) contrast(95%);
+  //   }
+  //   100% {
+  //     filter: invert(93%) sepia(11%) saturate(155%) hue-rotate(98deg)
+  //       brightness(96%) contrast(92%);
+  //   }
+  // }
+
+  // filter: invert(95%) sepia(14%) saturate(64%) hue-rotate(96deg) brightness(98%)
+  //   contrast(95%);
+  // filter: invert(96%) sepia(4%) saturate(1154%) hue-rotate(172deg)
+  //   brightness(94%) contrast(90%);
+  filter: invert(96%) sepia(2%) saturate(2335%) hue-rotate(173deg)
+    brightness(94%) contrast(100%);
+
+  @include desktop-width {
+    display: none;
+  }
+
+  @include small-phones-height {
+    height: 120vh;
+  }
+
+  @include longer-viewports-height {
+    background-size: 800px, 800px;
+  }
+
+  @include midscreen-width-1 {
+    background-size: 1000px, 1000px;
+  }
+
+  @include midscreen-width-2 {
+    background-size: 1300px, 1300px;
+    background-position: -10vw -10vh;
+  }
+}
+
+.hide-mobile {
+  @include desktop-width {
+    display: none;
+  }
+}
+
+div.mobile-menu {
+  width: 100vw;
+  height: calc(100vh - 14px);
+  background-color: $dark;
+  padding: 30px 9%;
+
+  display: flex;
+  flex-direction: column;
+
+  display: none;
+
+  a {
+    text-decoration: none;
+    color: $light;
+
+    font-weight: 300;
+    font-size: 34px;
+    font-family: $metropolis;
+  }
+
+  div.logo-plus-close {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+      font-size: 28px;
+      letter-spacing: -0.08em;
+      color: $text-light-2;
+      font-family: $josefin;
+    }
+
+    button.close-mobile {
+      color: $light;
+      border: $light 1px solid;
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: transparent;
+
+      border-radius: 4px;
+    }
+  }
+
+  ul.mobile-menu-list {
+    margin-top: 20vh;
+
+    li.mobile-menu-item {
+      margin-top: 10vh;
+      padding-bottom: 15px;
+
+      //* added due to partial border
+      position: relative;
+
+      //* replaced with partial border
+      // border-bottom: $accent solid 1px;
+      // width: 10%;
+    }
+
+    //* partial border for each list item. source: https://stackoverflow.com/questions/8835142/any-way-to-declare-a-size-partial-border-to-a-box
+    li.mobile-menu-item:after {
+      content: "";
+      background: $accent;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 30px;
+      height: 1px;
+    }
+  }
+}
+
+.page-minus-footer {
+  margin: 0% 9%;
+  margin: 0;
+  height: 90vh;
+
+  @include desktop-width {
+    margin: 0% 5.2%;
+    margin: 0;
+    height: initial;
+  }
+
+  @include smaller-desktop-3-height {
+    padding-bottom: 75px;
+  }
+
+  .show-desktop {
+    display: none;
+
+    @include desktop-width {
+      display: block;
+    }
+  }
+
+  .hide-mobile {
+    @include desktop-width {
+      display: none;
+    }
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: $bg-grey 0.4px solid;
+
+    // background-color: $whitish;
+
+    position: relative;
+    z-index: 15;
+
+    padding: 30px 9%;
+
+    @include desktop-width {
+      display: grid;
+      grid-template-columns: 33.333333% 33.333333% 33.333333%;
+      grid-template-rows: auto;
+      padding: 0px 5.2%;
+
+      border: 0;
+    }
+
+    h2.page-title {
+      font-family: $josefin;
+      font-size: 28px;
+      letter-spacing: -0.08em;
+      color: $light;
+      span {
+        font-family: $josefin;
+        font-size: 28px;
+        letter-spacing: -0.08em;
+
+        background: -webkit-linear-gradient($light, $light, $accent);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      @include desktop-width {
+        font-size: 28px;
+      }
+    }
+
+    @include desktop-width {
+      div.header-icons {
+        width: 190px;
+        height: 73px;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        justify-content: center;
+
+        // visibility: hidden;
+
+        .icon-wrapper {
+          width: 42%;
+          // border-left: $dark solid 1px;
+          // border-right: $dark solid 1px;
+          height: 73px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img.header-bulb {
+            height: 37.6px;
+            filter: invert(11%) sepia(24%) saturate(1122%) hue-rotate(186deg)
+              brightness(89%) contrast(96%);
+          }
+          img.header-clock {
+            height: 33.47px;
+          }
+        }
+
+        // .clock-wrapper {
+        //   // margin-left: 16.6%;
+        // }
+      }
+
+      div.bulb-wrapper.icon-wrapper {
+        display: none;
+      }
+    }
+
+    nav {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+      // padding: 5.5px 0;
+
+      font-size: 13.5px;
+      font-weight: 400;
+
+      button.mobile-menu-button {
+        border: $dark 1px solid;
+        padding: 10px 20px;
+        cursor: pointer;
+        background-color: transparent;
+
+        border-radius: 4px;
+
+        background-color: $accent;
+      }
+
+      // a {
+      //   img.hamburger {
+      //     height: 17px;
+      //   }
+      // }
+
+      ul.show-desktop {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        // *padding added to remove heading height disparity when hamburger is clicked
+        padding: 4.8px 0px;
+        // background-color: grey;
+
+        // * resets the removal of nav links in small-screen modes by default.
+
+        @include desktop-width-max {
+          display: none;
+        }
+
+        @include desktop-width {
+          //* crucial width determines whether nav links align with end of header bottom border for larger screens.
+          // width: 67%;
+          justify-content: end;
+          padding: 0px;
+        }
+
+        li.nav-list-item.contact,
+        li.nav-list-item.login,
+        li.nav-list-item.about {
+          a {
+            text-decoration: none;
+            color: $light;
+          }
+        }
+
+        li.nav-list-item.login,
+        li.nav-list-item.about {
+          margin-right: 20px;
+
+          @include desktop-width {
+            margin-right: 20px;
+
+            a {
+              transition: border-bottom 0.3s ease, color 0.3s ease;
+              color: $light;
+            }
+          }
+
+          a:hover {
+            // text-decoration: underline;
+            color: $text-light-2;
+            border-bottom: $accent solid 2px;
+          }
+        }
+
+        li.nav-list-item.contact {
+          a {
+            border: solid $accent 1px;
+            padding: 5px 4.5px;
+            padding-left: 15px;
+            background-color: $accent;
+
+            border-radius: 3px;
+            color: $text-light-3;
+
+            transition: background-color 0.3s ease, color 0.3s ease,
+              border-left 0.26s linear, border-right 0.26s linear,
+              border-top 0.26s linear, border-bottom 0.26s linear;
+          }
+
+          a:hover {
+            border: solid $accent 1px;
+            background-color: transparent;
+
+            color: $text-light-2;
+          }
+        }
+      }
+    }
+  }
+
+  @include desktop-width {
+    a.desktop-mode-toggle.show-desktop {
+      font-size: 9px;
+      font-weight: 400;
+      text-align: center;
+      margin-top: 5px;
+      color: $accent;
+      width: 14%;
+      margin: auto;
+      text-transform: uppercase;
+      text-decoration: none;
+      // text-decoration: line-through;
+      font-family: $metropolis;
+      outline: 0;
+
+      span#down-or-up {
+        font-size: 9px;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 5px;
+        width: 13%;
+        margin: auto;
+        color: $accent;
+        font-family: $metropolis;
+        outline: 0;
+      }
+
+      span.only-hover {
+        font-weight: 400;
+        display: none;
+        text-transform: lowercase;
+        text-decoration: none;
+        font-family: $metropolis;
+        outline: 0;
+      }
+    }
+
+    a.desktop-mode-toggle.show-desktop:hover {
+      span.only-hover {
+        font-weight: 400;
+        display: inline-block;
+        text-decoration: underline;
+        color: $accent;
+        text-decoration: none;
+        font-family: $metropolis;
+
+        span#light-or-dark {
+          font-weight: 400;
+          color: $accent;
+          font-family: $metropolis;
+        }
+      }
+    }
+  }
+
+  main {
+    margin-top: 70px;
+    position: relative;
+    z-index: 15;
+
+    margin: 70px 9% 0;
+
+    @media only screen and (max-height: 570px) {
+      margin-top: 40px;
+    }
+
+    @include desktop-width {
+      display: grid;
+      // height: 100%;
+      grid-template-columns: 50% 50%;
+      grid-template-rows: auto;
+      align-items: center;
+    }
+
+    @include midscreen-width-1 {
+      margin-top: 100px;
+    }
+
+    @include midscreen-width-2 {
+      margin-top: 120px;
+    }
+
+    @include longer-viewports-height {
+      margin-top: 120px;
+    }
+
+    @include desktop-width {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+      align-items: center;
+      column-gap: 30px;
+
+      margin: 40px 10% 0;
+
+      @include smaller-desktop-3-height {
+        margin-bottom: 60px;
+      }
+
+      @media only screen and (max-width: 1140px) {
+        margin-top: 90px;
+      }
+    }
+
+    section.main-left {
+      // width: 70%;
+      // margin-top: 100px;
+
+      h1 {
+        font-family: $metropolis;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 2.52rem;
+        line-height: 115%;
+        letter-spacing: -0.03em;
+
+        span {
+          @keyframes blink {
+            0% {
+              color: $text-light-2;
+            }
+
+            100% {
+              color: $accent;
+            }
+          }
+
+          animation: blink 2s ease 0s infinite;
+        }
+
+        @include longer-viewports-height {
+          font-size: 3.2rem;
+        }
+
+        @include midscreen-width-1 {
+          font-size: 3.2rem;
+        }
+
+        @include midscreen-width-2 {
+          font-size: 3.7rem;
+        }
+        @include desktop-width {
+          color: #acc7d6;
+
+          color: $light;
+          @media only screen and (max-width: 1200px) {
+            font-size: 3.5rem;
+          }
+
+          @media only screen and (max-width: 1200px) {
+            font-size: 3.2rem;
+          }
+
+          @media only screen and (max-width: 976px) {
+            font-size: 3rem;
+          }
+        }
+      }
+
+      p {
+        margin-top: 30px;
+        font-style: normal;
+        font-size: 1.1rem;
+        line-height: 26px;
+        font-weight: 400;
+        color: #8fa8b6;
+        color: $light;
+
+        @include longer-viewports-height {
+          margin-top: 40px;
+          font-size: 1.25rem;
+        }
+
+        @include midscreen-width-1 {
+          margin-top: 40px;
+          font-size: 1.25rem;
+        }
+
+        @include desktop-width {
+          @media only screen and (max-width: 976px) {
+            font-size: 1.2rem;
+          }
+        }
+      }
+
+      button.sign-up {
+        display: block;
+        width: 53.3%;
+        height: 40px;
+        // margin: auto;
+        margin-top: 60px;
+        background-color: $text-light-3;
+        background-color: $light;
+        color: $light;
+        color: $dark;
+        font-weight: 500;
+        font-size: 1.05rem;
+        border: none;
+        // font-family: $metropolis;
+
+        border-radius: 5px;
+
+        outline: 0;
+
+        cursor: pointer;
+
+        transition: border-left 0.4s ease-in-out, border-right 0.4s ease-in-out,
+          border-top 0.4s ease-in-out, border-bottom 0.4s ease-in-out;
+
+        &:hover {
+          // background-color: $text-light-2;
+
+          border: $text-light-3 1px solid;
+
+          //* box shadow used to create a blurred second border: https://stackoverflow.com/questions/5394116/outline-radius
+          box-shadow: 0 0 2pt 1pt $accent;
+
+          // outline-style: solid;
+          // outline-color: $text-light;
+          // outline-width: 2px;
+        }
+
+        @include longer-viewports-height {
+          // font-size: 1.2rem;
+          // height: 50px;
+          margin-top: 60px;
+        }
+
+        @include midscreen-width-1 {
+          // font-size: 1.2rem;
+          width: 180px;
+          // height: 50px;
+        }
+      }
+
+      button.try-it {
+        display: block;
+        width: 53.3%;
+        height: 40px;
+        margin-top: 30px;
+        background-color: transparent;
+        font-weight: 400;
+        font-size: 1.05rem;
+        border: none;
+        color: $dark;
+        // font-family: $metropolis;
+
+        border-radius: 5px;
+
+        outline: 0;
+
+        cursor: pointer;
+
+        background: $accent;
+        background: linear-gradient(
+          270deg,
+          $text-light,
+          $accent-2,
+          $footer,
+          $accent
+        );
+        background-size: 600% 600%;
+
+        -webkit-animation: tryBGAnimation 45s linear infinite;
+        -moz-animation: tryBGAnimation 45s linear infinite;
+        animation: tryBGAnimation 45s linear infinite;
+
+        @-webkit-keyframes tryBGAnimation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        @-moz-keyframes tryBGAnimation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        @keyframes tryBGAnimation {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+        background: $accent;
+
+        // background: $footer;
+        border: $dark 1px solid;
+
+        transition: box-shadow 0.4s ease, border-right 0.0009s linear,
+          border-bottom 0.0009s linear;
+
+        &:hover {
+          border: 0;
+          // border: $accent-2 1px solid;
+          // color: $text-light;
+
+          background: #8fa8b6;
+          background: $text-light;
+
+          box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.4);
+        }
+
+        @include longer-viewports-height {
+          margin-top: 30px;
+        }
+
+        @include midscreen-width-1 {
+          width: 180px;
+        }
+
+        @include desktop-width {
+          margin-left: 4.5%;
+
+          @media only screen and (max-width: 1140px) {
+            margin-left: 3px;
+          }
+        }
+      }
+
+      @include desktop-width {
+        button.button.sign-up,
+        button.button.try-it {
+          display: inline-block;
+
+          @media only screen and (max-width: 979px) {
+            display: block;
+          }
+        }
+      }
+
+      aside {
+        margin-top: 30px;
+        font-family: $ibm-mono;
+        font-weight: 300;
+        font-size: 11px;
+
+        @include midscreen-width-1 {
+          margin-top: 60px;
+          font-size: 12px;
+        }
+
+        @include longer-viewports-height {
+          margin-top: 150px;
+          font-size: 12px;
+        }
+
+        @include desktop-width {
+          margin-top: 30px;
+          color: #aabfcc;
+        }
+      }
+    }
+
+    div.img-container.show-desktop {
+      svg.tangled-bulbs {
+        justify-self: right;
+
+        // filter: invert(12%) sepia(9%) saturate(1246%) hue-rotate(157deg)
+        //   brightness(93%) contrast(95%);
+        // width: 100%;
+        // height: 100%;
+
+        @include larger-desktop-height {
+          height: 550px;
+        }
+
+        @include smaller-desktop-height {
+          height: 500px;
+        }
+
+        @include smaller-desktop-2-height {
+          height: 450px;
+        }
+
+        @include smaller-desktop-3-height {
+          height: 400px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+          height: 500px;
+        }
+
+        @media only screen and (max-width: 1062px) {
+          height: 450px;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: block;
+  background-color: $light;
+  // background-color: #aabfcc;
+
+  height: 129px;
+  padding-left: 9%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 13px;
+  position: relative;
+  z-index: 15;
+
+  // position: absolute;
+  // bottom: 0;
+  // width: 100vw;
+
+  @include small-phones-height {
+    // display:block;
+    margin-top: 150px;
+  }
+
+  // @include smaller-desktop-height {
+  //   margin-top: 400px;
+  // }
+
+  @include longer-viewports-height {
+    font-size: 13px;
+  }
+
+  @include desktop-width {
+    padding: 0% 5.2%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    height: 75px;
+    margin-top: initial;
+
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+    // background-image: linear-gradient($accent, $accent),
+    //   linear-gradient($dark, $dark);
+    // background-size: calc(1 * (100% / 2.0655)) 100%, calc(2 * (100% / 2)) 100%;
+    // background-repeat: no-repeat;
+  }
+
+  // @include smaller-desktop-5-height {
+  //   margin-top: 200px;
+  // }
+
+  div.left-links {
+    margin-bottom: 25px;
+    @include desktop-width {
+      margin: 0;
+    }
+
+    ul {
+      color: $dark;
+      display: flex;
+      flex-direction: row;
+
+      li {
+        color: $dark;
+        a {
+          color: $dark;
+        }
+      }
+    }
+
+    .divider,
+    .help {
+      margin-left: 20px;
+    }
+  }
+
+  div.right-content p {
+    color: $dark;
+  }
+}
+
+//*dark mode styling for tangled illustration
+.fil10 {
+  fill: transparent;
+}
+.fil0 {
+  fill: #aabfcc;
+  fill: $light;
+}
+.yellow {
+  fill: #ffaf00;
+}
+
+.fil1 {
+  animation: colorChange1 2.1s infinite;
+
+  animation-timing-function: linear;
+}
+.fil4 {
+  animation: colorChange2 2.2s infinite;
+
+  animation-timing-function: linear;
+}
+.fil3 {
+  animation: colorChange1 2.3s infinite;
+
+  animation-timing-function: linear;
+}
+.fil2 {
+  animation: colorChange2 2.7s infinite;
+
+  animation-timing-function: linear;
+}
+.fil6 {
+  animation: colorChange2 2.4s infinite;
+
+  animation-timing-function: linear;
+}
+.fil5 {
+  animation: colorChange1 2.8s infinite;
+
+  animation-timing-function: linear;
+}
+.fil9 {
+  animation: colorChange2 2.5s infinite;
+
+  animation-timing-function: linear;
+}
+.fil7 {
+  animation: colorChange1 2.6s infinite;
+
+  animation-timing-function: linear;
+}
+.fil8 {
+  animation: colorChange2 2.9s infinite;
+
+  animation-timing-function: linear;
+}
+
+@keyframes colorChange1 {
+  0% {
+    fill: #ffde96;
+  }
+  25% {
+    fill: #ffaf00;
+  }
+  50% {
+    fill: #ffaf00;
+  }
+
+  75% {
+    fill: #6d8faf;
+  }
+
+  100% {
+    fill: #1b2429;
+  }
+}
+
+@keyframes colorChange2 {
+  0% {
+    fill: #1b2429;
+  }
+  25% {
+    fill: #6d8faf;
+  }
+  50% {
+    fill: #ffaf00;
+  }
+
+  75% {
+    fill: #ffaf00;
+  }
+
+  100% {
+    fill: #ffde96;
+  }
+}

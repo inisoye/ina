@@ -1,0 +1,118 @@
+$size: 50px;
+$thickness: 1px;
+$centre-size: #{$size / 10};
+$color: #000000;
+$container-size: #{$size / 1.2};
+$transform: #{$container-size / 2};
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div.frame {
+  width: $size;
+  height: $size;
+  border: $color solid $thickness;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div.centre-circle {
+    position: absolute;
+    width: $centre-size;
+    height: $centre-size;
+    border-radius: 50%;
+    border: $color solid $thickness;
+    background-color: white;
+    z-index: 5;
+  }
+
+  div.container {
+    width: $container-size;
+    height: $container-size;
+
+    position: absolute;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div.hour-hand {
+    width: $thickness;
+    height: 25%;
+    background: $color;
+
+    position: absolute;
+    bottom: 50%;
+
+    // transform: rotate(-190deg);
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+    transform-origin: 50% 100%;
+  }
+
+  div.minute-hand {
+    width: $thickness;
+    height: 35%;
+    background: $color;
+
+    position: absolute;
+    bottom: 50%;
+
+    // transform: rotate(20deg);
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+    transform-origin: 50% 100%;
+  }
+
+  div.second-hand {
+    width: $thickness;
+    height: 50%;
+    background: rgb(150, 0, 0);
+
+    position: absolute;
+    bottom: 50%;
+
+    // transform: rotate(50deg);
+    backface-visibility: hidden;
+    outline: 1px solid transparent;
+    transform-origin: 50% 100%;
+  }
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateZ(360deg);
+
+  }
+}
+
+// .hour-container {
+//   animation: rotate 43200s infinite linear;
+// }
+// .minute-container {
+//   animation: rotate 3600s infinite linear;
+// }
+// .second-container {
+//   animation: rotate 60s infinite linear;
+// }
+
+// .minute-container {
+//   animation: rotate 3600s infinite steps(60);
+// }
+// .second-container {
+//   animation: rotate 60s infinite steps(60);
+// }

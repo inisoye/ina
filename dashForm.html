@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>iná.</title>
+    
+    <link rel="stylesheet" href="css/dashForm.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/errorMessages.css" />
+    <link rel="stylesheet" href="css/preloader.css" />
+  </head>
+  <body>
+    <div class="preloader-container">
+      <div class="v-align">
+        <h1 class="preloader-h1">iná will be ready in <span class="countdown">4</span>s.</h1>
+        <div class="loader">
+          <aside class="loader__box loader--left">
+            <span class="loader__circle"></span>
+          </aside>
+          <aside class="loader__box loader--right">
+            <span class="loader__circle"></span>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <div class="full-page-wrapper">
+      <header id="page-header">
+        <a href="index.html" class="title-link"><h2 class="page-title">iná.</h2></a>
+
+        <nav>
+          <ul class="">
+            <li class="nav-list-item sign-up">
+              <a href="#" title="Coming soon." class="nav-link">login</a>
+            </li>
+            <li class="nav-list-item contact">
+              <a href="#" title="Coming soon." class="nav-link">sign up</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="dash-bar-and-selector">
+          <!-- <div class="desktop-selector show-desktop" id="desktop-selector"></div> -->
+
+          <div class="dash-bar">
+            <button class="status-button dash-button selected" id="status-button">
+              <span class="button-title">status</span>
+              <span class="button-hover-text">Find out if there is light in a particular location.</span>
+              <img
+                src="images/Status4final.svg"
+                alt="bulb icon with question mark"
+              />
+            </button>
+
+            <button class="history-button dash-button" id="history-button">
+              <span class="button-title">history</span>
+              <span class="button-hover-text">Examine historical power supply data.</span>
+              <img
+                src="images/History.svg"
+                alt="clock icon with rewind (anti-clockwise) arrow"
+              />
+            </button>
+
+            <button class="maps-button dash-button" id="maps-button">
+              <span class="button-title">map</span>
+              <span class="button-hover-text">Visualise how much of your city has no light.</span>
+              <img
+                src="images/Maps.svg"
+                alt="map icon with pin-point location"
+              />
+            </button>
+
+            <button class="forecast-button dash-button" id="forecast-button">
+              <span class="button-title">forecast</span>
+              <span class="button-hover-text">View predictions of future power outages.</span>
+              <img src="images/Binoculars.svg" alt="binoculars icon" />
+            </button>
+
+            <button class="rankings-button dash-button" id="rankings-button">
+              <span class="button-title">rankings</span>
+              <span class="button-hover-text">Locate the parts of your city with the best power supply.</span>
+              <img src="images/Ranking2.svg" alt="olympic podium icon" />
+            </button>
+
+            <!--* dash buttons only ends -->
+          </div> 
+
+          <button class="collapse-button show-desktop" id="collapse-button">
+            <img src="images/Chevron3.svg" alt="double arrow symbol" />
+          </button>
+          
+
+          <!-- <div class="mobile-selector hide-mobile" id="mobile-selector"></div> -->
+        </div>
+
+        <div class="forms-and-results" id="forms-and-results">
+          <section class="forms">
+            <header class="forms-header">
+              <h2>Search for a location below</h2>
+            </header>
+
+            <div class="forms-body">
+              <div class="street-form form-bit ui-widget">
+                <label for="street-selector" class="form-label" id="form-label">enter your location</label>
+                <input id="street-selector" class="input" placeholder='e.g. "Osho Street" or "Alausa" or "Lagos"'>
+              </div>
+            </div>
+          </section>
+
+          <hr class="divider"/>
+
+          <section class="results">
+            <div class="header-key">
+              <header class="results-header">
+                <h2>Results</h2>
+              </header>
+
+              <section class="key-section">
+                <h4>key</h4>
+                <div class="no-light-section label-swab">
+                  <div class="no-light-key-swab swab"></div>
+                  <p>no light</p>
+                </div>
+    
+                <div class="light-section label-swab">
+                  <div class="light-key-swab swab"></div>
+                  <p>light on</p>
+                </div>
+              </section>
+            </div>
+
+            <div class="cards-container">
+              <div class="cards-section" id="result">
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                  id="sunflower-street-card"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+
+                  <p class="full-add alausa-1">Sunflower Street, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card ifako-ijaiye-1-card lagos black-card ifako-ijaiye-1"
+                >
+                  <div class="image-container ifako-ijaiye-1">
+                    <img
+                      class="card-image bulb-or-lantern ifako-ijaiye-1"
+                      src="images/Lantern.svg"
+                      alt="lantern icon"
+                    />
+                  </div>
+
+                  <div class="view-container ifako-ijaiye-1">
+                    <p class="view-details ifako-ijaiye-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add ifako-ijaiye-1">Adejonwo Close, Ifako-Ijaiye, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card ifako-ijaiye-1-card lagos black-card ifako-ijaiye-1"
+                >
+                  <div class="image-container ifako-ijaiye-1">
+                    <img
+                      class="card-image bulb-or-lantern ifako-ijaiye-1"
+                      src="images/Lantern.svg"
+                      alt="lantern icon"
+                    />
+                  </div>
+
+                  <div class="view-container ifako-ijaiye-1">
+                    <p class="view-details ifako-ijaiye-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add ifako-ijaiye-1">Bola Ademola Street, Ifako-Ijaiye, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Lily Drive, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card ifako-ijaiye-1-card lagos black-card ifako-ijaiye-1"
+                >
+                  <div class="image-container ifako-ijaiye-1">
+                    <img
+                      class="card-image bulb-or-lantern ifako-ijaiye-1"
+                      src="images/Lantern.svg"
+                      alt="lantern icon"
+                    />
+                  </div>
+
+                  <div class="view-container ifako-ijaiye-1">
+                    <p class="view-details ifako-ijaiye-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add ifako-ijaiye-1">Ajoke Street, Ifako-Ijaiye, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Ivy Close, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Carrot Street, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card ifako-ijaiye-1-card lagos black-card ifako-ijaiye-1"
+                >
+                  <div class="image-container ifako-ijaiye-1">
+                    <img
+                      class="card-image bulb-or-lantern ifako-ijaiye-1"
+                      src="images/Lantern.svg"
+                      alt="lantern icon"
+                    />
+                  </div>
+
+                  <div class="view-container ifako-ijaiye-1">
+                    <p class="view-details ifako-ijaiye-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add ifako-ijaiye-1">Popoola Close, Ifako-Ijaiye, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card ifako-ijaiye-1-card lagos black-card ifako-ijaiye-1"
+                >
+                  <div class="image-container ifako-ijaiye-1">
+                    <img
+                      class="card-image bulb-or-lantern ifako-ijaiye-1"
+                      src="images/Lantern.svg"
+                      alt="lantern icon"
+                    />
+                  </div>
+
+                  <div class="view-container ifako-ijaiye-1">
+                    <p class="view-details ifako-ijaiye-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add ifako-ijaiye-1">Ibrahim Street, Ifako-Ijaiye, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Palm Avenue, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Ixora Drive, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card ifako-ijaiye-1-card lagos black-card ifako-ijaiye-1"
+                >
+                  <div class="image-container ifako-ijaiye-1">
+                    <img
+                      class="card-image bulb-or-lantern ifako-ijaiye-1"
+                      src="images/Lantern.svg"
+                      alt="lantern icon"
+                    />
+                  </div>
+
+                  <div class="view-container ifako-ijaiye-1">
+                    <p class="view-details ifako-ijaiye-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add ifako-ijaiye-1">Gbenga Martins Close, Ifako-Ijaiye, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card ifako-ijaiye-1-card lagos black-card ifako-ijaiye-1"
+                >
+                  <div class="image-container ifako-ijaiye-1">
+                    <img
+                      class="card-image bulb-or-lantern ifako-ijaiye-1"
+                      src="images/Lantern.svg"
+                      alt="lantern icon"
+                    />
+                  </div>
+
+                  <div class="view-container ifako-ijaiye-1">
+                    <p class="view-details ifako-ijaiye-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add ifako-ijaiye-1">Osho Street, Ifako-Ijaiye, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Hibiscus Street, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Canary Drive, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Lavender Close, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Butterfly Close, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Marigold Close, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Pine Drive, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Avocado Drive, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Banana Close, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Dove Close, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Robin Close, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Coconut Drive, Alausa, Lagos</p>
+                </a>
+
+                <a
+                  href="#"
+                  class="card alausa-1-card lagos white-card alausa-1"
+                >
+                  <div class="image-container alausa-1">
+                    <img
+                      class="card-image bulb-or-lantern alausa-1"
+                      src="images/Bulb.svg"
+                      alt="lightbulb icon"
+                    />
+                  </div>
+
+                  <div class="view-container alausa-1">
+                    <p class="view-details alausa-1">VIEW DETAILS</p>
+                  </div>
+                  
+                  <p class="full-add alausa-1">Sparrow Close, Alausa, Lagos</p>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <section class="card-details" id="card-details">
+          <a href="#" class="back-results">back to results</a>
+
+          <div class="enlarged-card">
+            <header class="enlarged-card-header">
+              <div class="enlarged-card-header-text">
+                <h2 class="big-add big-text-color">Sunflower Street, Alausa, Lagos</h2>
+                <p class="big-status big-text-color">There is light in this location*</p>
+                <p class="big-time big-text-color">Light <span class="brought-or-taken big-text-color">brought at </span><span class="big-time-value big-text-color">2:30 PM</span> today</p>
+                <p class="data-source big-text-color">*based on data obtained from <span class="data-source-value big-text-color">Sunflower Street, Alausa, Lagos</span></p>
+              </div>
+
+              <!-- !remove the height attribute later -->
+              <img
+                class="enlarged-card-header-image show-desktop"
+                src="images/Bulb.svg"
+                alt="lightbulb icon"
+                height="55px"
+              />
+            </header>
+
+            <hr class="enlarged-card-divider">
+
+            <section class="charts-bit">
+              <p class="mobile-select-chart-type big-text-color">select chart type below:</p>
+              <h3 class="big-text-color"><span class="select-chart-type big-text-color">select chart type:</span>   
+                <a class="ina-timeline-choice selected-chart big-text-color timeline-bar-selector">iná Timeline <img class="chart-icon timeline-icon" src="images/Timeline1.svg" alt="Generic timeline icon"> </a> 
+                <span class="slash-div big-text-color">/</span> 
+                <a class="chart-choice big-text-color timeline-bar-selector">Weekly Chart <img class="chart-icon bar-icon" src="images/BarChart2.svg" alt="Generic bar chart icon"> </a>
+              </h3>
+
+              <div class="timeline-with-title">
+                <h5 class="timeline-title big-text-color">Timeline showing the last five power switches</h5>
+                <div class="ina-timeline-container">
+                    <ul class="timeline">
+                      <!-- Item 1 -->
+                      <li>
+                        <div class="direction-r">
+                          <div class="flag-wrapper">
+                            <span class="flag flag-1">Light On</span>
+                            <span class="time-wrapper"
+                              ><span class="time time-1">Nov 09, 10:13AM</span></span
+                            >
+                          </div>
+                          <div class="desc">
+                            <span class="duration duration-1">Uptime Duration: 1hr 33 mins</span>
+                            <!-- <span>Date: Oct 23, 2019</span> -->
+                          </div>
+                        </div>
+                      </li>
+              
+                      <!-- Item 2 -->
+                      <li>
+                        <div class="direction-l">
+                          <div class="flag-wrapper">
+                            <span class="flag flag-2">Light Off</span>
+                            <span class="time-wrapper"><span class="time time-2">Nov 09, 9:40AM</span></span>
+                          </div>
+                          <div class="desc">
+                            <span class="duration duration-2">Blackout Duration: 33mins</span>
+                            <!-- <span>Date: Oct 23, 2019</span> -->
+                          </div>
+                        </div>
+                      </li>
+              
+                      <!-- Item 3 -->
+                      <li>
+                        <div class="direction-r">
+                          <div class="flag-wrapper">
+                            <span class="flag flag-3">Light On</span>
+                            <span class="time-wrapper"><span class="time time-3">Nov 09, 9:29AM</span></span>
+                          </div>
+                          <div class="desc">
+                            <span class="duration duration-3">Uptime Duration: 11mins</span>
+                            <!-- <span>Date: Oct 23, 2019</span> -->
+                          </div>
+                        </div>
+                      </li>
+              
+                      <!-- Item 4 -->
+                      <li>
+                        <div class="direction-l">
+                          <div class="flag-wrapper">
+                            <span class="flag flag-4">Light Off</span>
+                            <span class="time-wrapper"><span class="time time-4">Nov 09, 8:48AM</span></span>
+                          </div>
+                          <div class="desc">
+                            <span class="duration duration-4">Blackout Duration: 37mins</span>
+                            <!-- <span>Date: Oct 23, 2019</span> -->
+                          </div>
+                        </div>
+                      </li>
+              
+                      <!-- Item 5 -->
+                      <li>
+                        <div class="direction-r">
+                          <div class="flag-wrapper">
+                            <span class="flag flag-5">Light On</span>
+                            <span class="time-wrapper"><span class="time time-5">Nov 09, 6:33AM</span></span>
+                          </div>
+                          <div class="desc">
+                            <span class="duration duration-5">Uptime Duration: 1hr 15mins</span>
+                            <!-- <span>Date: Oct 23, 2019</span> -->
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                </div>
+              </div>
+
+              <div class="bar-container">
+                  <h5 class="bar-title big-text-color">Power supply over the past few days</h5>
+                  <div id = "container" style = "width: 99%; height: 280px; margin: 0 auto"></div>
+              </div>
+            </section>
+
+            <hr class="show-desktop enlarged-card-divider enlarged-card-divider2">
+          </div>
+        </section>
+
+        <div style="display:none" class="error-message history-message">
+          <div class="eyes-wrapper error-message-image-wrapper">
+            <img class="error-message-image" src="images/eyes.svg" alt="eyes in the dark">
+          </div>
+
+          <div class="error-message-text">
+            <h2>Oh no! Nepa just took light in this section.</h2>
+          
+            <p>
+              We know how annoying this must be.
+            </p>
+            <p>
+              As a result, we are working hard to to get the section ready for you.
+            </p>
+            <p>Just you.</p> 
+            
+          </div>
+        </div>
+
+        <div style="display:none"   class="error-message map-message">
+          <div class="hands-wrapper error-message-image-wrapper">
+            <img class="error-message-image ogas-key" src="images/ogasKeys.svg" alt="hand holding keys">
+          </div>
+
+          <div class="error-message-text">
+            <h2>
+              The key to this section is in the hand of 
+              the Oga at the top.
+            </h2>
+          
+            <p>A glorious map will be shown here when he hands the key back to us.</p>
+          </div>
+        </div>
+
+        <div style="display:none" class="error-message forecast-message">
+          <div class="gen-wrapper error-message-image-wrapper">
+            <img class="error-message-image" src="images/faultyGen.svg" alt="hand holding keys">
+          </div>
+
+          <div class="error-message-text">
+            <h2 class="multiple-h2s">
+              The generator that powers forecasts is currently faulty. 
+            </h2>
+            <h2>
+              The fault is an apparent dizziness.
+            </h2>
+          
+            <p>Forecasts will be possible after our gen guy has fixed it.</p>
+          </div>
+        </div>
+
+        <div style="display:none" class="error-message rankings-message">
+          <div class="victor-wrapper error-message-image-wrapper">
+            <img class="error-message-image" src="images/victor.svg" alt="hand holding keys">
+          </div>
+
+          <div class="error-message-text">
+            <h2 class="multiple-h2s">
+              Oya. No jokes. The rankings are not ready yet.
+            </h2>
+            <h2>
+              We need iná in more locations. Wanna help? <a href="mailto:ina.energyteam@gmail.com">Contact us</a>.
+            </h2>
+          
+            <p>If you have no help to offer, well, Victor (above) could play you an imaginary tune 😉.</p>
+          </div>
+        </div>
+      </main>
+  
+      <footer>
+        <div class="left-links">
+          <ul>
+            <li class="attribution"><a href="#">attribution</a></li>
+            <li class="divider">|</li>
+            <li class="help"><a href="#">help</a></li>
+          </ul>
+        </div>
+
+        <div class="right-content">
+          <p>© iná 2019. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="js/googleTimeline.js"></script>
+    <script type="text/javascript" src="js/googleBar.js"></script>
+    
+    <script type="text/javascript" src="js/dashForm.js"></script>
+    <script type="text/javascript" src="js/apiRequests.js"></script>
+    <script type="text/javascript" src="js/preloader.js"></script>
+  </body>
+</html>
