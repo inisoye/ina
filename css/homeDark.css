@@ -151,7 +151,7 @@ div.mobile-menu div.logo-plus-close h2 {
   font-size: 28px;
   letter-spacing: -0.07em;
   color: #325372;
-  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
+  font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 div.mobile-menu div.logo-plus-close button.close-mobile {
@@ -249,14 +249,14 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 }
 
 .page-minus-footer header h2.page-title {
-  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
+  font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 28px;
   letter-spacing: -0.07em;
   color: #bdd1db;
 }
 
 .page-minus-footer header h2.page-title span {
-  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
+  font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 28px;
   background: -webkit-linear-gradient(#bdd1db, #bdd1db, #ffc64a);
   -webkit-background-clip: text;
