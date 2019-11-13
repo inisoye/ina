@@ -631,6 +631,7 @@ div.full-page-wrapper main div.forms-and-results section.forms div.forms-body in
   text-align: center;
   background-color: #f4fbfd;
   color: #212c30;
+  -webkit-appearance: none;
 }
 
 div.full-page-wrapper main div.forms-and-results section.forms div.forms-body input.input:focus {
