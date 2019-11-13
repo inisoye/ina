@@ -19,13 +19,15 @@ $desktop-width-1: 950px;
   }
 }
 
-$ibm-sans: "IBM Plex Sans", "Inter", "Public Sans", -apple-system,
-  BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$ibm-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
 $ibm-mono: "Space Mono", "IBM Plex Mono", monospace;
 $ibm-condensed: "IBM Plex Sans Condensed", sans-serif;
-$josefin: "Glacial Indifference", "Josefin Sans", sans-serif;
-$metropolis: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+$josefin: "Josefin Sans", "Glacial Indifference", sans-serif;
+$metropolis: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
 
 div.error-message {
   width: 90%;

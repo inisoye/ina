@@ -3,7 +3,7 @@
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "IBM Plex Sans", "Inter", "Public Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #191e22;
   border-color: #191e22;
   list-style-type: none;
@@ -132,7 +132,7 @@ div.mobile-menu a {
   color: #bdd1db;
   font-weight: 300;
   font-size: 34px;
-  font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 div.mobile-menu div.logo-plus-close {
@@ -427,7 +427,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
     margin: auto;
     text-transform: uppercase;
     text-decoration: none;
-    font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     outline: 0;
   }
   .page-minus-footer a.desktop-mode-toggle.show-desktop span#down-or-up {
@@ -438,7 +438,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
     width: 13%;
     margin: auto;
     color: #ffc64a;
-    font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     outline: 0;
   }
   .page-minus-footer a.desktop-mode-toggle.show-desktop span.only-hover {
@@ -446,7 +446,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
     display: none;
     text-transform: lowercase;
     text-decoration: none;
-    font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     outline: 0;
   }
   .page-minus-footer a.desktop-mode-toggle.show-desktop:hover span.only-hover {
@@ -455,12 +455,12 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
     text-decoration: underline;
     color: #ffc64a;
     text-decoration: none;
-    font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
   .page-minus-footer a.desktop-mode-toggle.show-desktop:hover span.only-hover span#light-or-dark {
     font-weight: 400;
     color: #ffc64a;
-    font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   }
 }
 
@@ -539,7 +539,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 }
 
 .page-minus-footer main section.main-left h1 {
-  font-family: "Work Sans", "Space Grotesk", "Metropolis", "Raleway", sans-serif;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-style: normal;
   font-weight: 500;
   font-size: 2.52rem;
