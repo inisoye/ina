@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
+@font-face {
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
+  src: url("../fonts/GlacialIndifference-Bold.ttf") format("truetype");
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -84,9 +88,9 @@ div.full-page-wrapper header#page-header a.title-link {
 }
 
 div.full-page-wrapper header#page-header a.title-link h2.page-title {
-  font-family: "Josefin Sans", "Glacial Indifference", sans-serif;
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
   font-size: 28px;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.07em;
 }
 
 div.full-page-wrapper header#page-header nav {

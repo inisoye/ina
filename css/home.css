@@ -1,7 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
+@font-face {
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
+  src: url("../fonts/GlacialIndifference-Bold.ttf") format("truetype");
+}
+
 @-webkit-keyframes fadeInUp {
   from {
     opacity: 0;
@@ -14,6 +18,7 @@
     transform: none;
   }
 }
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -226,7 +231,7 @@ div.mobile-menu div.logo-plus-close h2 {
   font-size: 28px;
   letter-spacing: -0.08em;
   color: #1d354b;
-  font-family: "Josefin Sans", "Glacial Indifference", sans-serif;
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
 }
 
 div.mobile-menu div.logo-plus-close button.close-mobile {
@@ -338,13 +343,13 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 }
 
 .page-minus-footer header h2.page-title {
-  font-family: "Josefin Sans", "Glacial Indifference", sans-serif;
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
   font-size: 28px;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.07em;
 }
 
 .page-minus-footer header h2.page-title span {
-  font-family: "Josefin Sans", "Glacial Indifference", sans-serif;
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
   font-size: 28px;
   background: -webkit-linear-gradient(#212c30, #212c30, #ffc64a);
   -webkit-background-clip: text;
@@ -637,8 +642,8 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 }
 
 .page-minus-footer main section.main-left h1 span {
-  -webkit-animation: blink 2s ease 0s infinite;
-          animation: blink 2s ease 0s infinite;
+  -webkit-animation: blink 1s ease 0s infinite;
+          animation: blink 1s ease 0s infinite;
 }
 
 @-webkit-keyframes blink {
@@ -845,9 +850,15 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 
 .page-minus-footer main section.main-left button.try-it:hover {
   border: 0;
-  background: #d0d9d8;
+  background: #ffd884;
   -webkit-box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.4);
           box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+@media (min-width: 1060px) {
+  .page-minus-footer main section.main-left button.try-it:hover {
+    background: #d0d9d8;
+  }
 }
 
 @media only screen and (max-width: 367px) {

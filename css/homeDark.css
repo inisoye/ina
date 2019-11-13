@@ -149,9 +149,9 @@ div.mobile-menu div.logo-plus-close {
 
 div.mobile-menu div.logo-plus-close h2 {
   font-size: 28px;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.07em;
   color: #325372;
-  font-family: "Josefin Sans", "Glacial Indifference", sans-serif;
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
 }
 
 div.mobile-menu div.logo-plus-close button.close-mobile {
@@ -249,16 +249,15 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 }
 
 .page-minus-footer header h2.page-title {
-  font-family: "Josefin Sans", "Glacial Indifference", sans-serif;
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
   font-size: 28px;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.07em;
   color: #bdd1db;
 }
 
 .page-minus-footer header h2.page-title span {
-  font-family: "Josefin Sans", "Glacial Indifference", sans-serif;
+  font-family: "Glacial Indifference", "Josefin Sans", sans-serif;
   font-size: 28px;
-  letter-spacing: -0.08em;
   background: -webkit-linear-gradient(#bdd1db, #bdd1db, #ffc64a);
   -webkit-background-clip: text;
   background-clip: text;
@@ -548,8 +547,8 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 }
 
 .page-minus-footer main section.main-left h1 span {
-  -webkit-animation: blink 2s ease 0s infinite;
-          animation: blink 2s ease 0s infinite;
+  -webkit-animation: blink 1s ease 0s infinite;
+          animation: blink 1s ease 0s infinite;
 }
 
 @-webkit-keyframes blink {

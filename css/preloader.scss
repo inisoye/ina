@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300&display=swap");
+// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300&display=swap");
 
 $dark: #212c30;
 $footer: #d0d9d8;
@@ -188,16 +188,16 @@ h1.preloader-h1 {
 
   display: inline-block;
   font-weight: 300;
-  font-family: "IBM Plex Sans", "Inter", "Public Sans", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  // font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-  // Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-  // "Segoe UI Symbol";
+  // font-family: "IBM Plex Sans", "Inter", "Public Sans", -apple-system,
+  //   BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+  //   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
   margin-bottom: 15vh;
   margin-top: -5vh;
 
-  span {
+  span.countdown {
     color: $dark;
     font-weight: 300;
   }
