@@ -1,5 +1,5 @@
 //* updates colours of cards in list
-fetch("http://checklight.pythonanywhere.com/streets")
+fetch("https://checklight.pythonanywhere.com/streets")
   .then(function(response) {
     return response.json();
   })
@@ -46,7 +46,7 @@ function timeConvert(n) {
 }
 
 //* updates big card elements for ifako Ijaiye 1
-fetch("http://checklight.pythonanywhere.com/streets")
+fetch("https://checklight.pythonanywhere.com/streets")
   .then(function(response) {
     return response.json();
   })
@@ -151,7 +151,7 @@ fetch("http://checklight.pythonanywhere.com/streets")
   });
 
 //! redraws bar chart with ifako-ijaiye-1-data
-fetch("http://checklight.pythonanywhere.com/streets")
+fetch("https://checklight.pythonanywhere.com/streets")
   .then(function(response) {
     return response.json();
   })
