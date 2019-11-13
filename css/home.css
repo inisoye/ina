@@ -234,6 +234,7 @@ div.mobile-menu div.logo-plus-close button.close-mobile {
   padding: 10px 20px;
   cursor: pointer;
   background-color: transparent;
+  font-size: 15px;
   border-radius: 4px;
 }
 
@@ -418,6 +419,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 
 .page-minus-footer header nav button.mobile-menu-button {
   border: #212c30 1px solid;
+  font-size: 15px;
   padding: 10px 20px;
   cursor: pointer;
   background-color: transparent;
