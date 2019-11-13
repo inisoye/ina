@@ -815,24 +815,6 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   }
 }
 
-@media (max-height: 773px) {
-  .page-minus-footer main div.img-container.show-desktop svg.tangled-bulbs {
-    height: 500px;
-  }
-}
-
-@media (max-height: 714px) {
-  .page-minus-footer main div.img-container.show-desktop svg.tangled-bulbs {
-    height: 450px;
-  }
-}
-
-@media (max-height: 670px) {
-  .page-minus-footer main div.img-container.show-desktop svg.tangled-bulbs {
-    height: 400px;
-  }
-}
-
 @media only screen and (max-width: 1200px) {
   .page-minus-footer main div.img-container.show-desktop svg.tangled-bulbs {
     height: 500px;

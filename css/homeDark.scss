@@ -963,17 +963,17 @@ div.mobile-menu {
           height: 550px;
         }
 
-        @include smaller-desktop-height {
-          height: 500px;
-        }
+        // @include smaller-desktop-height {
+        //   height: 500px;
+        // }
 
-        @include smaller-desktop-2-height {
-          height: 450px;
-        }
+        // @include smaller-desktop-2-height {
+        //   height: 450px;
+        // }
 
-        @include smaller-desktop-3-height {
-          height: 400px;
-        }
+        // @include smaller-desktop-3-height {
+        //   height: 400px;
+        // }
 
         @media only screen and (max-width: 1200px) {
           height: 500px;
