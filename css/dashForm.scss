@@ -124,6 +124,7 @@ div.full-page-wrapper {
 
     @include desktop-width-1 {
       border-bottom: 0.8px solid $bg-grey;
+      //* changed to 22.5 to remove yellow (accent) bit on page bottom
       padding: 22.5px 5.2%;
     }
 
