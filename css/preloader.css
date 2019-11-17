@@ -141,7 +141,7 @@ h1.preloader-h1 {
   background-color: #ffcb59;
   display: inline-block;
   font-weight: 300;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   margin-bottom: 15vh;
   margin-top: -5vh;
 }
@@ -149,6 +149,7 @@ h1.preloader-h1 {
 h1.preloader-h1 span.countdown {
   color: #212c30;
   font-weight: 300;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 .made-with-love {
