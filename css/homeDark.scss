@@ -678,7 +678,6 @@ div.mobile-menu {
       grid-template-columns: auto auto;
       grid-template-rows: auto;
       align-items: center;
-      column-gap: 30px;
 
       margin: 40px 10% 0;
 
@@ -686,8 +685,17 @@ div.mobile-menu {
         margin-bottom: 60px;
       }
 
-      @media only screen and (max-width: 1140px) {
-        margin-top: 90px;
+      @media only screen and (max-width: 1157px) {
+        margin-left: 5.2%;
+        margin-right: 5.2%;
+      }
+      // @media only screen and (max-width: 1160px) {
+      //   margin-top: 90px;
+      // }
+
+      @media only screen and (min-width: 1677px) {
+        margin-left: 18%;
+        margin-right: 18%;
       }
     }
 

@@ -523,8 +523,6 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-column-gap: 30px;
-            column-gap: 30px;
     margin: 40px 10% 0;
   }
 }
@@ -535,9 +533,17 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   }
 }
 
-@media only screen and (min-width: 1025px) and (max-width: 1140px) {
+@media only screen and (min-width: 1025px) and (max-width: 1157px) {
   .page-minus-footer main {
-    margin-top: 90px;
+    margin-left: 5.2%;
+    margin-right: 5.2%;
+  }
+}
+
+@media only screen and (min-width: 1025px) and (min-width: 1677px) {
+  .page-minus-footer main {
+    margin-left: 18%;
+    margin-right: 18%;
   }
 }
 

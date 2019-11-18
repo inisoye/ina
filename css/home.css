@@ -618,9 +618,17 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   }
 }
 
-@media only screen and (min-width: 1060px) and (max-width: 1160px) {
+@media only screen and (min-width: 1060px) and (max-width: 1157px) {
   .page-minus-footer main {
-    margin-top: 90px;
+    margin-left: 5.2%;
+    margin-right: 5.2%;
+  }
+}
+
+@media only screen and (min-width: 1060px) and (min-width: 1677px) {
+  .page-minus-footer main {
+    margin-left: 18%;
+    margin-right: 18%;
   }
 }
 
