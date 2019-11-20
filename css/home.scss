@@ -254,7 +254,7 @@ body {
     flex-direction: column;
     position: relative;
 
-    min-height: 108vh;
+    min-height: 120vh;
 
     @include larger-desktop-height {
       min-height: 100vh;
@@ -686,7 +686,11 @@ div.mobile-menu {
 
       margin: 40px 10% 0;
 
-      @include smaller-desktop-3-height {
+      // @include smaller-desktop-3-height {
+      //   margin-bottom: 60px;
+      // }
+
+      @media only screen and (max-height: 709px) {
         margin-bottom: 60px;
       }
 

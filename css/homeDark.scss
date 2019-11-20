@@ -223,7 +223,7 @@ body {
     // border-left: $dark 10px solid;
     // border-right: $dark 10px solid;
 
-    min-height: 108vh;
+    min-height: 120vh;
     // height: 115vh;
 
     @include larger-desktop-height {
@@ -681,7 +681,11 @@ div.mobile-menu {
 
       margin: 40px 10% 0;
 
-      @include smaller-desktop-3-height {
+      // @include smaller-desktop-3-height {
+      //   margin-bottom: 60px;
+      // }
+
+      @media only screen and (max-height: 709px) {
         margin-bottom: 60px;
       }
 
