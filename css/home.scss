@@ -51,7 +51,7 @@ $small-phones-height: 800px;
 $longer-viewports-height: 1000px;
 $midscreen-width-1: 650px;
 $midscreen-width-2: 849px;
-$desktop-width: 1060px;
+$desktop-width: 1025px;
 $big-desktop-width: 1350px;
 $smaller-desktop-height: 773px;
 $smaller-desktop-2-height: 714px;
@@ -397,6 +397,10 @@ div.mobile-menu {
   margin: 0;
   height: 90vh;
 
+  @media only screen and (max-height: 495px) {
+    min-height: 250vh;
+  }
+
   @include desktop-width {
     margin: 0% 5.2%;
     margin: 0;
@@ -508,15 +512,16 @@ div.mobile-menu {
 
       button.mobile-menu-button {
         border: $dark 1px solid;
-        font-size: 15px;
+        font-size: 14px;
 
         padding: 10px 20px;
         cursor: pointer;
-        background-color: transparent;
 
         border-radius: 4px;
 
         background-color: $accent;
+        background-color: $light;
+        // background-color: transparent;
       }
 
       ul.show-desktop {
@@ -717,7 +722,7 @@ div.mobile-menu {
         line-height: 115%;
         letter-spacing: -0.03em;
         opacity: 0;
-        animation: fadeInLeft 0.3s linear 0s forwards;
+        animation: fadeInLeft 0.5s ease 0s forwards;
 
         span {
           @keyframes blink {
@@ -916,8 +921,8 @@ div.mobile-menu {
         background: $accent;
         border: $dark 1px solid;
 
-        transition: box-shadow 0.4s ease, border-right 0.0009s linear,
-          border-bottom 0.0009s linear;
+        transition: box-shadow 0.4s ease, border-right 0.002s linear,
+          border-bottom 0.002s linear;
 
         opacity: 0;
         animation: fadeInUp 1.005s ease 1.4s forwards;
@@ -993,30 +998,22 @@ div.mobile-menu {
     div.img-container.show-desktop {
       svg.tangled-bulbs {
         justify-self: right;
+        align-self: center;
 
-        @include larger-desktop-height {
-          height: 550px;
-        }
+        // @keyframes increaseHeight {
+        //   from {
+        //     height: 480px;
+        //   }
 
-        // @include smaller-desktop-height {
-        //   height: 500px;
+        //   to {
+        //     height: 565.65px;
+        //   }
         // }
 
-        // @include smaller-desktop-2-height {
-        //   height: 450px;
-        // }
+        // height: 480px;
+        animation: fadeIn 1.3s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
 
-        // @include smaller-desktop-3-height {
-        //   height: 400px;
-        // }
-
-        @media only screen and (max-width: 1200px) {
-          height: 500px;
-        }
-
-        @media only screen and (max-width: 1062px) {
-          height: 450px;
-        }
+        height: 565.65px;
       }
     }
   }

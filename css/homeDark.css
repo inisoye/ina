@@ -193,6 +193,12 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   height: 90vh;
 }
 
+@media only screen and (max-height: 495px) {
+  .page-minus-footer {
+    min-height: 250vh;
+  }
+}
+
 @media (min-width: 1025px) {
   .page-minus-footer {
     margin: 0% 5.2%;

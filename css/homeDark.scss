@@ -376,6 +376,10 @@ div.mobile-menu {
   margin: 0;
   height: 90vh;
 
+  @media only screen and (max-height: 495px) {
+    min-height: 250vh;
+  }
+
   @include desktop-width {
     margin: 0% 5.2%;
     margin: 0;

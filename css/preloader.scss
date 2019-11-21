@@ -13,7 +13,6 @@ $text-light-2: #1d354b;
 $accent: #ffcb59;
 $accent-2: #ffffff;
 
-@import url(https://fonts.googleapis.com/css?family=Raleway:500);
 @-moz-keyframes leftAnim {
   0% {
     -moz-transform: translateX(97px);
@@ -97,7 +96,7 @@ $accent-2: #ffffff;
   width: 2px;
   z-index: 1;
   height: 150px;
-  border-left: 2px solid $dark;
+  border-left: 1px solid $dark;
 }
 .loader__box {
   position: absolute;
@@ -129,7 +128,7 @@ $accent-2: #ffffff;
 .loader__circle {
   width: 75px;
   height: 75px;
-  border: solid 2px $dark;
+  border: solid 1px $dark;
   display: block;
   background-color: $dark;
   -moz-border-radius: 50%;
@@ -183,7 +182,6 @@ h1.preloader-h1 {
   color: $dark;
 
   padding: 15px 20px;
-  background-color: $lighter;
   background-color: $accent;
 
   display: inline-block;
