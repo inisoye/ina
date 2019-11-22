@@ -122,16 +122,13 @@ fetch("https://checklight.pythonanywhere.com/streets")
                 }
               }
 
-              //* Second conditional to fix other timeline values
+              //* Second conditional to fix other timeline feautures
               if (post.history.time_line[i].status) {
                 flags[i].innerHTML = "Light On";
 
                 //*concerning colours
                 flags[i].style.backgroundColor = "#ffffff";
                 flags[i].style.color = "#1d282e";
-
-                // afterFlag[i].style.borderLeftColor = "#ffffff";
-                // beforeFlag[i].style.backgroundColor = "#ffffff";
 
                 times[i].style.backgroundColor = "#ffffff";
                 times[i].style.color = "#1d282e";
@@ -145,9 +142,6 @@ fetch("https://checklight.pythonanywhere.com/streets")
                 //*concerning colours
                 flags[i].style.backgroundColor = "#1d282e";
                 flags[i].style.color = "#ffffff";
-
-                // afterFlag[i].style.borderLeftColor = "#1d282e";
-                // beforeFlag[i].style.backgroundColor = "#1d282e";
 
                 times[i].style.backgroundColor = "#1d282e";
                 times[i].style.color = "#ffffff";
