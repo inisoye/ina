@@ -1002,7 +1002,7 @@ div.full-page-wrapper main div.forms-and-results section.results div.cards-secti
 }
 
 div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.card p.view-details {
-  font-size: 11px;
+  font-size: 10px;
   -ms-grid-column: 2;
   -ms-grid-column-span: 1;
   grid-column: 2/3;
@@ -1016,7 +1016,7 @@ div.full-page-wrapper main div.forms-and-results section.results div.cards-secti
 
 @media (max-width: 368.8px) {
   div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.card p.view-details {
-    font-size: 10px;
+    font-size: 9px;
   }
 }
 
@@ -1043,7 +1043,7 @@ div.full-page-wrapper main div.forms-and-results section.results div.cards-secti
 
 @media (max-width: 368.8px) {
   div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.card p.full-add {
-    font-size: 13px;
+    font-size: 13.5px;
   }
 }
 

@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
 
@@ -38,7 +38,7 @@ $text-light-gradient: #9ab8d43a;
 $text-light-2: #1d354b;
 $accent: #fff48f;
 $accent: #ffc64a;
-$accent-border: #ffba26;
+$accent-border: #f7af13;
 // $accent: #ffbd2f;
 $accent-3: #ff8e6f;
 $accent-3: #ff6a35;
@@ -51,7 +51,7 @@ $small-phones-height: 800px;
 $longer-viewports-height: 1000px;
 $midscreen-width-1: 650px;
 $midscreen-width-2: 849px;
-$desktop-width: 1025px;
+$desktop-width: 1000px;
 $big-desktop-width: 1350px;
 $smaller-desktop-height: 773px;
 $smaller-desktop-2-height: 714px;
@@ -717,7 +717,7 @@ div.mobile-menu {
       h1 {
         font-family: $metropolis;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 2.52rem;
         line-height: 115%;
         letter-spacing: -0.03em;
@@ -762,11 +762,11 @@ div.mobile-menu {
             font-size: 3.5rem;
           }
 
-          @media only screen and (max-width: 1200px) {
+          @media only screen and (max-width: 1222px) {
             font-size: 3.2rem;
           }
 
-          @media only screen and (max-width: 976px) {
+          @media only screen and (max-width: 1028px) {
             font-size: 3rem;
           }
         }
@@ -846,8 +846,12 @@ div.mobile-menu {
 
         @include midscreen-width-1 {
           // font-size: 1.2rem;
-          width: 180px;
+          width: 225px;
           // height: 50px;
+        }
+
+        @include desktop-width {
+          width: 180px;
         }
       }
 
@@ -946,15 +950,12 @@ div.mobile-menu {
         }
 
         @include midscreen-width-1 {
-          width: 180px;
+          width: 225px;
         }
 
         @include desktop-width {
           margin-left: 4.5%;
-
-          @media only screen and (max-width: 1180px) {
-            margin-left: 3px;
-          }
+          width: 180px;
         }
       }
 
@@ -963,8 +964,12 @@ div.mobile-menu {
         button.button.try-it {
           display: inline-block;
 
-          @media only screen and (max-width: 979px) {
-            display: block;
+          // @media only screen and (max-width: 1050px) {
+          //   display: block;
+          // }
+
+          @media only screen and (max-width: 1180px) {
+            width: 140px;
           }
         }
       }
@@ -1000,20 +1005,19 @@ div.mobile-menu {
         justify-self: right;
         align-self: center;
 
-        // @keyframes increaseHeight {
-        //   from {
-        //     height: 480px;
-        //   }
-
-        //   to {
-        //     height: 565.65px;
-        //   }
-        // }
-
-        // height: 480px;
         animation: fadeIn 1.3s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
 
-        height: 565.65px;
+        @include larger-desktop-height {
+          height: 550px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+          height: 500px;
+        }
+
+        @media only screen and (max-width: 1062px) {
+          height: 450px;
+        }
       }
     }
   }

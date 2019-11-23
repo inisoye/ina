@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
 
@@ -53,7 +53,7 @@ $small-phones-height: 800px;
 $longer-viewports-height: 1000px;
 $midscreen-width-1: 650px;
 $midscreen-width-2: 849px;
-$desktop-width: 1025px;
+$desktop-width: 1000px;
 $big-desktop-width: 1350px;
 $smaller-desktop-height: 773px;
 $smaller-desktop-2-height: 714px;
@@ -663,6 +663,8 @@ div.mobile-menu {
       grid-template-columns: 50% 50%;
       grid-template-rows: auto;
       align-items: center;
+
+      column-gap: 30px;
     }
 
     @include midscreen-width-1 {
@@ -714,7 +716,7 @@ div.mobile-menu {
       h1 {
         font-family: $metropolis;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 2.52rem;
         line-height: 115%;
         letter-spacing: -0.03em;
@@ -752,11 +754,11 @@ div.mobile-menu {
             font-size: 3.5rem;
           }
 
-          @media only screen and (max-width: 1200px) {
+          @media only screen and (max-width: 1222px) {
             font-size: 3.2rem;
           }
 
-          @media only screen and (max-width: 976px) {
+          @media only screen and (max-width: 1028px) {
             font-size: 3rem;
           }
         }
@@ -818,7 +820,7 @@ div.mobile-menu {
           border: $text-light-3 1px solid;
 
           //* box shadow used to create a blurred second border: https://stackoverflow.com/questions/5394116/outline-radius
-          box-shadow: 0 0 2pt 1pt $accent;
+          box-shadow: 0 0 2pt 2pt $accent;
 
           // outline-style: solid;
           // outline-color: $text-light;
@@ -833,8 +835,12 @@ div.mobile-menu {
 
         @include midscreen-width-1 {
           // font-size: 1.2rem;
-          width: 180px;
+          width: 225px;
           // height: 50px;
+        }
+
+        @include desktop-width {
+          width: 180px;
         }
       }
 
@@ -906,7 +912,7 @@ div.mobile-menu {
         background: $accent;
 
         // background: $footer;
-        border: $dark 1px solid;
+        // border: $dark 1px solid;
 
         transition: box-shadow 0.4s ease, border-right 0.0009s linear,
           border-bottom 0.0009s linear;
@@ -927,15 +933,12 @@ div.mobile-menu {
         }
 
         @include midscreen-width-1 {
-          width: 180px;
+          width: 225px;
         }
 
         @include desktop-width {
           margin-left: 4.5%;
-
-          @media only screen and (max-width: 1140px) {
-            margin-left: 3px;
-          }
+          width: 180px;
         }
       }
 
@@ -944,8 +947,12 @@ div.mobile-menu {
         button.button.try-it {
           display: inline-block;
 
-          @media only screen and (max-width: 979px) {
-            display: block;
+          // @media only screen and (max-width: 1050px) {
+          //   display: block;
+          // }
+
+          @media only screen and (max-width: 1180px) {
+            width: 140px;
           }
         }
       }
@@ -977,26 +984,9 @@ div.mobile-menu {
       svg.tangled-bulbs {
         justify-self: right;
 
-        // filter: invert(12%) sepia(9%) saturate(1246%) hue-rotate(157deg)
-        //   brightness(93%) contrast(95%);
-        // width: 100%;
-        // height: 100%;
-
         @include larger-desktop-height {
           height: 550px;
         }
-
-        // @include smaller-desktop-height {
-        //   height: 500px;
-        // }
-
-        // @include smaller-desktop-2-height {
-        //   height: 450px;
-        // }
-
-        // @include smaller-desktop-3-height {
-        //   height: 400px;
-        // }
 
         @media only screen and (max-width: 1200px) {
           height: 500px;

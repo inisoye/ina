@@ -113,7 +113,7 @@ body {
   padding: 20px;
   list-style-type: none;
   @media (max-width: 7500px) {
-    width: 89%;
+    width: 99%;
     padding: 2em 0 1em 0;
 
     @include desktop-width-1 {
@@ -361,9 +361,9 @@ body {
     margin-right: auto;
     border-radius: 5px;
   }
-  @media (max-width: 336px) {
-    width: 170px;
-  }
+  // @media (max-width: 336px) {
+  //   width: 170px;
+  // }
 }
 
 //* my additions

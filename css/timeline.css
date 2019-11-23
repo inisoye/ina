@@ -59,7 +59,7 @@ body {
 
 @media (max-width: 7500px) {
   .timeline {
-    width: 89%;
+    width: 99%;
     padding: 2em 0 1em 0;
   }
 }
@@ -347,12 +347,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;
-  }
-}
-
-@media (max-width: 336px) {
-  .desc {
-    width: 170px;
   }
 }
 
