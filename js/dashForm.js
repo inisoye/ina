@@ -143,13 +143,6 @@ streetSelector.onkeyup = function() {
     }
   }
 
-  //!!!!*****!!TEMPORARY - REMOVE LATER!
-  //todo DELETE THIS BIT WHEN ALAUSA 1 DATA IS AVAILABLE
-  let alausa1Cards = document.querySelectorAll("a.alausa-1-card");
-  for (i = 0; i < alausa1Cards.length; i++) {
-    alausa1Cards[i].style.display = "none";
-  }
-
   //! Bit providing feedback with labels and bottom border
   //* fullAddsOldArr is an array containing nodes of full addresses
   let fullAddsOldArr = Array.prototype.slice.call(fullAdds);
@@ -206,14 +199,6 @@ streetSelector.onkeyup = function() {
     streetSelector.style.borderBottom = "#6d8faf 1px solid";
   }
 };
-
-//!!!!*****!!TEMPORARY - REMOVE LATER!
-//todo DELETE THIS BIT WHEN ALAUSA 1 DATA IS AVAILABLE
-let alausa1Cards = document.querySelectorAll("a.alausa-1-card");
-for (i = 0; i < alausa1Cards.length; i++) {
-  alausa1Cards[i].style.display = "none";
-}
-//!!!!*****!!TEMPORARY - REMOVE LATER! BIT ENDS
 
 //! post-typing function
 function doneTyping() {
@@ -277,8 +262,8 @@ function updateEnlargedStatus(relevantIndex) {
     enlargedBulbOrLantern.style.filter =
       "invert(100%) sepia(0%) saturate(7498%) hue-rotate(173deg) brightness(105%) contrast(101%)";
 
-    enlargedCardDivider[0].style.borderTop = "#ffc64a solid 0.5px";
-    enlargedCardDivider[1].style.borderTop = "#ffc64a solid 0.5px";
+    enlargedCardDivider[0].style.borderTop = "#ffffff solid 0.5px";
+    enlargedCardDivider[1].style.borderTop = "#ffffff solid 0.5px";
 
     chartIcon[0].style.filter =
       "invert(100%) sepia(0%) saturate(7498%) hue-rotate(173deg) brightness(105%) contrast(101%)";

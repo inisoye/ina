@@ -7,27 +7,25 @@ fetch("https://checklight.pythonanywhere.com/streets")
     // console.log(data);
     // console.log(data.streets);
     data.streets.forEach(function(post) {
-      //* Ifako Ijaiye 1 denote first subdivisions area.
-      let ifakoIjaiye1Cards = document.querySelectorAll(
-        "a.ifako-ijaiye-1-card"
-      );
-      let ifako1cardImages = document.querySelectorAll(
-        "a.ifako-ijaiye-1-card img.card-image.bulb-or-lantern"
+      //* alausa 1 denote first subdivisions area.
+      let alausa1Cards = document.querySelectorAll("a.alausa-1-card");
+      let alausa1cardImages = document.querySelectorAll(
+        "a.alausa-1-card img.card-image.bulb-or-lantern"
       );
 
-      if (post.status == 0 && post.lga == "Ifako ijaiye") {
-        for (i = 0; i < ifakoIjaiye1Cards.length; i++) {
-          ifakoIjaiye1Cards[i].classList.add("black-card");
-          ifakoIjaiye1Cards[i].classList.remove("white-card");
+      if (post.status == 0 && post.lga == "Ikeja") {
+        for (i = 0; i < alausa1Cards.length; i++) {
+          alausa1Cards[i].classList.add("black-card");
+          alausa1Cards[i].classList.remove("white-card");
 
-          ifako1cardImages[i].src = "images/Lantern.svg";
+          alausa1cardImages[i].src = "images/Lantern.svg";
         }
-      } else if (post.status !== 0 && post.lga == "Ifako ijaiye") {
-        for (i = 0; i < ifakoIjaiye1Cards.length; i++) {
-          ifakoIjaiye1Cards[i].classList.remove("black-card");
-          ifakoIjaiye1Cards[i].classList.add("white-card");
+      } else if (post.status !== 0 && post.lga == "Ikeja") {
+        for (i = 0; i < alausa1Cards.length; i++) {
+          alausa1Cards[i].classList.remove("black-card");
+          alausa1Cards[i].classList.add("white-card");
 
-          ifako1cardImages[i].src = "images/Bulb.svg";
+          alausa1cardImages[i].src = "images/Bulb.svg";
         }
       }
     });
@@ -45,7 +43,7 @@ function timeConvert(n) {
   return rhours + "hr(s) " + rminutes + "min(s)";
 }
 
-//* updates big card elements for ifako Ijaiye 1
+//* updates big card elements for alausa 1
 fetch("https://checklight.pythonanywhere.com/streets")
   .then(function(response) {
     return response.json();
@@ -54,27 +52,27 @@ fetch("https://checklight.pythonanywhere.com/streets")
     // console.log(data);
     // console.log(data.streets);
 
-    //* Ifako Ijaiye 1 denote first subdivisions area.
-    let ifakoIjaiye1Cards = document.querySelectorAll("a.ifako-ijaiye-1-card");
-    let ifakoIjaiye1CardsArr = Array.prototype.slice.call(ifakoIjaiye1Cards);
-    let ifako1cardImages = document.querySelectorAll(
-      "a.ifako-ijaiye-1-card img.card-image.bulb-or-lantern"
+    //* alausa 1 denote first subdivisions area.
+    let alausa1Cards = document.querySelectorAll("a.alausa-1-card");
+    let alausa1CardsArr = Array.prototype.slice.call(alausa1Cards);
+    let alausa1cardImages = document.querySelectorAll(
+      "a.alausa-1-card img.card-image.bulb-or-lantern"
     );
 
     let bigTimeValue = document.querySelector("span.big-time-value");
     let dataSourceValue = document.querySelector("span.data-source-value");
 
-    for (i = 0; i < ifakoIjaiye1CardsArr.length; i++) {
-      //* ensures data sourcing happens only when ifako-ijaiye-1 cards are clicked based on class(ifako-ijaiye-1) given to all childnodes
-      ifakoIjaiye1CardsArr[i].addEventListener("click", function(clickedItem) {
-        if (clickedItem.target.className.includes("ifako-ijaiye-1")) {
-          dataSourceValue.innerHTML = "Adejonwo Close, Ifako-Ijaiye, Lagos";
+    for (i = 0; i < alausa1CardsArr.length; i++) {
+      //* ensures data sourcing happens only when alausa-1 cards are clicked based on class(alausa-1) given to all childnodes
+      alausa1CardsArr[i].addEventListener("click", function(clickedItem) {
+        if (clickedItem.target.className.includes("alausa-1")) {
+          dataSourceValue.innerHTML = "Sunflower Street, Alausa, Lagos";
 
           data.streets.forEach(function(post) {
-            if (post.status == 0 && post.lga == "Ifako ijaiye") {
+            if (post.status == 0 && post.lga == "Ikeja") {
               let timeLightTaken = post.last_no_light.slice(-10, -1);
               bigTimeValue.innerHTML = timeLightTaken;
-            } else if (post.status !== 0 && post.lga == "Ifako ijaiye") {
+            } else if (post.status !== 0 && post.lga == "Ikeja") {
               let timeLightBrought = post.last_light.slice(-10, -1);
               bigTimeValue.innerHTML = timeLightBrought;
             }
@@ -92,63 +90,66 @@ fetch("https://checklight.pythonanywhere.com/streets")
             let durationSpan = document.querySelectorAll(".desc span");
 
             //! Timeline updates start here
-            for (i = 0; i < flags.length; i++) {
-              times[i].innerHTML = post.history.time_line[i].time;
+            if (post.lga == "Ikeja") {
+              for (i = 0; i < flags.length; i++) {
+                times[i].innerHTML = post.history.time_line[i].time;
 
-              //* previous index variable created due to back-end error
-              let previousIndex = i - 1;
+                //* previous index variable created due to back-end error
+                let previousIndex = i - 1;
 
-              //* converts duration to rounded minutes
-              //* conditional used to prevent error of negative indices when previous index is used
-              if (i > 0) {
-                let durationValue = Math.round(
-                  post.history.time_line[previousIndex].period / 60
-                );
+                //* converts duration to rounded minutes
+                //* conditional used to prevent error of negative indices when previous index is used
+                if (i > 0) {
+                  let durationValue = Math.round(
+                    post.history.time_line[previousIndex].period / 60
+                  );
 
-                //* timeConvert function defined above. From: https://www.w3resource.com/javascript-exercises/javascript-date-exercise-13.php
-                durationValue = timeConvert(durationValue);
+                  //* timeConvert function defined above. From: https://www.w3resource.com/javascript-exercises/javascript-date-exercise-13.php
+                  durationValue = timeConvert(durationValue);
 
-                if (post.history.time_line[i].status) {
-                  durations[i].innerHTML = "Uptime Duration: " + durationValue;
+                  if (post.history.time_line[i].status) {
+                    durations[i].innerHTML =
+                      "Uptime Duration: " + durationValue;
+                  } else {
+                    durations[i].innerHTML =
+                      "Downtime Duration: " + durationValue;
+                  }
                 } else {
-                  durations[i].innerHTML =
-                    "Downtime Duration: " + durationValue;
+                  if (post.history.time_line[i].status) {
+                    durations[i].innerHTML = "Uptime Duration: Ongoing";
+                  } else {
+                    durations[i].innerHTML = "Downtime Duration: Ongoing";
+                  }
                 }
-              } else {
+
+                //* Second conditional to fix other timeline feautures
                 if (post.history.time_line[i].status) {
-                  durations[i].innerHTML = "Uptime Duration: Ongoing";
+                  flags[i].innerHTML = "Light On";
+
+                  //*concerning colours
+                  flags[i].style.backgroundColor = "#ffffff";
+                  flags[i].style.color = "#1d282e";
+
+                  times[i].style.backgroundColor = "#ffffff";
+                  times[i].style.color = "#1d282e";
+                  desc[i].style.backgroundColor = "#ffffff";
+
+                  durations[i].style.color = "#1d282e";
+                  durationSpan[i].style.color = "#1d282e";
                 } else {
-                  durations[i].innerHTML = "Downtime Duration: Ongoing";
+                  flags[i].innerHTML = "Light Off";
+
+                  //*concerning colours
+                  flags[i].style.backgroundColor = "#1d282e";
+                  flags[i].style.color = "#ffffff";
+
+                  times[i].style.backgroundColor = "#1d282e";
+                  times[i].style.color = "#ffffff";
+                  desc[i].style.backgroundColor = "#1d282e";
+
+                  durations[i].style.color = "#ffffff";
+                  durationSpan[i].style.color = "#ffffff";
                 }
-              }
-
-              //* Second conditional to fix other timeline feautures
-              if (post.history.time_line[i].status) {
-                flags[i].innerHTML = "Light On";
-
-                //*concerning colours
-                flags[i].style.backgroundColor = "#ffffff";
-                flags[i].style.color = "#1d282e";
-
-                times[i].style.backgroundColor = "#ffffff";
-                times[i].style.color = "#1d282e";
-                desc[i].style.backgroundColor = "#ffffff";
-
-                durations[i].style.color = "#1d282e";
-                durationSpan[i].style.color = "#1d282e";
-              } else {
-                flags[i].innerHTML = "Light Off";
-
-                //*concerning colours
-                flags[i].style.backgroundColor = "#1d282e";
-                flags[i].style.color = "#ffffff";
-
-                times[i].style.backgroundColor = "#1d282e";
-                times[i].style.color = "#ffffff";
-                desc[i].style.backgroundColor = "#1d282e";
-
-                durations[i].style.color = "#ffffff";
-                durationSpan[i].style.color = "#ffffff";
               }
             }
           });
@@ -160,23 +161,23 @@ fetch("https://checklight.pythonanywhere.com/streets")
     console.log(error);
   });
 
-//! redraws bar chart with ifako-ijaiye-1-data
+//! redraws bar chart with alausa-1-data
 fetch("https://checklight.pythonanywhere.com/streets")
   .then(function(response) {
     return response.json();
   })
   .then(function(data) {
-    //* Ifako Ijaiye 1 denote first subdivisions area.
-    let ifakoIjaiye1Cards = document.querySelectorAll("a.ifako-ijaiye-1-card");
-    let ifakoIjaiye1CardsArr = Array.prototype.slice.call(ifakoIjaiye1Cards);
+    //* alausa 1 denote first subdivisions area.
+    let alausa1Cards = document.querySelectorAll("a.alausa-1-card");
+    let alausa1CardsArr = Array.prototype.slice.call(alausa1Cards);
 
-    for (i = 0; i < ifakoIjaiye1CardsArr.length; i++) {
-      //* ensures data sourcing happens only when ifako-ijaiye-1 cards are clicked based on class(ifako-ijaiye-1) given to all childnodes
-      ifakoIjaiye1CardsArr[i].addEventListener("click", function(clickedItem) {
-        if (clickedItem.target.className.includes("ifako-ijaiye-1")) {
+    for (i = 0; i < alausa1CardsArr.length; i++) {
+      //* ensures data sourcing happens only when alausa-1 cards are clicked based on class(alausa-1) given to all childnodes
+      alausa1CardsArr[i].addEventListener("click", function(clickedItem) {
+        if (clickedItem.target.className.includes("alausa-1")) {
           let streetsArrray = data.streets;
           for (i = 0; i < streetsArrray.length; i++) {
-            if (streetsArrray[i].lga == "Ifako ijaiye") {
+            if (streetsArrray[i].lga == "Ikeja") {
               //! Bar Chart updates start here
               let dailySupplyHoursArray =
                 streetsArrray[i].history.daily_supply.values;

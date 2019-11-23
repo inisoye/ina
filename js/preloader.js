@@ -4,12 +4,12 @@ let countdown = document.querySelector("span.countdown");
 
 setTimeout(function() {
   fullPageWrapper.style.display = "block";
-}, 4000);
+}, 700);
 setTimeout(function() {
   preloaderContainer.style.display = "none";
-}, 4999);
+}, 1999);
 
-let timeLeft = 4;
+let timeLeft = 1;
 countdown.innerHTML = timeLeft;
 
 let pageLoadTimer = setInterval(function() {
