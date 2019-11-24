@@ -190,7 +190,7 @@ h1.preloader-h1 span.countdown {
 
 @-webkit-keyframes heightReduction {
   from {
-    height: 100vh;
+    height: calc(100vh - 161.7px);
   }
   to {
     height: 0px;
@@ -199,7 +199,7 @@ h1.preloader-h1 span.countdown {
 
 @keyframes heightReduction {
   from {
-    height: 100vh;
+    height: calc(100vh - 161.7px);
   }
   to {
     height: 0px;
