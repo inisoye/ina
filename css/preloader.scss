@@ -236,7 +236,7 @@ h1.preloader-h1 {
 }
 
 .preloader-container {
-  animation: heightReduction 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 1s
+  animation: heightReduction 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s
     forwards;
   // visibility: visible;
 }

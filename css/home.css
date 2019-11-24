@@ -716,9 +716,15 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   }
 }
 
-@media only screen and (min-width: 1000px) and (max-width: 1028px) {
+@media only screen and (min-width: 1000px) and (max-width: 1031px) {
   .page-minus-footer main section.main-left h1 {
     font-size: 3rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1005px) {
+  .page-minus-footer main section.main-left h1 {
+    font-size: 2.8em;
   }
 }
 
@@ -753,7 +759,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   }
 }
 
-@media only screen and (min-width: 1000px) and (max-width: 976px) {
+@media only screen and (min-width: 1000px) and (max-width: 1005px) {
   .page-minus-footer main section.main-left p {
     font-size: 1.2rem;
   }

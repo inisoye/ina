@@ -758,8 +758,12 @@ div.mobile-menu {
             font-size: 3.2rem;
           }
 
-          @media only screen and (max-width: 1028px) {
+          @media only screen and (max-width: 1031px) {
             font-size: 3rem;
+          }
+
+          @media only screen and (max-width: 1005px) {
+            font-size: 2.8em;
           }
         }
       }
@@ -784,7 +788,7 @@ div.mobile-menu {
         }
 
         @include desktop-width {
-          @media only screen and (max-width: 976px) {
+          @media only screen and (max-width: 1005px) {
             font-size: 1.2rem;
           }
         }
