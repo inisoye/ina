@@ -394,3 +394,14 @@ dailyChartLink.addEventListener("click", function() {
   inaTimelineWithTitle.style.display = "none";
   barChart.style.display = "block";
 });
+
+//! Back Button Detector
+//* idea from: https://codepen.io/christianismyname/pen/PwmVvG
+(function() {
+  if (window.history && window.history.pushState) {
+    window.onpopstate = function() {
+      //* clicks back to results link
+      backResults.click();
+    };
+  }
+})();
