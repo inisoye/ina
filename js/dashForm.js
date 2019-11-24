@@ -395,13 +395,31 @@ dailyChartLink.addEventListener("click", function() {
   barChart.style.display = "block";
 });
 
-//! Back Button Detector
-//* idea from: https://codepen.io/christianismyname/pen/PwmVvG
-(function() {
-  if (window.history && window.history.pushState) {
-    window.onpopstate = function() {
-      //* clicks back to results link
-      backResults.click();
-    };
-  }
-})();
+// //! Back Button Detector
+// //* idea from: https://codepen.io/christianismyname/pen/PwmVvG
+// (function() {
+//   if (window.history && window.history.pushState) {
+//     window.onpopstate = function() {
+//       //* clicks back to results link
+//       backResults.click();
+//     };
+//   }
+// })();
+
+// window.addEventListener(
+//   "popstate",
+//   function(event) {
+//     // The popstate event is fired each time when the current history entry changes.
+
+//     if (formsAndResultsSection.style.display == "block") {
+//       enlargedCardSection.style.display = "block";
+//       formsAndResultsSection.style.display = "none";
+//     } else {
+//       enlargedCardSection.style.display = "none";
+//       formsAndResultsSection.style.display = "block";
+//     }
+
+//     // history.pushState(null, null, window.location.pathname);
+//   },
+//   false
+// );
