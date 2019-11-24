@@ -183,8 +183,8 @@ h1.preloader-h1 span.countdown {
 }
 
 .preloader-container {
-  -webkit-animation: heightReduction 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s forwards;
-          animation: heightReduction 1s cubic-bezier(0.445, 0.05, 0.55, 0.95) 2s forwards;
+  -webkit-animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+          animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
 }
 
 @-webkit-keyframes heightReduction {
