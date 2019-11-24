@@ -152,7 +152,8 @@ $accent-2: #ffffff;
 .preloader-container {
   background: $accent;
   background: $text-light;
-  height: 100vh;
+  height: calc(100vh - 6.3px);
+  overflow-y: hidden;
   position: relative;
 
   // border-top: $light 6.3px solid;

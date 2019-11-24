@@ -111,7 +111,8 @@
 .preloader-container {
   background: #ffcb59;
   background: #6d8faf;
-  height: 100vh;
+  height: calc(100vh - 6.3px);
+  overflow-y: hidden;
   position: relative;
 }
 

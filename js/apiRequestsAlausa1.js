@@ -412,6 +412,7 @@ fetch("https://checklight.pythonanywhere.com/streets")
                     "click",
                     function(clickedItem) {
                       if (
+                        clickedItem.target.className.includes("alausa-1") ||
                         clickedItem.target.className == "full-add" ||
                         clickedItem.target.tagName == "A" ||
                         clickedItem.target.className == "view" ||
