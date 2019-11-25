@@ -15,14 +15,14 @@ fetch("https://checklight.pythonanywhere.com/streets")
         "a.ifako-ijaiye-1-card img.card-image.bulb-or-lantern"
       );
 
-      if (post.status == 0 && post.lga == "Ifako") {
+      if (post.status == 0 && post.lga == "Ifako Ijaiye") {
         for (i = 0; i < ifakoIjaiye1Cards.length; i++) {
           ifakoIjaiye1Cards[i].classList.add("black-card");
           ifakoIjaiye1Cards[i].classList.remove("white-card");
 
           ifako1cardImages[i].src = "images/Lantern.svg";
         }
-      } else if (post.status !== 0 && post.lga == "Ifako") {
+      } else if (post.status !== 0 && post.lga == "Ifako Ijaiye") {
         for (i = 0; i < ifakoIjaiye1Cards.length; i++) {
           ifakoIjaiye1Cards[i].classList.remove("black-card");
           ifakoIjaiye1Cards[i].classList.add("white-card");
@@ -71,10 +71,10 @@ fetch("https://checklight.pythonanywhere.com/streets")
           dataSourceValue.innerHTML = "Adejonwo Close, Ifako-Ijaiye, Lagos";
 
           data.streets.forEach(function(post) {
-            if (post.status == 0 && post.lga == "Ifako") {
+            if (post.status == 0 && post.lga == "Ifako Ijaiye") {
               let timeLightTaken = post.last_no_light.slice(-10, -1);
               bigTimeValue.innerHTML = timeLightTaken;
-            } else if (post.status !== 0 && post.lga == "Ifako") {
+            } else if (post.status !== 0 && post.lga == "Ifako Ijaiye") {
               let timeLightBrought = post.last_light.slice(-10, -1);
               bigTimeValue.innerHTML = timeLightBrought;
             }
@@ -92,7 +92,7 @@ fetch("https://checklight.pythonanywhere.com/streets")
             let durationSpan = document.querySelectorAll(".desc span");
 
             //! Timeline updates start here
-            if (post.lga == "Ifako") {
+            if (post.lga == "Ifako Ijaiye") {
               for (i = 0; i < flags.length; i++) {
                 times[i].innerHTML = post.history.time_line[i].time;
 
@@ -179,7 +179,7 @@ fetch("https://checklight.pythonanywhere.com/streets")
         if (clickedItem.target.className.includes("ifako-ijaiye-1")) {
           let streetsArrray = data.streets;
           for (i = 0; i < streetsArrray.length; i++) {
-            if (streetsArrray[i].lga == "Ifako") {
+            if (streetsArrray[i].lga == "Ifako Ijaiye") {
               //! Bar Chart updates start here
               let dailySupplyHoursArray =
                 streetsArrray[i].history.daily_supply.values;
