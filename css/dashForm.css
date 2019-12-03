@@ -1296,6 +1296,8 @@ div.full-page-wrapper main section.card-details div.enlarged-card header.enlarge
   grid-column: 1/2;
   -ms-grid-column-align: end;
       justify-self: end;
+  padding-right: 8%;
+  display: none;
 }
 
 div.full-page-wrapper main section.card-details hr.enlarged-card-divider {
