@@ -200,7 +200,7 @@ div.full-page-wrapper {
       margin: 0px 5.2%;
 
       display: flex;
-      align-items: center;
+      // align-items: center;
       //todo use justify-content and width of "forms-and-results" bit to ensure the main section is properly centered/aligned
       // justify-content: space-between;
       // background-color: aqua;
@@ -1241,7 +1241,7 @@ div.full-page-wrapper {
 
       hr.enlarged-card-divider {
         // margin: 0 7%;
-        border: none;
+        // border: none;
         border-top: $accent solid 0.5px;
       }
       .enlarged-card-divider2 {
@@ -1274,7 +1274,6 @@ div.full-page-wrapper {
           font-size: 11px;
           display: flex;
           align-content: center;
-          align-items: center;
           justify-content: center;
           text-align: left;
           font-weight: normal;
