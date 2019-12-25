@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>iná.</title>
+
+    <link rel="stylesheet" href="css/horsey.css" />
+
+    <link rel="stylesheet" href="css/dashForm.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/errorMessages.css" />
+    <link rel="stylesheet" href="css/preloader.css" />
+    <link rel="stylesheet" href="css/historyCharts.css" />
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+  </head>
+  <body>
+    <div class="preloader-container">
+      <h1 class="preloader-h1">
+        <span class="let1">i</span>
+        <span class="let2">n</span>
+        <span class="let3">á</span>
+        <span class="let4">.</span>
+      </h1>
+    </div>
+    <div class="full-page-wrapper">
+      <header id="page-header">
+        <a href="index.html" class="title-link"
+          ><h2 class="page-title">iná.</h2></a
+        >
+
+        <nav>
+          <ul class="">
+            <li class="nav-list-item sign-up">
+              <a href="#" title="Coming soon." class="nav-link">login</a>
+            </li>
+            <li class="nav-list-item contact">
+              <a href="#" title="Coming soon." class="nav-link">sign up</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <!-- *empty containers to prevent dashForm JS from breaking/generating errors -->
+        <div style="display: none;">
+          <div id="forms-and-results"></div>
+          <div id="card-details"></div>
+          <div id="street-selector"></div>
+          <div class="history-message"></div>
+          <div class="history-message"></div>
+          <a class="back-results"></a>
+          <a class="ina-timeline-choice"></a>
+          <a class="chart-choice"></a>
+        </div>
+        <!-- *empty containers to prevent JS from breaking ENDs -->
+
+        <div class="dash-bar-and-selector">
+          <!-- <div class="desktop-selector show-desktop" id="desktop-selector"></div> -->
+
+          <div class="dash-bar">
+            <button
+              onclick="location.href='dashForm.html';"
+              class="status-button dash-button"
+              id="status-button"
+            >
+              <span class="button-title">status</span>
+              <span class="button-hover-text"
+                >Find out if there is light in a particular location.</span
+              >
+              <img
+                src="images/Status4final.svg"
+                alt="bulb icon with question mark"
+              />
+            </button>
+
+            <button
+              class="history-button dash-button selected"
+              id="history-button"
+            >
+              <span class="button-title">history</span>
+              <span class="button-hover-text"
+                >Examine and compare historical power supply data.</span
+              >
+              <img
+                src="images/History.svg"
+                alt="clock icon with rewind (anti-clockwise) arrow"
+              />
+            </button>
+
+            <button class="maps-button dash-button" id="maps-button">
+              <span class="button-title">map</span>
+              <span class="button-hover-text"
+                >Visualise how much of your city has no light.</span
+              >
+              <img
+                src="images/Maps.svg"
+                alt="map icon with pin-point location"
+              />
+            </button>
+
+            <button class="forecast-button dash-button" id="forecast-button">
+              <span class="button-title">forecast</span>
+              <span class="button-hover-text"
+                >View predictions of future power outages.</span
+              >
+              <img src="images/Binoculars.svg" alt="binoculars icon" />
+            </button>
+
+            <button class="rankings-button dash-button" id="rankings-button">
+              <span class="button-title">rankings</span>
+              <span class="button-hover-text"
+                >Locate the parts of your city with the best power supply.</span
+              >
+              <img src="images/Ranking2.svg" alt="olympic podium icon" />
+            </button>
+
+            <!--* dash buttons only ends -->
+          </div>
+
+          <button class="collapse-button show-desktop" id="collapse-button">
+            <img src="images/Chevron3.svg" alt="double arrow symbol" />
+          </button>
+
+          <!-- <div class="mobile-selector hide-mobile" id="mobile-selector"></div> -->
+        </div>
+
+        <div class="charts history-charts-wrapper">
+          <section class="charts-forms charts-subsection">
+            <header>
+              <h2 class="text-center charts-h2 add-locations">Add locations here</h2 class="charts-h2">
+              <p class="text-center add-locations-sub">you can add a maximum of three locations to compare</p>
+            </header>
+
+            <div class="charts-selector1 first-second-selector">
+              <label for="first-location" class="charts-input-label label-dark"
+                >enter first location
+              </label>
+              <input
+                id="first-location"
+                class="charts-input first-location"
+                placeholder='e.g. "Osho Street"'
+              />
+              <button class="plot-button plot-button-dark">plot</button>
+            </div>
+
+            <div class="charts-selector2 first-second-selector second-third-selector">
+              <label for="second-location" class="charts-input-label label-yellow second-third-label"
+                >enter second location
+              </label>
+              <input
+                id="second-location"
+                class="charts-input second-third-input second-location"
+                placeholder='e.g. "Ivy Close"'
+              />
+              <button class="plot-button second-third-plot plot-button-yellow">add second location</button>
+            </div>
+
+            <div class="charts-selector3 second-third-selector">
+              <label for="third-location" class="charts-input-label label-light second-third-label"
+                >enter third location
+              </label>
+              <input
+                id="third-location"
+                class="charts-input second-third-input third-location"
+                placeholder='e.g. "Canary Drive"'
+              />
+              <button class="plot-button second-third-plot plot-button-light">add third location</button>
+            </div>
+          </section>
+
+          <section class="pie-chart-wrapper charts-subsection  pie-bar-line">
+            <header>
+              <h2 class="text-center charts-h2">Proportion of whatever you shall plot</h2>
+            </header>
+            <div class="pie-chart-container">
+              <canvas style="height: 290px" id="pie-chart"></canvas>
+            </div>
+          </section>
+
+          <section class="bar-chart-wrapper charts-subsection pie-bar-line">
+            <header>
+              <h2 class="text-center charts-h2">Another title showing what you want</h2>
+            </header>
+            <div class="bar-chart-container">
+              <canvas style="height: 290px" id="bar-chart"></canvas>
+            </div>
+          </section>
+
+          <section class="line-chart-wrapper charts-subsection pie-bar-line">
+            <header>
+              <h2 class="text-center charts-h2">Another title showing what you want</h2>
+            </header>
+            <div class="line-chart-container">
+              <canvas style="height: 290px" id="line-chart"></canvas>
+            </div>
+          </section>
+        </div>
+
+        <div style="display:none" class="error-message map-message">
+          <div class="hands-wrapper error-message-image-wrapper">
+            <img
+              class="error-message-image ogas-key"
+              src="images/ogasKeys.svg"
+              alt="hand holding keys"
+            />
+          </div>
+
+          <div class="error-message-text">
+            <h2>
+              The key to this section is in the hand of the Oga at the top.
+            </h2>
+
+            <p>
+              A glorious map will be shown here when he hands the key back to
+              us.
+            </p>
+          </div>
+        </div>
+
+        <div style="display:none" class="error-message forecast-message">
+          <div class="gen-wrapper error-message-image-wrapper">
+            <img
+              class="error-message-image"
+              src="images/faultyGen.svg"
+              alt="hand holding keys"
+            />
+          </div>
+
+          <div class="error-message-text">
+            <h2 class="multiple-h2s">
+              The generator that powers forecasts is currently faulty.
+            </h2>
+            <h2>
+              The fault is an apparent dizziness.
+            </h2>
+
+            <p>Forecasts will be possible after our gen guy has fixed it.</p>
+          </div>
+        </div>
+
+        <div style="display:none" class="error-message rankings-message">
+          <div class="victor-wrapper error-message-image-wrapper">
+            <img
+              class="error-message-image"
+              src="images/victor.svg"
+              alt="hand holding keys"
+            />
+          </div>
+
+          <div class="error-message-text">
+            <h2 class="multiple-h2s">
+              Oya. No jokes. The rankings are not ready yet.
+            </h2>
+            <h2>
+              We need iná in more locations. Wanna help?
+              <a href="mailto:ina.energyteam@gmail.com">Contact us</a>.
+            </h2>
+
+            <p>
+              If you have no help to offer, well, Victor (above) could play you
+              an imaginary tune 😉.
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="left-links">
+          <ul>
+            <li class="attribution"><a href="#">attribution</a></li>
+            <li class="divider">|</li>
+            <li class="help"><a href="#">help</a></li>
+          </ul>
+        </div>
+
+        <div class="right-content">
+          <p>© iná 2019. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/preloader.js"></script>
+    <script type="text/javascript" src="js/dashForm.js"></script>
+    <script type="text/javascript" src="js/historyPie.js"></script>
+    <script type="text/javascript" src="js/historyBar.js"></script>
+    <script type="text/javascript" src="js/historyLine.js"></script>
+    <script type="text/javascript" src="js/historyCharts.js"></script>
+    <script type="text/javascript" src="js/autoComplete.js"></script>
+    <!-- *For Autocomplete -->
+    <script type="text/javascript" src="js/horsey.js"></script>
+  </body>
+</html>

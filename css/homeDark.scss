@@ -1,13 +1,13 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
 
-$ibm-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-  Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+
+
+$ibm-sans: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
-$ibm-mono: "Space Mono", "IBM Plex Mono", monospace;
-$ibm-condensed: "IBM Plex Sans Condensed", sans-serif;
 $josefin: "Josefin Sans", "Glacial Indifference", -apple-system,
   BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -21,6 +21,7 @@ $dark: #1f2a2e;
 $dark: #191e22;
 $light: #bdd1db;
 $light: #c8dbe4;
+$light: #bbcfd8;
 $white: #ffffff;
 $whitish: #ffffffcc;
 
@@ -429,13 +430,9 @@ div.mobile-menu {
     h2.page-title {
       font-family: $josefin;
       font-size: 28px;
-      letter-spacing: -0.07em;
+      letter-spacing: -0.08em;
       color: $light;
       span {
-        font-family: $josefin;
-        font-size: 28px;
-        // letter-spacing: -0.08em;
-
         background: -webkit-linear-gradient($light, $light, $accent);
         -webkit-background-clip: text;
         background-clip: text;
@@ -681,7 +678,7 @@ div.mobile-menu {
 
     @include desktop-width {
       display: grid;
-      grid-template-columns: auto auto;
+      grid-template-columns: 40% auto;
       grid-template-rows: auto;
       align-items: center;
 
@@ -964,8 +961,8 @@ div.mobile-menu {
 
       aside {
         margin-top: 30px;
-        font-family: $ibm-mono;
-        font-weight: 300;
+        font-family: $metropolis;
+        font-weight: 400;
         font-size: 11px;
 
         @include midscreen-width-1 {
@@ -986,8 +983,13 @@ div.mobile-menu {
     }
 
     div.img-container.show-desktop {
+      display: none;
+      @include desktop-width {
+        display: grid;
+      }
       svg.tangled-bulbs {
-        justify-self: right;
+        justify-self: flex-end;
+        align-self: flex-end;
 
         @include larger-desktop-height {
           height: 550px;

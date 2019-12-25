@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
@@ -7,7 +7,7 @@
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #191e22;
   border-color: #191e22;
   list-style-type: none;
@@ -30,7 +30,7 @@ body {
 
 body div.full-page-wrapper {
   border-top: #6d8faf 6.3px solid;
-  background-color: #c8dbe4;
+  background-color: #bbcfd8;
   background-image: linear-gradient(200deg, #9ab8d43a 0%, #a8bdc756 100%);
   background-color: #ffd884;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#8da2ad));
@@ -133,7 +133,7 @@ div.mobile-menu {
 
 div.mobile-menu a {
   text-decoration: none;
-  color: #c8dbe4;
+  color: #bbcfd8;
   font-weight: 300;
   font-size: 34px;
   font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -159,8 +159,8 @@ div.mobile-menu div.logo-plus-close h2 {
 }
 
 div.mobile-menu div.logo-plus-close button.close-mobile {
-  color: #c8dbe4;
-  border: #c8dbe4 1px solid;
+  color: #bbcfd8;
+  border: #bbcfd8 1px solid;
   padding: 10px 20px;
   cursor: pointer;
   background-color: transparent;
@@ -261,14 +261,12 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 .page-minus-footer header h2.page-title {
   font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 28px;
-  letter-spacing: -0.07em;
-  color: #c8dbe4;
+  letter-spacing: -0.08em;
+  color: #bbcfd8;
 }
 
 .page-minus-footer header h2.page-title span {
-  font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 28px;
-  background: -webkit-linear-gradient(#c8dbe4, #c8dbe4, #ffc64a);
+  background: -webkit-linear-gradient(#bbcfd8, #bbcfd8, #ffc64a);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -381,7 +379,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 .page-minus-footer header nav ul.show-desktop li.nav-list-item.login a,
 .page-minus-footer header nav ul.show-desktop li.nav-list-item.about a {
   text-decoration: none;
-  color: #c8dbe4;
+  color: #bbcfd8;
 }
 
 .page-minus-footer header nav ul.show-desktop li.nav-list-item.login,
@@ -398,7 +396,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   .page-minus-footer header nav ul.show-desktop li.nav-list-item.about a {
     -webkit-transition: border-bottom 0.3s ease, color 0.3s ease;
     transition: border-bottom 0.3s ease, color 0.3s ease;
-    color: #c8dbe4;
+    color: #bbcfd8;
   }
 }
 
@@ -524,8 +522,8 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   .page-minus-footer main {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 40% auto;
+        grid-template-columns: 40% auto;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     -webkit-box-align: center;
@@ -610,7 +608,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 @media (min-width: 1000px) {
   .page-minus-footer main section.main-left h1 {
     color: #acc7d6;
-    color: #c8dbe4;
+    color: #bbcfd8;
   }
 }
 
@@ -645,7 +643,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   line-height: 26px;
   font-weight: 400;
   color: #8fa8b6;
-  color: #c8dbe4;
+  color: #bbcfd8;
 }
 
 @media (min-height: 1000px) {
@@ -674,8 +672,8 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   height: 40px;
   margin-top: 60px;
   background-color: #1e2e3d;
-  background-color: #c8dbe4;
-  color: #c8dbe4;
+  background-color: #bbcfd8;
+  color: #bbcfd8;
   color: #191e22;
   font-weight: 500;
   font-size: 1.05rem;
@@ -804,8 +802,8 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 
 .page-minus-footer main section.main-left aside {
   margin-top: 30px;
-  font-family: "Space Mono", "IBM Plex Mono", monospace;
-  font-weight: 300;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
   font-size: 11px;
 }
 
@@ -830,9 +828,21 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   }
 }
 
+.page-minus-footer main div.img-container.show-desktop {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .page-minus-footer main div.img-container.show-desktop {
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
 .page-minus-footer main div.img-container.show-desktop svg.tangled-bulbs {
-  -ms-grid-column-align: right;
-      justify-self: right;
+  justify-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 @media (min-height: 850px) {
@@ -855,7 +865,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 
 footer {
   display: block;
-  background-color: #c8dbe4;
+  background-color: #bbcfd8;
   height: 129px;
   padding-left: 9%;
   display: -webkit-box;
@@ -951,7 +961,7 @@ footer div.right-content p {
 
 .fil0 {
   fill: #aabfcc;
-  fill: #c8dbe4;
+  fill: #bbcfd8;
 }
 
 .yellow {

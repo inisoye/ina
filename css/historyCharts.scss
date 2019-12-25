@@ -1,0 +1,348 @@
+$ibm-sans: rubik, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$josefin: "Josefin Sans", "Glacial Indifference", "Glacial Indifference",
+  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$metropolis: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+$dark: #1b2429;
+$dark: #212c30;
+// $dark: #1c2232;
+$black: #1b2429;
+$footer: #d0d9d8;
+$light: #e1e5e9;
+// $light: #e4e8ec;
+$lighter: #eaf3f8;
+$lighter-2: #f4fbfd;
+$bg-grey: #c2ced4;
+$bg-grey-2: #d3d9df;
+$light-outline: #cadbdf;
+$text-light: #6d8faf;
+
+$text-light-2: #1d354b;
+$text-light-3: #7390ac;
+$accent: #ffc64a;
+$accent-dark: #e79e00;
+$accent-2: #ffffff;
+
+$desktop-width-1: 950px;
+
+@mixin desktop-width-1 {
+  @media (min-width: #{$desktop-width-1}) {
+    @content;
+  }
+}
+
+body {
+  font-family: $ibm-sans;
+}
+
+//* For preloader
+.preloader-container {
+  background: $black;
+}
+
+h1.preloader-h1 span {
+  color: $accent-2;
+}
+
+@keyframes letterChange {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+//* Preloader ends
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.charts {
+  @include desktop-width-1 {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 3.4%;
+    gap: 10px;
+  }
+}
+
+.pie-bar-line {
+  opacity: 0.2;
+}
+
+.pie-bar-line-visible {
+  @keyframes showCharts {
+    0% {
+      opacity: 0.2;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  animation: showCharts 1.5s ease 0s forwards;
+}
+
+.charts-h2 {
+  color: $text-light-3;
+  font-size: 18px;
+  font-size: 17px;
+  font-weight: 400;
+
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  font-family: $metropolis;
+  letter-spacing: -0.015em;
+
+  &.add-locations {
+    color: $text-light-2;
+    font-weight: 500;
+    margin-bottom: 0px;
+  }
+
+  @include desktop-width-1 {
+    margin-top: 0;
+
+    @media only screen and (max-width: 1180px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.add-locations-sub {
+  margin-bottom: 20px;
+  font-size: 11px;
+  color: $text-light;
+}
+
+.charts-input-label {
+  margin-bottom: 2px;
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: $text-light;
+
+  padding-left: 18px;
+  text-align: left;
+
+  transition: all 0.5s ease;
+
+  &.label-dark {
+    color: $dark;
+  }
+  &.label-yellow {
+    color: $accent-dark;
+  }
+  &.label-light {
+    color: $text-light;
+  }
+}
+
+.charts-input {
+  width: 77%;
+  height: 34px;
+  font-size: 13.5px;
+  font-family: $ibm-sans;
+  font-weight: 500;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0px;
+  border: 0.5px solid $footer;
+  border-bottom: 1px solid $text-light;
+  // border-top: 0.5px solid $accent;
+  outline: 0;
+  padding-left: 18px;
+  text-align: left;
+  background-color: $lighter-2;
+  color: $dark;
+
+  //* added to remove default mobile form box-shadow inset
+  -webkit-appearance: none;
+
+  &:focus {
+    border: 0.5px solid $light-outline;
+    // border-top: 0.5px solid $bg-grey;
+    border-bottom: 1px solid $dark;
+    background-color: $accent-2;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    color: $text-light;
+  }
+}
+
+.first-second-selector {
+  margin-bottom: 25px;
+}
+// .second-third-selector {
+//   opacity: 0.4;
+// }
+
+.plot-button {
+  height: 34px;
+  width: 18%;
+  margin-left: 1%;
+  background-color: $bg-grey;
+  color: $dark;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+
+  &.plot-button-dark {
+    background-color: $dark;
+    color: white;
+  }
+  &.plot-button-yellow {
+    background-color: $accent;
+  }
+  &.plot-button-light {
+    background-color: $text-light;
+    color: white;
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+.second-third-label {
+  visibility: hidden;
+}
+
+.second-third-input {
+  width: 0px;
+  display: none;
+}
+
+.second-third-plot {
+  width: 96.5%;
+  margin-left: 0;
+}
+
+.animate-inputs {
+  @keyframes increaseInputWidth {
+    0% {
+      width: 0px;
+    }
+    100% {
+      width: 77%;
+    }
+  }
+
+  display: inline-block;
+  animation: increaseInputWidth 1.5s ease 0s forwards;
+}
+
+.animate-plots {
+  @keyframes reducePlotWidth {
+    0% {
+      width: 96.5%;
+    }
+    100% {
+      width: 18%;
+    }
+  }
+
+  margin-left: 1%;
+  animation: reducePlotWidth 1.5s ease 0s forwards;
+}
+
+.pie-chart-wrapper,
+.bar-chart-wrapper,
+.line-chart-wrapper {
+  height: 400px;
+
+  @include desktop-width-1 {
+    canvas {
+      height: 225px !important;
+    }
+  }
+}
+
+.charts-subsection {
+  padding: 3% 9%;
+  border-bottom: $bg-grey solid 0.5px;
+
+  &.charts-forms {
+    padding-bottom: 10%;
+  }
+
+  @include desktop-width-1 {
+    height: 300px;
+    padding: 0 12%;
+  }
+}
+
+.bar-chart-wrapper,
+.line-chart-wrapper {
+  @include desktop-width-1 {
+    border-bottom: 0;
+    border-top: $bg-grey solid 0.5px;
+    padding-top: 30px;
+  }
+}
+
+.pie-chart-wrapper,
+.line-chart-wrapper {
+  @include desktop-width-1 {
+    border-left: $bg-grey solid 0.5px;
+  }
+}
+
+.charts-forms,
+.bar-chart-wrapper {
+  @include desktop-width-1 {
+    border-right: $bg-grey solid 0.5px;
+  }
+}
+
+//* Autocomplete Styling
+.sey-container {
+  box-shadow: none;
+  width: 63.1%;
+
+  @include desktop-width-1 {
+    width: 20%;
+    width: 18%;
+  }
+}
+
+.sey-item {
+  font-size: 13px;
+  color: $dark;
+
+  padding: 20px 7px;
+
+  &:hover {
+    background-color: $bg-grey;
+  }
+
+  @include desktop-width-1 {
+    padding: 7px;
+  }
+}
+
+.sey-selected {
+  background-color: $bg-grey;
+}

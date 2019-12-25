@@ -16,19 +16,12 @@
   </head>
   <body>
     <div class="preloader-container">
-      <div class="v-align">
-        <h1 class="preloader-h1">
-          iná will be ready in <span class="countdown">2</span>s.
-        </h1>
-        <div class="loader">
-          <aside class="loader__box loader--left">
-            <span class="loader__circle"></span>
-          </aside>
-          <aside class="loader__box loader--right">
-            <span class="loader__circle"></span>
-          </aside>
-        </div>
-      </div>
+      <h1 class="preloader-h1">
+        <span class="let1">i</span>
+        <span class="let2">n</span>
+        <span class="let3">á</span>
+        <span class="let4">.</span>
+      </h1>
     </div>
 
     <div class="full-page-wrapper">
@@ -68,10 +61,10 @@
               />
             </button>
 
-            <button class="history-button dash-button" id="history-button">
+            <button onclick="location.href='historyCharts.html';" class="history-button dash-button" id="history-button">
               <span class="button-title">history</span>
               <span class="button-hover-text"
-                >Examine historical power supply data.</span
+                >Examine and compare historical power supply data.</span
               >
               <img
                 src="images/History.svg"
@@ -664,6 +657,7 @@
           <a href="#" class="back-results">back to results</a>
 
           <div class="enlarged-card">
+            <button class="enlarged-card-close">go back</button>
             <header class="enlarged-card-header">
               <div class="enlarged-card-header-text">
                 <h2 class="big-add big-text-color">
@@ -852,7 +846,7 @@
         </section>
 
         <div style="display:none" class="error-message history-message">
-          <div class="eyes-wrapper error-message-image-wrapper">
+          <!-- <div class="eyes-wrapper error-message-image-wrapper">
             <img
               class="error-message-image"
               src="images/eyes.svg"
@@ -871,7 +865,7 @@
               you.
             </p>
             <p>Just you.</p>
-          </div>
+          </div> -->
         </div>
 
         <div style="display:none" class="error-message map-message">
@@ -957,6 +951,7 @@
       </footer>
     </div>
 
+    <script type="text/javascript" src="js/preloader.js"></script>
     <script
       type="text/javascript"
       src="https://www.gstatic.com/charts/loader.js"
@@ -967,6 +962,5 @@
     <script type="text/javascript" src="js/dashForm.js"></script>
     <script type="text/javascript" src="js/apiRequestsIfako1.js"></script>
     <script type="text/javascript" src="js/apiRequestsAlausa1.js"></script>
-    <script type="text/javascript" src="js/preloader.js"></script>
   </body>
 </html>
