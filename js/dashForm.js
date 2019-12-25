@@ -252,15 +252,24 @@ function colorEnlargedCardText(textColor) {
   }
 }
 
+//! bit closing enlarged card
+let backResults = document.querySelector("button.enlarged-card-close");
+backResults.addEventListener("click", function() {
+  formsAndResultsSection.style.display = "block";
+  enlargedCardSection.style.display = "none";
+});
+
 function updateEnlargedStatus(relevantIndex) {
   if (resultCardsArr[relevantIndex].className.includes("black-card")) {
-    // console.log("black");
     bigStatus.innerHTML = "There is no light in this location*";
     broughtOrTaken.innerHTML = "taken at ";
     enlargedCard.style.backgroundColor = "#1b2429";
     colorEnlargedCardText("#ffffff");
     enlargedCard.classList.remove("scrollbar-black");
     enlargedCard.classList.add("scrollbar-white");
+
+    backResults.style.backgroundColor = "#ffffff";
+    backResults.style.color = "#1b2429";
 
     enlargedBulbOrLantern.src = "images/Lantern.svg";
     enlargedBulbOrLantern.style.filter =
@@ -274,13 +283,15 @@ function updateEnlargedStatus(relevantIndex) {
     chartIcon[1].style.filter =
       "invert(100%) sepia(0%) saturate(7498%) hue-rotate(173deg) brightness(105%) contrast(101%)";
   } else if (resultCardsArr[relevantIndex].className.includes("white-card")) {
-    // console.log("white");
     bigStatus.innerHTML = "There is light in this location*";
     broughtOrTaken.innerHTML = "brought at ";
     enlargedCard.style.backgroundColor = "#ffffff";
     colorEnlargedCardText("#1b2429");
     enlargedCard.classList.remove("scrollbar-white");
     enlargedCard.classList.add("scrollbar-black");
+
+    backResults.style.backgroundColor = "#1b2429";
+    backResults.style.color = "#ffffff";
 
     enlargedBulbOrLantern.src = "images/Bulb.svg";
     enlargedBulbOrLantern.style.filter =
@@ -365,13 +376,6 @@ for (i = 0; i < resultCards.length; i++) {
     // false
   );
 }
-
-//! bit closing enlarged card
-let backResults = document.querySelector("a.back-results");
-backResults.addEventListener("click", function() {
-  formsAndResultsSection.style.display = "block";
-  enlargedCardSection.style.display = "none";
-});
 
 //! bit switching between the charts
 let inaTimelineLink = document.querySelector("a.ina-timeline-choice");
