@@ -1,0 +1,387 @@
+body {
+  font-family: rubik, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.preloader-container {
+  background: #1b2429;
+}
+
+h1.preloader-h1 span {
+  color: #ffffff;
+}
+
+@-webkit-keyframes letterChange {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes letterChange {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  50% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+@media (min-width: 950px) {
+  .charts {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    -ms-grid-columns: 50% 50%;
+        grid-template-columns: 50% 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 3.4%;
+    gap: 10px;
+  }
+}
+
+.pie-bar-line {
+  opacity: 0.2;
+}
+
+.pie-bar-line-visible {
+  -webkit-animation: showCharts 1.5s ease 0s forwards;
+          animation: showCharts 1.5s ease 0s forwards;
+}
+
+@-webkit-keyframes showCharts {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes showCharts {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.charts-h2 {
+  color: #7390ac;
+  font-size: 18px;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  letter-spacing: -0.015em;
+}
+
+.charts-h2.add-locations {
+  color: #1d354b;
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 950px) {
+  .charts-h2 {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 950px) and (max-width: 1180px) {
+  .charts-h2 {
+    font-size: 16px;
+  }
+}
+
+.add-locations-sub {
+  margin-bottom: 20px;
+  font-size: 11px;
+  color: #6d8faf;
+}
+
+.charts-input-label {
+  margin-bottom: 2px;
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  color: #6d8faf;
+  padding-left: 18px;
+  text-align: left;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.charts-input-label.label-dark {
+  color: #212c30;
+}
+
+.charts-input-label.label-yellow {
+  color: #e79e00;
+}
+
+.charts-input-label.label-light {
+  color: #6d8faf;
+}
+
+.charts-input {
+  width: 77%;
+  height: 34px;
+  font-size: 13.5px;
+  font-family: rubik, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 500;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0;
+  border-radius: 0px;
+  border: 0.5px solid #d0d9d8;
+  border-bottom: 1px solid #6d8faf;
+  outline: 0;
+  padding-left: 18px;
+  text-align: left;
+  background-color: #f4fbfd;
+  color: #212c30;
+  -webkit-appearance: none;
+}
+
+.charts-input:focus {
+  border: 0.5px solid #cadbdf;
+  border-bottom: 1px solid #212c30;
+  background-color: #ffffff;
+}
+
+.charts-input::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6d8faf;
+}
+
+.charts-input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6d8faf;
+}
+
+.charts-input::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6d8faf;
+}
+
+.charts-input::placeholder {
+  font-weight: 400;
+  font-size: 14px;
+  color: #6d8faf;
+}
+
+.first-second-selector {
+  margin-bottom: 25px;
+}
+
+.plot-button {
+  height: 34px;
+  width: 18%;
+  margin-left: 1%;
+  background-color: #c2ced4;
+  color: #212c30;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.plot-button.plot-button-dark {
+  background-color: #212c30;
+  color: white;
+}
+
+.plot-button.plot-button-yellow {
+  background-color: #ffc64a;
+}
+
+.plot-button.plot-button-light {
+  background-color: #6d8faf;
+  color: white;
+}
+
+.plot-button:hover {
+  opacity: 0.7;
+}
+
+.second-third-label {
+  visibility: hidden;
+}
+
+.second-third-input {
+  width: 0px;
+  display: none;
+}
+
+.second-third-plot {
+  width: 96.5%;
+  margin-left: 0;
+}
+
+.animate-inputs {
+  display: inline-block;
+  -webkit-animation: increaseInputWidth 1.5s ease 0s forwards;
+          animation: increaseInputWidth 1.5s ease 0s forwards;
+}
+
+@-webkit-keyframes increaseInputWidth {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 77%;
+  }
+}
+
+@keyframes increaseInputWidth {
+  0% {
+    width: 0px;
+  }
+  100% {
+    width: 77%;
+  }
+}
+
+.animate-plots {
+  margin-left: 1%;
+  -webkit-animation: reducePlotWidth 1.5s ease 0s forwards;
+          animation: reducePlotWidth 1.5s ease 0s forwards;
+}
+
+@-webkit-keyframes reducePlotWidth {
+  0% {
+    width: 96.5%;
+  }
+  100% {
+    width: 18%;
+  }
+}
+
+@keyframes reducePlotWidth {
+  0% {
+    width: 96.5%;
+  }
+  100% {
+    width: 18%;
+  }
+}
+
+.pie-chart-wrapper,
+.bar-chart-wrapper,
+.line-chart-wrapper {
+  height: 400px;
+}
+
+@media (min-width: 950px) {
+  .pie-chart-wrapper canvas,
+  .bar-chart-wrapper canvas,
+  .line-chart-wrapper canvas {
+    height: 225px !important;
+  }
+}
+
+.charts-subsection {
+  padding: 3% 9%;
+  border-bottom: #c2ced4 solid 0.5px;
+}
+
+.charts-subsection.charts-forms {
+  padding-bottom: 10%;
+}
+
+@media (min-width: 950px) {
+  .charts-subsection {
+    height: 300px;
+    padding: 0 12%;
+  }
+}
+
+@media (min-width: 950px) {
+  .bar-chart-wrapper,
+  .line-chart-wrapper {
+    border-bottom: 0;
+    border-top: #c2ced4 solid 0.5px;
+    padding-top: 30px;
+  }
+}
+
+@media (min-width: 950px) {
+  .pie-chart-wrapper,
+  .line-chart-wrapper {
+    border-left: #c2ced4 solid 0.5px;
+  }
+}
+
+@media (min-width: 950px) {
+  .charts-forms,
+  .bar-chart-wrapper {
+    border-right: #c2ced4 solid 0.5px;
+  }
+}
+
+.sey-container {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  width: 63.1%;
+}
+
+@media (min-width: 950px) {
+  .sey-container {
+    width: 20%;
+    width: 18%;
+  }
+}
+
+.sey-item {
+  font-size: 13px;
+  color: #212c30;
+  padding: 20px 7px;
+}
+
+.sey-item:hover {
+  background-color: #c2ced4;
+}
+
+@media (min-width: 950px) {
+  .sey-item {
+    padding: 7px;
+  }
+}
+
+.sey-selected {
+  background-color: #c2ced4;
+}
+/*# sourceMappingURL=historyCharts.css.map */

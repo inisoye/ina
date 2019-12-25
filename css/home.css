@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik:400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
@@ -76,7 +76,7 @@
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: rubik, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #212c30;
   border-color: #212c30;
   list-style-type: none;
@@ -346,12 +346,10 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 .page-minus-footer header h2.page-title {
   font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 28px;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.08em;
 }
 
 .page-minus-footer header h2.page-title span {
-  font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-size: 28px;
   background: -webkit-linear-gradient(#212c30, #212c30, #ffc64a);
   -webkit-background-clip: text;
   background-clip: text;
@@ -431,8 +429,6 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   cursor: pointer;
   border-radius: 4px;
   background-color: #ffc64a;
-  background-color: #e1e5e9;
-  background-color: transparent;
 }
 
 .page-minus-footer header nav ul.show-desktop {
@@ -608,8 +604,8 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   .page-minus-footer main {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: auto auto;
-        grid-template-columns: auto auto;
+    -ms-grid-columns: 40% auto;
+        grid-template-columns: 40% auto;
     -ms-grid-rows: auto;
         grid-template-rows: auto;
     -webkit-box-align: center;
@@ -830,14 +826,6 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   border-radius: 4px;
   outline: 0;
   cursor: pointer;
-  background: -webkit-gradient(linear, right top, left top, from(#6d8faf), color-stop(#ffd884), color-stop(#d0d9d8), to(#ffc64a));
-  background: linear-gradient(270deg, #6d8faf, #ffd884, #d0d9d8, #ffc64a);
-  background-size: 600% 600%;
-  -webkit-animation: tryBGAnimation 45s linear infinite;
-  animation: tryBGAnimation 45s linear infinite;
-  background: #ffd884;
-  border: #f7af13 1px solid;
-  background: #ffc64a;
   border: #212c30 1px solid;
   -webkit-transition: border-right 0.002s linear, border-bottom 0.002s linear, -webkit-box-shadow 0.4s ease;
   transition: border-right 0.002s linear, border-bottom 0.002s linear, -webkit-box-shadow 0.4s ease;
@@ -846,30 +834,6 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   opacity: 0;
   -webkit-animation: fadeInUp 1.005s ease 1.4s forwards;
           animation: fadeInUp 1.005s ease 1.4s forwards;
-}
-
-@-webkit-keyframes tryBGAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes tryBGAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .page-minus-footer main section.main-left button.try-it:hover {
@@ -926,8 +890,8 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
 
 .page-minus-footer main section.main-left aside {
   margin-top: 30px;
-  font-family: "Space Mono", "IBM Plex Mono", monospace;
-  font-weight: 300;
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-weight: 400;
   font-size: 11px;
   color: #1d354b;
   opacity: 0;
@@ -955,12 +919,21 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   }
 }
 
+.page-minus-footer main div.img-container.show-desktop {
+  display: none;
+}
+
+@media (min-width: 1000px) {
+  .page-minus-footer main div.img-container.show-desktop {
+    display: -ms-grid;
+    display: grid;
+  }
+}
+
 .page-minus-footer main div.img-container.show-desktop svg.tangled-bulbs {
-  -ms-grid-column-align: right;
-      justify-self: right;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  justify-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
   -webkit-animation: fadeIn 1.3s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
           animation: fadeIn 1.3s cubic-bezier(0.77, 0, 0.175, 1) 0s forwards;
 }

@@ -1,191 +1,5 @@
-@-webkit-keyframes leftAnim {
-  0% {
-    -webkit-transform: translateX(97px);
-    transform: translateX(97px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-
-@keyframes leftAnim {
-  0% {
-    -webkit-transform: translateX(97px);
-    transform: translateX(97px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes rightAnim {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-93px);
-    transform: translateX(-93px);
-  }
-}
-
-@keyframes rightAnim {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-93px);
-    transform: translateX(-93px);
-  }
-}
-
-.loader {
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.loader::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  margin-left: -1px;
-  width: 2px;
-  z-index: 1;
-  height: 150px;
-  border-left: 1px solid #212c30;
-}
-
-.loader__box {
-  position: absolute;
-  top: 0;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  z-index: 2;
-}
-
-.loader--left {
-  left: 0;
-}
-
-.loader--left .loader__circle {
-  background-color: #fff;
-  right: 10px;
-  -webkit-animation: leftAnim 1.3s ease-in-out alternate infinite;
-  animation: leftAnim 1.3s ease-in-out alternate infinite;
-}
-
-.loader--right {
-  right: 0;
-}
-
-.loader--right .loader__circle {
-  left: 10px;
-  -webkit-animation: rightAnim 1.3s ease-in-out alternate infinite;
-  animation: rightAnim 1.3s ease-in-out alternate infinite;
-}
-
-.loader__circle {
-  width: 75px;
-  height: 75px;
-  border: solid 1px #212c30;
-  display: block;
-  background-color: #212c30;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  margin-top: -37.5px;
-}
-
-* {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.preloader-container {
-  background: #ffcb59;
-  background: #6d8faf;
-  height: calc(100vh - 6.3px);
-  overflow-y: hidden;
-  position: relative;
-}
-
-.v-align {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  width: 100%;
-  max-height: 90vh;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-h1.preloader-h1 {
-  font-size: 24px;
-  display: block;
-  text-align: center;
-  -webkit-box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.4);
-          box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
-  color: #212c30;
-  padding: 15px 20px;
-  background-color: #ffcb59;
-  display: inline-block;
-  font-weight: 300;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  margin-bottom: 15vh;
-  margin-top: -5vh;
-}
-
-h1.preloader-h1 span.countdown {
-  color: #212c30;
-  font-weight: 300;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-}
-
-.made-with-love {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  bottom: 10px;
-  text-align: center;
-  font-size: 4px;
-  z-index: 9999;
-  font-family: "Ibm Plex Sans", sans-serif;
-  color: #fff;
-}
-
-.made-with-love i {
-  font-style: normal;
-  color: #f50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.made-with-love a:hover {
-  text-decoration: underline;
-}
-
 .full-page-wrapper {
   display: none;
-}
-
-.preloader-container {
-  -webkit-animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
-          animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
 }
 
 @-webkit-keyframes heightReduction {
@@ -204,5 +18,87 @@ h1.preloader-h1 span.countdown {
   to {
     height: 0px;
   }
+}
+
+.preloader-container {
+  background: #c2ced4;
+  height: calc(100vh - 6.3px);
+  overflow-y: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+          animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+}
+
+h1.preloader-h1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+h1.preloader-h1 span {
+  color: #212c30;
+  font-size: 100px;
+  letter-spacing: -0.08em;
+  font-weight: 700;
+  font-family: "Josefin Sans", "Glacial Indifference", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@-webkit-keyframes letterChange {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes letterChange {
+  0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+  50% {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.let1 {
+  -webkit-animation: letterChange 0.6s linear infinite;
+          animation: letterChange 0.6s linear infinite;
+}
+
+.let2 {
+  -webkit-animation: letterChange 0.6s linear 0.4s infinite;
+          animation: letterChange 0.6s linear 0.4s infinite;
+}
+
+.let3 {
+  -webkit-animation: letterChange 0.6s linear 0.8s infinite;
+          animation: letterChange 0.6s linear 0.8s infinite;
+}
+
+.let4 {
+  -webkit-animation: letterChange 0.6s linear 1.2s infinite;
+          animation: letterChange 0.6s linear 1.2s infinite;
 }
 /*# sourceMappingURL=preloader.css.map */

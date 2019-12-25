@@ -1,5 +1,3 @@
-// @import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300&display=swap");
-
 $dark: #212c30;
 $footer: #d0d9d8;
 $light: #e1e5e9;
@@ -11,240 +9,76 @@ $text-light: #6d8faf;
 
 $text-light-2: #1d354b;
 $accent: #ffcb59;
+$accent-dark: #e79e00;
 $accent-2: #ffffff;
-
-@-moz-keyframes leftAnim {
-  0% {
-    -moz-transform: translateX(97px);
-    transform: translateX(97px);
-  }
-  100% {
-    -moz-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@-webkit-keyframes leftAnim {
-  0% {
-    -webkit-transform: translateX(97px);
-    transform: translateX(97px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes leftAnim {
-  0% {
-    -moz-transform: translateX(97px);
-    -ms-transform: translateX(97px);
-    -webkit-transform: translateX(97px);
-    transform: translateX(97px);
-  }
-  100% {
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@-moz-keyframes rightAnim {
-  0% {
-    -moz-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -moz-transform: translateX(-93px);
-    transform: translateX(-93px);
-  }
-}
-@-webkit-keyframes rightAnim {
-  0% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-93px);
-    transform: translateX(-93px);
-  }
-}
-@keyframes rightAnim {
-  0% {
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-  100% {
-    -moz-transform: translateX(-93px);
-    -ms-transform: translateX(-93px);
-    -webkit-transform: translateX(-93px);
-    transform: translateX(-93px);
-  }
-}
-.loader {
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
-  position: relative;
-}
-.loader::after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  left: 50%;
-  margin-left: -1px;
-  width: 2px;
-  z-index: 1;
-  height: 150px;
-  border-left: 1px solid $dark;
-}
-.loader__box {
-  position: absolute;
-  top: 0;
-  width: 150px;
-  height: 150px;
-  overflow: hidden;
-  z-index: 2;
-}
-.loader--left {
-  left: 0;
-}
-.loader--left .loader__circle {
-  background-color: #fff;
-  right: 10px;
-  -moz-animation: leftAnim 1.3s ease-in-out alternate infinite;
-  -webkit-animation: leftAnim 1.3s ease-in-out alternate infinite;
-  animation: leftAnim 1.3s ease-in-out alternate infinite;
-}
-.loader--right {
-  right: 0;
-}
-.loader--right .loader__circle {
-  left: 10px;
-  -moz-animation: rightAnim 1.3s ease-in-out alternate infinite;
-  -webkit-animation: rightAnim 1.3s ease-in-out alternate infinite;
-  animation: rightAnim 1.3s ease-in-out alternate infinite;
-}
-.loader__circle {
-  width: 75px;
-  height: 75px;
-  border: solid 1px $dark;
-  display: block;
-  background-color: $dark;
-  -moz-border-radius: 50%;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  margin-top: -37.5px;
-}
-
-* {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-// .preloader-container {
-//   min-height: 100%;
-// }
-
-.preloader-container {
-  background: $accent;
-  background: $text-light;
-  height: calc(100vh - 6.3px);
-  overflow-y: hidden;
-  position: relative;
-
-  // border-top: $light 6.3px solid;
-}
-
-.v-align {
-  position: absolute;
-  text-align: center;
-  left: 0;
-  width: 100%;
-  max-height: 90vh;
-  top: 50%;
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-h1.preloader-h1 {
-  font-size: 24px;
-  display: block;
-  text-align: center;
-  box-shadow: 4px 4px 6px -1px rgba(0, 0, 0, 0.4);
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-  border-radius: 5px;
-  color: $dark;
-
-  padding: 15px 20px;
-  background-color: $accent;
-
-  display: inline-block;
-  font-weight: 300;
-  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
-  margin-bottom: 15vh;
-  margin-top: -5vh;
-
-  span.countdown {
-    color: $dark;
-    font-weight: 300;
-    font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
-      Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol";
-  }
-}
-
-.made-with-love {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  bottom: 10px;
-  text-align: center;
-  font-size: 4px;
-  z-index: 9999;
-  font-family: "Ibm Plex Sans", sans-serif;
-  color: #fff;
-}
-.made-with-love i {
-  font-style: normal;
-  color: #f50057;
-  font-size: 14px;
-  position: relative;
-  top: 2px;
-}
-.made-with-love a {
-  color: #fff;
-  text-decoration: none;
-}
-.made-with-love a:hover {
-  text-decoration: underline;
-}
 
 //* bit written for animation and JS manipulation
 .full-page-wrapper {
   display: none;
 }
-
-.preloader-container {
-  animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
-  // visibility: visible;
-}
-
 @keyframes heightReduction {
   from {
     height: calc(100vh - 161.7px);
-    // visibility: visible;
   }
   to {
     height: 0px;
-    // visibility: hidden;
   }
+}
+
+.preloader-container {
+  background: $bg-grey;
+  height: calc(100vh - 6.3px);
+  overflow-y: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  animation: heightReduction 2s cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+}
+
+h1.preloader-h1 {
+  display: flex;
+}
+
+h1.preloader-h1 span {
+  color: $dark;
+  font-size: 100px;
+  letter-spacing: -0.08em;
+  font-weight: 700;
+  font-family: "Josefin Sans", "Glacial Indifference", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+@keyframes letterChange {
+  0% {
+    transform: translateY(0);
+    // transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-10px);
+    // transform: translateY(-10px) translateX(-10px);
+  }
+  100% {
+    transform: translateY(0);
+    // transform: translateY(0) translateX(0);
+  }
+}
+
+.let1 {
+  animation: letterChange 0.6s linear infinite;
+}
+
+.let2 {
+  animation: letterChange 0.6s linear 0.4s infinite;
+}
+
+.let3 {
+  animation: letterChange 0.6s linear 0.8s infinite;
+}
+
+.let4 {
+  animation: letterChange 0.6s linear 1.2s infinite;
 }

@@ -54,10 +54,10 @@ historyButton.addEventListener("click", function() {
   collapseButtonImage.style.filter =
     "invert(76%) sepia(0%) saturate(0%) hue-rotate(51deg) brightness(88%) contrast(88%)";
 
-  formPlusResults.style.display = "none";
+  // formPlusResults.style.display = "none";
   cardResults.style.display = "none";
 
-  historyMessage.style.display = "block";
+  // historyMessage.style.display = "block";
   mapMessage.style.display = "none";
   forecastMessage.style.display = "none";
   rankingsMessage.style.display = "none";
@@ -129,6 +129,10 @@ let typingTimer;
 let doneTypingInterval = 3500;
 
 streetSelector.onkeyup = function() {
+  //* Remove transparency from results
+  let resultsSection = document.querySelector("section.results");
+  resultsSection.style.opacity = "1";
+
   //! Bit verifying input & filtering cards
   let streetInput = streetSelector.value.toLowerCase();
 
