@@ -1,3 +1,25 @@
+let historyChartsWrapper = document.querySelector("div.history-charts-wrapper");
+
+historyButton.addEventListener("click", function() {
+  if (matchMedia("(min-width: 950px)").matches) {
+    historyChartsWrapper.style.display = "grid";
+  } else {
+    historyChartsWrapper.style.display = "block";
+  }
+});
+
+mapButton.addEventListener("click", function() {
+  historyChartsWrapper.style.display = "none";
+});
+
+forecastButton.addEventListener("click", function() {
+  historyChartsWrapper.style.display = "none";
+});
+
+rankingsButton.addEventListener("click", function() {
+  historyChartsWrapper.style.display = "none";
+});
+
 let secondThirdInputs = document.querySelectorAll("input.second-third-input");
 let secondThirdSelectors = document.querySelectorAll(
   "div.second-third-selector"
@@ -106,25 +128,3 @@ let reduceThirdButtonShowInput = () => {
   });
 };
 reduceThirdButtonShowInput();
-
-let historyChartsWrapper = document.querySelector("div.history-charts-wrapper");
-
-historyButton.addEventListener("click", function() {
-  if (matchMedia("(min-width: 950px)").matches) {
-    historyChartsWrapper.style.display = "grid";
-  } else {
-    historyChartsWrapper.style.display = "block";
-  }
-});
-
-mapButton.addEventListener("click", function() {
-  historyChartsWrapper.style.display = "none";
-});
-
-forecastButton.addEventListener("click", function() {
-  historyChartsWrapper.style.display = "none";
-});
-
-rankingsButton.addEventListener("click", function() {
-  historyChartsWrapper.style.display = "none";
-});

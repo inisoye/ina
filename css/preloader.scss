@@ -58,7 +58,7 @@ h1.preloader-h1 span {
     // transform: translateY(0) translateX(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
     // transform: translateY(-10px) translateX(-10px);
   }
   100% {
@@ -68,17 +68,21 @@ h1.preloader-h1 span {
 }
 
 .let1 {
+  padding-left: 10px;
   animation: letterChange 0.6s linear infinite;
 }
 
 .let2 {
+  padding-left: 10px;
   animation: letterChange 0.6s linear 0.4s infinite;
 }
 
 .let3 {
+  padding-left: 10px;
   animation: letterChange 0.6s linear 0.8s infinite;
 }
 
 .let4 {
+  padding-left: 10px;
   animation: letterChange 0.6s linear 1.2s infinite;
 }

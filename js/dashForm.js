@@ -78,7 +78,7 @@ mapButton.addEventListener("click", function() {
   cardResults.style.display = "none";
 
   historyMessage.style.display = "none";
-  mapMessage.style.display = "block";
+  mapMessage.style.display = "none";
   forecastMessage.style.display = "none";
   rankingsMessage.style.display = "none";
 });

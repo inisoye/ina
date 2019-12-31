@@ -54,11 +54,27 @@ h1.preloader-h1 span {
     transform: translateX(0);
   }
   50% {
-    transform: translateX(-10px);
+    transform: translateX(-15px);
   }
   100% {
     transform: translateX(0);
   }
+}
+
+.let1 {
+  animation: letterChange 0.8s linear infinite;
+}
+
+.let2 {
+  animation: letterChange 0.8s linear 0.4s infinite;
+}
+
+.let3 {
+  animation: letterChange 0.8s linear 0.8s infinite;
+}
+
+.let4 {
+  animation: letterChange 0.8s linear 1.2s infinite;
 }
 //* Preloader ends
 
@@ -136,7 +152,7 @@ h1.preloader-h1 span {
 .charts-input-label {
   margin-bottom: 2px;
   display: block;
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 500;
   color: $text-light;
 
@@ -159,7 +175,7 @@ h1.preloader-h1 span {
 .charts-input {
   width: 77%;
   height: 34px;
-  font-size: 13.5px;
+  font-size: 13px;
   font-family: $ibm-sans;
   font-weight: 500;
   box-shadow: none;
@@ -273,12 +289,23 @@ h1.preloader-h1 span {
 .line-chart-wrapper {
   height: 400px;
 
+  canvas {
+    height: 290px !important;
+  }
+
   @include desktop-width-1 {
     canvas {
       height: 225px !important;
     }
   }
 }
+
+// .pie-chart-container,
+// .bar-chart-container,
+// .line-chart-container {
+//   display: block;
+//   visibility: visible;
+// }
 
 .charts-subsection {
   padding: 3% 9%;

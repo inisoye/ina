@@ -1,7 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Rubik:400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Archivo+Narrow:400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,500,600,700&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rubik:300,400,500,600,700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
 
@@ -428,7 +426,6 @@ div.full-page-wrapper {
               text-align: left;
 
               border: $accent 1.5px solid;
-              // border-left: $accent 1.5px solid;
 
               .button-title {
                 display: block;
@@ -449,7 +446,6 @@ div.full-page-wrapper {
                 width: 80%;
                 margin: 5px 10px 0;
                 color: $text-light;
-
                 font-size: 12px;
                 font-weight: normal;
               }
@@ -574,6 +570,7 @@ div.full-page-wrapper {
 
           .button-title {
             color: $dark;
+            letter-spacing: -0.03em;
           }
 
           @include desktop-width-1 {
@@ -583,6 +580,7 @@ div.full-page-wrapper {
               .button-title {
                 font-weight: 500;
                 color: $text-light-2;
+                letter-spacing: -0em;
               }
 
               .button-hover-text {
@@ -1186,11 +1184,9 @@ div.full-page-wrapper {
           right: 0;
           width: 30%;
           height: 30px;
-          border-radius: 4px 0 4px 0;
-          border-radius: 0 4px 0 4px;
+          border-radius: 4px 0 10px 0;
+          border-radius: 0 4px 0 10px;
           border: 0;
-          // border-bottom: 1px $dark solid;
-          // border-right: 1px $dark solid;
           color: $accent-2;
           background-color: $dark;
           cursor: pointer;
@@ -1198,9 +1194,15 @@ div.full-page-wrapper {
           font-size: 15px;
           font-weight: 500;
 
+          &:hover {
+            opacity: 0.8;
+          }
+
           @include desktop-width-1 {
             width: 10%;
             height: 5%;
+            border-radius: 4px 0 10px 0;
+            left: 0;
           }
         }
 

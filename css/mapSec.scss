@@ -1,0 +1,364 @@
+$ibm-sans: rubik, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$josefin: "Josefin Sans", "Glacial Indifference", "Glacial Indifference",
+  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$metropolis: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+$dark: #1b2429;
+$dark: #212c30;
+// $dark: #1c2232;
+$black: #1b2429;
+$footer: #d0d9d8;
+$light: #e1e5e9;
+// $light: #e4e8ec;
+$lighter: #eaf3f8;
+$lighter-2: #f4fbfd;
+$bg-grey: #c2ced4;
+$bg-grey: #c2ced4;
+$bg-grey-2: #d3d9df;
+$light-outline: #cadbdf;
+$text-light: #6d8faf;
+
+$text-light-2: #1d354b;
+$text-light-3: #7390ac;
+$accent: #ffc64a;
+$accent-dark: #e79e00;
+$accent-2: #ffffff;
+
+$desktop-width-1: 950px;
+
+$accent-top: #e68181;
+$accent-left: #b6a2be;
+$accent-right: #6db18f;
+$accent-bottom: #ecae7c;
+$accent-light: #fff48f;
+
+@mixin desktop-width-1 {
+  @media (min-width: #{$desktop-width-1}) {
+    @content;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body {
+  font-family: $ibm-sans;
+}
+
+//* For preloader
+.preloader-container {
+  background: $text-light;
+}
+
+h1.preloader-h1 span {
+  color: $accent;
+}
+
+@keyframes letterChange {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-15px) translateX(-15px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.let1 {
+  animation: letterChange 0.8s linear infinite;
+}
+
+.let2 {
+  animation: letterChange 0.8s linear 0.4s infinite;
+}
+
+.let3 {
+  animation: letterChange 0.8s linear 0.8s infinite;
+}
+
+.let4 {
+  animation: letterChange 0.8s linear 1.2s infinite;
+}
+
+//* Preloader ends
+
+.map-container {
+  position: relative;
+  width: 88%;
+  margin: 32px 6% 0;
+  border: 1.5px solid $accent;
+  background-color: $bg-grey;
+
+  display: grid;
+  grid-template-rows: 20% 80%;
+
+  @include desktop-width-1 {
+    margin: 0 0 0 5%;
+    grid-template-rows: auto;
+    grid-template-columns: 80% 20%;
+
+    //* added to prevent text spill
+    @media only screen and (max-width: 1213px) {
+      grid-template-columns: 70% 30%;
+    }
+  }
+}
+
+#map {
+  background-color: $bg-grey;
+  position: relative;
+  width: 100%;
+  height: 630px;
+
+  @include desktop-width-1 {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+    height: 70vh;
+
+    @media only screen and (max-height: 829px) {
+      height: 580.3px;
+    }
+  }
+}
+
+.map-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: $accent-2;
+  grid-row: 1 / 2;
+
+  * {
+    text-align: center;
+  }
+
+  @include desktop-width-1 {
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 70% 30%;
+    grid-template-columns: 100%;
+    align-items: center;
+    justify-content: center;
+    // border-left: 1.5px solid $accent;
+  }
+}
+
+.instr-overlay {
+  padding: 20px 0;
+  border-bottom: 0.5px solid $accent;
+
+  @include desktop-width-1 {
+    padding: 0 10%;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: lowercase;
+
+    @include desktop-width-1 {
+      font-size: 30px;
+    }
+  }
+}
+
+.instr-overlay {
+  display: none;
+}
+
+section.key-overlay {
+  padding: 20px 0;
+  border-bottom: 0.5px solid $accent;
+
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  @include desktop-width-1 {
+    padding: 0;
+    grid-row: 2 / 3;
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+  }
+
+  h4 {
+    margin-right: 3%;
+    font-size: 11px;
+    font-weight: bold;
+    color: $text-light;
+
+    display: none;
+
+    @include desktop-width-1 {
+      display: block;
+      margin-right: 0;
+      font-weight: 400;
+      font-family: $metropolis;
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+  }
+
+  div.light-section {
+    margin-left: 7%;
+
+    @include desktop-width-1 {
+      margin-left: 0;
+      margin-top: 5%;
+    }
+  }
+
+  div.label-swab {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    div.swab {
+      border-radius: 3px;
+      width: 33px;
+      height: 13px;
+
+      margin-right: 7px;
+
+      -moz-box-shadow: 3px 3px 3px 3px rgba(32, 32, 32, 0.07);
+      box-shadow: 3px 3px 3px 3px rgba(32, 32, 32, 0.07);
+
+      @include desktop-width-1 {
+        width: 38px;
+        height: 18px;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      text-align: right;
+
+      //* added to prevent text spill
+      @media only screen and (max-width: 483px) {
+        font-size: 12px;
+      }
+
+      @include desktop-width-1 {
+        font-size: 15px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  div.no-light-key-swab {
+    background-color: $black;
+  }
+
+  div.light-key-swab {
+    background-color: $accent-2;
+    border: 0.5px solid $light-outline;
+  }
+}
+
+.info-overlay {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  padding-right: 4%;
+
+  // display: none;
+
+  @include desktop-width-1 {
+    padding: 0;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 100%;
+
+    border-bottom: 0.5px solid $accent;
+
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 1fr);
+  }
+
+  div {
+    padding: 20px 0;
+
+    &:last-child {
+      border-left: $accent solid 0.5px;
+    }
+  }
+
+  h5 {
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: $text-light;
+    font-family: $metropolis;
+    font-weight: 400;
+
+    @include desktop-width-1 {
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+  }
+
+  p {
+    font-size: 17px;
+    font-weight: 700;
+
+    //* added to prevent text spill
+    @media only screen and (max-width: 483px) {
+      font-size: 14.5px;
+    }
+
+    @include desktop-width-1 {
+      font-size: 25px;
+    }
+  }
+
+  button {
+    border: 0;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 0 5%;
+    background-color: $dark;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+
+    height: 60%;
+    width: 80%;
+    margin: auto;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    @include desktop-width-1 {
+      font-size: 18px;
+    }
+  }
+}

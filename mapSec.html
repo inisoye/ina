@@ -4,17 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"/>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+    />
     <title>iná.</title>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/horsey.css" />
     <link rel="stylesheet" href="css/dashForm.css" />
     <link rel="stylesheet" href="css/timeline.css" />
     <link rel="stylesheet" href="css/errorMessages.css" />
     <link rel="stylesheet" href="css/preloader.css" />
-    <link rel="stylesheet" href="css/historyCharts.css" />
+    <link rel="stylesheet" href="css/mapSec.css" />
   </head>
   <body>
     <div class="preloader-container">
@@ -50,7 +56,6 @@
           <div id="card-details"></div>
           <div id="street-selector"></div>
           <div class="history-message"></div>
-          <div class="history-message"></div>
           <button class="enlarged-card-close"></button>
           <a class="ina-timeline-choice"></a>
           <a class="chart-choice"></a>
@@ -77,7 +82,8 @@
             </button>
 
             <button
-              class="history-button dash-button selected"
+              onclick="location.href='historyCharts.html';"
+              class="history-button dash-button"
               id="history-button"
             >
               <span class="button-title">history</span>
@@ -90,11 +96,7 @@
               />
             </button>
 
-            <button 
-            onclick="location.href='mapSec.html';" 
-            class="maps-button dash-button" 
-            id="maps-button"
-            >
+            <button class="maps-button dash-button selected" id="maps-button">
               <span class="button-title">map</span>
               <span class="button-hover-text"
                 >Visualise how much of your city has no light.</span
@@ -131,76 +133,36 @@
           <!-- <div class="mobile-selector hide-mobile" id="mobile-selector"></div> -->
         </div>
 
-        <div class="charts history-charts-wrapper">
-          <section class="charts-forms charts-subsection">
-            <header>
-              <h2 class="text-center charts-h2 add-locations">Add locations here</h2 class="charts-h2">
-              <p class="text-center add-locations-sub">you can add a maximum of three locations to compare</p>
-            </header>
+        <div class="map-container">
+          <div id="map"></div>
+          <div class="map-overlay">
+            <div class="instr-overlay"><h3>Click on a coloured area</h3></div>
 
-            <div class="charts-selector1 first-second-selector">
-              <label for="first-location" class="charts-input-label label-dark"
-                >enter first location
-              </label>
-              <input
-                id="first-location"
-                class="charts-input first-location"
-                placeholder='e.g. "Osho Street"'
-              />
-              <button class="plot-button plot-button-dark">plot</button>
-            </div>
+            <section class="key-overlay">
+              <h4>MAP KEY</h4>
+              <div class="no-light-section label-swab">
+                <div class="no-light-key-swab swab"></div>
+                <p>no light</p>
+              </div>
 
-            <div class="charts-selector2 first-second-selector second-third-selector">
-              <label for="second-location" class="charts-input-label label-yellow second-third-label"
-                >enter second location
-              </label>
-              <input
-                id="second-location"
-                class="charts-input second-third-input second-location"
-                placeholder='e.g. "Ivy Close"'
-              />
-              <button class="plot-button second-third-plot plot-button-yellow">add second location</button>
-            </div>
+              <div class="light-section label-swab">
+                <div class="light-key-swab swab"></div>
+                <p>light on</p>
+              </div>
+            </section>
 
-            <div class="charts-selector3 second-third-selector">
-              <label for="third-location" class="charts-input-label label-light second-third-label"
-                >enter third location
-              </label>
-              <input
-                id="third-location"
-                class="charts-input second-third-input third-location"
-                placeholder='e.g. "Canary Drive"'
-              />
-              <button class="plot-button second-third-plot plot-button-light">add third location</button>
-            </div>
-          </section>
-
-          <section class="pie-chart-wrapper charts-subsection  pie-bar-line">
-            <header>
-              <h2 class="text-center charts-h2">Proportion of whatever you shall plot</h2>
-            </header>
-            <div class="pie-chart-container">
-              <canvas style="height: 290px" id="pie-chart"></canvas>
-            </div>
-          </section>
-
-          <section class="bar-chart-wrapper charts-subsection pie-bar-line">
-            <header>
-              <h2 class="text-center charts-h2">Another title showing what you want</h2>
-            </header>
-            <div class="bar-chart-container">
-              <canvas style="height: 290px" id="bar-chart"></canvas>
-            </div>
-          </section>
-
-          <section class="line-chart-wrapper charts-subsection pie-bar-line">
-            <header>
-              <h2 class="text-center charts-h2">Another title showing what you want</h2>
-            </header>
-            <div class="line-chart-container">
-              <canvas style="height: 290px" id="line-chart"></canvas>
-            </div>
-          </section>
+            <section class="info-overlay">
+              <div class="location-info">
+                <h5>AREA</h5>
+                <p class="area-update">Ikeja-1</p>
+              </div>
+              <div class="status-info">
+                <h5>STATUS</h5>
+                <p class="status-update">No Light</p>
+              </div>
+              <button class="view-streets">View Streets</button>
+            </section>
+          </div>
         </div>
 
         <div style="display:none" class="error-message map-message">
@@ -288,12 +250,6 @@
 
     <script type="text/javascript" src="js/preloader.js"></script>
     <script type="text/javascript" src="js/dashForm.js"></script>
-    <script type="text/javascript" src="js/historyPie.js"></script>
-    <script type="text/javascript" src="js/historyBar.js"></script>
-    <script type="text/javascript" src="js/historyLine.js"></script>
-    <script type="text/javascript" src="js/historyCharts.js"></script>
-    <script type="text/javascript" src="js/autoComplete.js"></script>
-    <!-- *For Autocomplete -->
-    <script type="text/javascript" src="js/horsey.js"></script>
+    <script src="js/mapSec.js"></script>
   </body>
 </html>
