@@ -8,9 +8,9 @@ historyButton.addEventListener("click", function() {
   }
 });
 
-mapButton.addEventListener("click", function() {
-  historyChartsWrapper.style.display = "none";
-});
+// mapButton.addEventListener("click", function() {
+//   historyChartsWrapper.style.display = "none";
+// });
 
 forecastButton.addEventListener("click", function() {
   historyChartsWrapper.style.display = "none";
