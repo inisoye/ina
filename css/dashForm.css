@@ -2,12 +2,23 @@
 @import url("https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,600&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
 * {
   margin: 0px;
   padding: 0px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: inter, rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #212c30;
   list-style-type: none;
 }
@@ -623,7 +634,7 @@ div.full-page-wrapper main div.forms-and-results section.forms div.forms-body in
   width: 100%;
   height: 39px;
   font-size: 15px;
-  font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: inter, rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-weight: 500;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -1356,7 +1367,7 @@ div.full-page-wrapper main section.card-details section.charts-bit {
 div.full-page-wrapper main section.card-details section.charts-bit .mobile-select-chart-type {
   margin-bottom: 20px;
   font-size: 12px;
-  font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: inter, rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 @media (min-width: 950px) {
@@ -1421,7 +1432,7 @@ div.full-page-wrapper main section.card-details section.charts-bit h3 a {
   width: max-content;
   padding-bottom: 3.5px;
   cursor: pointer;
-  font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: inter, rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 div.full-page-wrapper main section.card-details section.charts-bit h3 a.ina-timeline-choice {

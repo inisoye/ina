@@ -3,7 +3,17 @@
 @import url("https://fonts.googleapis.com/css?family=Josefin+Sans:700&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Space+Mono&display=swap");
 
-$ibm-sans: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+@import url("https://rsms.me/inter/inter.css");
+html {
+  font-family: "Inter", sans-serif;
+}
+@supports (font-variation-settings: normal) {
+  html {
+    font-family: "Inter var", sans-serif;
+  }
+}
+
+$ibm-sans: inter, rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
   Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
   "Segoe UI Symbol";
 $josefin: "Josefin Sans", "Glacial Indifference", -apple-system,
@@ -225,21 +235,15 @@ div.full-page-wrapper {
       }
 
       @include desktop-width-1 {
-        // border-left: $accent 3px solid;
-
         height: calc(100vh - 161.7px);
         display: flex;
         flex-direction: row;
         overflow-x: initial;
         position: relative;
 
-        // background-color: aqua;
-
         // width: 250px; //todo decide whether to change this to a percentage
 
         @media only screen and (max-height: 829px) {
-          // overflow-y: scroll;
-
           height: 685.5px;
         }
       }
