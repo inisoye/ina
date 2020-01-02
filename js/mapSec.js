@@ -67,37 +67,31 @@ map.on("load", () => {
           return;
         } //* map still not loaded; bail out.
 
-        //* now that the map is loaded, it's safe to query the features:
+        //* now that the map is loaded, it's safe to query the features (into an array):
         let mapFeatures = map.queryRenderedFeatures({ layers: ["areas"] });
 
-        //* create array of tileset features
-        let tileFeatures = mapFeatures.map(eachFeature => ({
-          name: eachFeature.properties.hostStreet,
-          status: eachFeature.properties.status
-        }));
-
-        //* sort both alphabetically arrays by name. idea: https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-        tileFeatures.sort((a, b) =>
-          a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+        // //* sort both alphabetically arrays by name. idea: https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+        mapFeatures.sort((a, b) =>
+          a.properties.hostStreet
+            .toLowerCase()
+            .localeCompare(b.properties.hostStreet.toLowerCase())
         );
         hostStreetsArray.sort((a, b) =>
           a.name.toLowerCase().localeCompare(b.name.toLowerCase())
         );
 
-        //* change status in tile properties
-        for (i = 0; i < tileFeatures.length; i++) {
+        // //* change status in tile properties
+        for (i = 0; i < mapFeatures.length; i++) {
           if (
-            tileFeatures[i].name.toLowerCase() ===
+            mapFeatures[i].properties.hostStreet.toLowerCase() ===
             hostStreetsArray[i].name.toLowerCase()
           ) {
-            tileFeatures[i].status = hostStreetsArray[i].status;
+            mapFeatures[i].properties.status = hostStreetsArray[i].status;
             console.log(hostStreetsArray[i].name.toLowerCase());
           }
         }
 
-        // map.getSource("ina").setData(data);
-
-        //* update no-light alert on tile click
+        // //* update no-light alert on tile click
         map.on("click", e => {
           let areas = map.queryRenderedFeatures(e.point, {
             layers: ["areas"]
@@ -112,7 +106,8 @@ map.on("load", () => {
           }
         });
 
-        console.log(tileFeatures);
+        // console.log(mapFeatures);
+        console.log(mapFeatures);
         console.log(hostStreetsArray);
         map.resize();
 

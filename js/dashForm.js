@@ -25,6 +25,12 @@ let forecastMessage = document.querySelector("div.forecast-message");
 let rankingsMessage = document.querySelector("div.rankings-message");
 
 statusButton.addEventListener("click", function() {
+  statusButton.classList.add("selected");
+  // historyButton.classList.remove("selected");
+  // mapButton.classList.remove("selected");
+  forecastButton.classList.remove("selected");
+  rankingsButton.classList.remove("selected");
+
   collapseButton.style.borderColor = "#1b2429";
   collapseButtonImage.style.filter = "none";
 
@@ -38,6 +44,12 @@ statusButton.addEventListener("click", function() {
 });
 
 historyButton.addEventListener("click", function() {
+  historyButton.classList.add("selected");
+  // statusButton.classList.remove("selected");
+  // mapButton.classList.remove("selected");
+  forecastButton.classList.remove("selected");
+  rankingsButton.classList.remove("selected");
+
   collapseButton.style.borderColor = "#9dbbca";
   collapseButtonImage.style.filter =
     "invert(76%) sepia(0%) saturate(0%) hue-rotate(51deg) brightness(88%) contrast(88%)";
@@ -52,6 +64,12 @@ historyButton.addEventListener("click", function() {
 });
 
 mapButton.addEventListener("click", function() {
+  mapButton.classList.add("selected");
+  // statusButton.classList.remove("selected");
+  // historyButton.classList.remove("selected");
+  forecastButton.classList.remove("selected");
+  rankingsButton.classList.remove("selected");
+
   collapseButton.style.borderColor = "#9dbbca";
   collapseButtonImage.style.filter =
     "invert(76%) sepia(0%) saturate(0%) hue-rotate(51deg) brightness(88%) contrast(88%)";
