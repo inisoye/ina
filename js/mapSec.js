@@ -17,7 +17,7 @@ mapboxgl.accessToken =
 
 var map = new mapboxgl.Map({
   container: "map",
-  style: "mapbox://styles/inisoye/ck4pqx1en1irw1crv8twc5iko"
+  style: "mapbox://styles/inisoye/ck4veka1f2wnd1cr97gr3d2kt"
 });
 
 //* Makes the map fill the container regardless of size
@@ -45,15 +45,6 @@ map.on("load", () => {
     infoOverlay.style.display = "grid";
   });
 
-  let mapFeatures = map.queryRenderedFeatures({ layers: ["areas"] });
-  // var mapFeatures = map.querySourceFeatures("composite", {
-  //   sourceLayer: "streets-1jwgoh"
-  // });
-  console.log(mapFeatures);
-
-  // let blah = map.getSource("composite").vectorLayerIds;
-  // console.log(blah);
-
   fetch("https://checklight.pythonanywhere.com/streets")
     .then(function(response) {
       return response.json();
@@ -70,13 +61,66 @@ map.on("load", () => {
         return streetObject.host.includes(streetObject.name);
       });
 
-      console.log(hostStreetsArray);
+      afterMapLoads = () => {
+        //* ensures map is loadeed before query. Idea: https://stackoverflow.com/questions/50705118/mapbox-queryrenderedfeatures-on-load
+        if (!map.loaded()) {
+          return;
+        } //* map still not loaded; bail out.
 
-      // mapFeatures.forEach((feature) => {
-      //   var prop = feature.properties;
-      //   // console.log(prop);
-      //   console.log(prop.hostStreet);
-      // });
+        //* now that the map is loaded, it's safe to query the features:
+        let mapFeatures = map.queryRenderedFeatures({ layers: ["areas"] });
+
+        //* create array of tileset features
+        let tileFeatures = mapFeatures.map(eachFeature => ({
+          name: eachFeature.properties.hostStreet,
+          status: eachFeature.properties.status
+        }));
+
+        //* sort both alphabetically arrays by name. idea: https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
+        tileFeatures.sort((a, b) =>
+          a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+        );
+        hostStreetsArray.sort((a, b) =>
+          a.name.toLowerCase().localeCompare(b.name.toLowerCase())
+        );
+
+        //* change status in tile properties
+        for (i = 0; i < tileFeatures.length; i++) {
+          if (
+            tileFeatures[i].name.toLowerCase() ===
+            hostStreetsArray[i].name.toLowerCase()
+          ) {
+            tileFeatures[i].status = hostStreetsArray[i].status;
+            console.log(hostStreetsArray[i].name.toLowerCase());
+          }
+        }
+
+        // map.getSource("ina").setData(data);
+
+        //* update no-light alert on tile click
+        map.on("click", e => {
+          let areas = map.queryRenderedFeatures(e.point, {
+            layers: ["areas"]
+          });
+
+          //* update area info
+          let statusUpdate = document.querySelector("p.status-update");
+          if (areas[0].properties.status) {
+            statusUpdate.textContent = "Light On";
+          } else {
+            statusUpdate.textContent = "No Light";
+          }
+        });
+
+        console.log(tileFeatures);
+        console.log(hostStreetsArray);
+        map.resize();
+
+        //* ensures onrender occurs just once
+        map.off("render", afterMapLoads); // remove this handler now that we're done.
+      };
+
+      map.on("render", afterMapLoads);
     })
 
     .catch(function(error) {
