@@ -108,11 +108,9 @@ map.on("load", () => {
 
       paintAreaData = e => {
         //* ensures nothing  happens till map loads completely. Idea: https://stackoverflow.com/questions/50705118/mapbox-queryrenderedfeatures-on-load
-        // if (!map.loaded()) {
-        //   return;
-        // }
-
-        map.resize();
+        if (!map.loaded()) {
+          return;
+        }
 
         let tilesArray = e.features;
 
@@ -203,12 +201,13 @@ map.on("load", () => {
           infoOverlay.style.display = "grid";
         });
 
-        // map.off("render", "area-colours", paintAreaData);
-        
+        map.resize();
+
         //* ensures onrender (below) occurs just a couple of times. itll otherwise keep firing
-        setTimeout(function() {
-          map.off("render", "area-colours", paintAreaData);
-        }, 2000);
+        map.off("render", "area-colours", paintAreaData);
+        // setTimeout(function() {
+        //   map.off("render", "area-colours", paintAreaData);
+        // }, 1000);
       };
 
       map.on("render", "area-colours", paintAreaData);
