@@ -26,8 +26,8 @@ let rankingsMessage = document.querySelector("div.rankings-message");
 
 statusButton.addEventListener("click", function() {
   statusButton.classList.add("selected");
-  // historyButton.classList.remove("selected");
-  // mapButton.classList.remove("selected");
+  historyButton.classList.remove("selected");
+  mapButton.classList.remove("selected");
   forecastButton.classList.remove("selected");
   rankingsButton.classList.remove("selected");
 
@@ -45,8 +45,8 @@ statusButton.addEventListener("click", function() {
 
 historyButton.addEventListener("click", function() {
   historyButton.classList.add("selected");
-  // statusButton.classList.remove("selected");
-  // mapButton.classList.remove("selected");
+  statusButton.classList.remove("selected");
+  mapButton.classList.remove("selected");
   forecastButton.classList.remove("selected");
   rankingsButton.classList.remove("selected");
 
@@ -65,8 +65,8 @@ historyButton.addEventListener("click", function() {
 
 mapButton.addEventListener("click", function() {
   mapButton.classList.add("selected");
-  // statusButton.classList.remove("selected");
-  // historyButton.classList.remove("selected");
+  statusButton.classList.remove("selected");
+  historyButton.classList.remove("selected");
   forecastButton.classList.remove("selected");
   rankingsButton.classList.remove("selected");
 
