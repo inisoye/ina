@@ -251,10 +251,6 @@ h1.preloader-h1 span {
   }
 }
 
-.instr-overlay {
-  display: none;
-}
-
 section.key-overlay {
   padding: 20px 0;
   border-bottom: 0.5px solid #ffc64a;
@@ -385,12 +381,14 @@ section.key-overlay div.light-key-swab {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding-right: 4%;
+  padding: 0 2%;
+  display: none;
 }
 
 @media (min-width: 950px) {
   .info-overlay {
     padding: 0;
+    padding: 0 5%;
     -ms-grid-row: 1;
     -ms-grid-row-span: 1;
     grid-row: 1 / 2;
@@ -464,7 +462,7 @@ section.key-overlay div.light-key-swab {
 
 @media (min-width: 950px) {
   .info-overlay button {
-    font-size: 18px;
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=mapSec.css.map */

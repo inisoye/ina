@@ -41,24 +41,47 @@ map.on("load", () => {
     source: "areas", // the source for the layer (we set it up above)
     sourceLayer: "areasAndData",
 
-    //* match approach to painting: https://stackoverflow.com/questions/46177267/mapbox-layer-fill-color-based-on-text-property?answertab=oldest#tab-top
     paint: {
-      // "fill-color": [
-      //   "match",
-      //   ["get", "status"], // get the property
-      //   0,
-      //   "#1b2429", // if 0 then dark
-      //   1,
-      //   "#ffb005", // if 1 then yellow
-      //   "white" // white otherwise
-      // ]
+      //* match approach to painting: https://stackoverflow.com/questions/46177267/mapbox-layer-fill-color-based-on-text-property?answertab=oldest#tab-top
+      //! match approach not used
 
-      //* if no light paint yellow, paint black if otherwise. status feature-state created
+      //* if light paint yellow, paint black if otherwise. status feature-state created
       "fill-color": [
         "case",
         ["boolean", ["feature-state", "status"], false],
         "#ffb005",
         "#1b2429"
+      ],
+
+      //* idea: https://docs.mapbox.com/mapbox-gl-js/style-spec/#types-function-zoom-property
+      "fill-opacity": {
+        stops: [
+          // zoom is 12 -> zoom will be 1
+          [11, 1],
+          // zoom is 16 -> zoom will be 0.65
+          [16, 0.65]
+        ]
+      }
+    }
+  });
+
+  map.addLayer({
+    id: "area-lines",
+    type: "line",
+    source: "areas",
+    paint: {
+      "line-color": [
+        "case",
+        ["boolean", ["feature-state", "status"], false],
+        "#1b2429",
+        "#ffb005"
+      ],
+
+      "line-width": [
+        "case",
+        ["boolean", ["feature-state", "border"], false],
+        2,
+        0
       ]
     }
   });
@@ -83,13 +106,17 @@ map.on("load", () => {
         a.name.toLowerCase().localeCompare(b.name.toLowerCase())
       );
 
-      console.log(hostStreetsArray);
-
       paintAreaData = e => {
         //* ensures nothing  happens till map loads completely. Idea: https://stackoverflow.com/questions/50705118/mapbox-queryrenderedfeatures-on-load
         if (!map.loaded()) {
+          // fullPageWrapper.style.display = "none";
+          // preloaderContainer.style.display = "block";
+
           return;
         }
+
+        // fullPageWrapper.style.display = "block";
+        // preloaderContainer.style.display = "none";
 
         let tilesArray = e.features;
 
@@ -126,35 +153,66 @@ map.on("load", () => {
               { status: false }
             );
           }
-
-          // tilesArray[i].addEventListener("click", function() {});
-          // console.log(tilesArray[i]);
         }
 
-        console.log(tilesArray);
+        map.on("click", f => {
+          //* creates a box around clicked point on map: https://docs.mapbox.com/mapbox-gl-js/example/queryrenderedfeatures-around-point/
+          var bbox = [
+            [f.point.x - 0.5, f.point.y - 0.5],
+            [f.point.x + 0.5, f.point.y + 0.5]
+          ];
+          var features = map.queryRenderedFeatures(bbox, {
+            layers: ["area-colours"]
+          });
 
-        //* ensures onrender occurs just once. itll otherwise keep firing
-        map.off("render", "area-colours", paintAreaData);
-      };
+          let statusUpdate = document.querySelector("p.status-update");
+          if (features[0].state.status) {
+            statusUpdate.textContent = "Light On";
+          } else {
+            statusUpdate.textContent = "No Light";
+          }
 
-      map.on("click", f => {
-        //* creates a box around clicked point on map
-        var bbox = [
-          [f.point.x - 0.5, f.point.y - 0.5],
-          [f.point.x + 0.5, f.point.y + 0.5]
-        ];
-        var features = map.queryRenderedFeatures(bbox, {
-          layers: ["area-colours"]
+          //* update area info
+          let areaUpdate = document.querySelector("p.area-update");
+          areaUpdate.textContent = features[0].properties.name;
+
+          //* outline clicked card
+          let featureID = features[0].id;
+          map.setFeatureState(
+            { source: "areas", id: featureID },
+            { border: true }
+          );
+
+          setTimeout(function() {
+            map.setFeatureState(
+              { source: "areas", id: featureID },
+              { border: false }
+            );
+          }, 3000);
         });
 
-        console.log(features);
-        let statusUpdate = document.querySelector("p.status-update");
-        if (features[0].properties.status) {
-          statusUpdate.textContent = "Light On";
-        } else {
-          statusUpdate.textContent = "No Light";
-        }
-      });
+        map.on("click", g => {
+          var bbox = [
+            [g.lngLat.lng + 0.005, g.lngLat.lat + 0.005],
+            [g.lngLat.lng - 0.005, g.lngLat.lat - 0.005]
+          ];
+
+          //* zoom to clicked tile
+          map.fitBounds(bbox);
+
+          //* hide instr show info
+          let instrOverlay = document.querySelector("div.instr-overlay");
+          let infoOverlay = document.querySelector("section.info-overlay");
+          instrOverlay.style.display = "none";
+          infoOverlay.style.display = "grid";
+        });
+
+        //* ensures onrender (below) occurs just a couple of times. itll otherwise keep firing
+        map.off("render", "area-colours", paintAreaData);
+        // setTimeout(function() {
+        //   map.off("render", "area-colours", paintAreaData);
+        // }, 1000);
+      };
 
       map.on("render", "area-colours", paintAreaData);
     })
