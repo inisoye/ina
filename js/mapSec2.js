@@ -53,7 +53,7 @@ map.on("load", () => {
       //   "white" // white otherwise
       // ]
 
-      //* if no light paint yellow, paint black if otherwise
+      //* if no light paint yellow, paint black if otherwise. status feature-state created
       "fill-color": [
         "case",
         ["boolean", ["feature-state", "status"], false],
@@ -85,19 +85,19 @@ map.on("load", () => {
 
       console.log(hostStreetsArray);
 
-      sortAreaData = e => {
+      paintAreaData = e => {
         //* ensures nothing  happens till map loads completely. Idea: https://stackoverflow.com/questions/50705118/mapbox-queryrenderedfeatures-on-load
         if (!map.loaded()) {
           return;
         }
 
-        e.features.sort((a, b) =>
+        let tilesArray = e.features;
+
+        tilesArray.sort((a, b) =>
           a.properties.hostStreet
             .toLowerCase()
             .localeCompare(b.properties.hostStreet.toLowerCase())
         );
-
-        let tilesArray = e.features;
 
         for (i = 0; i < tilesArray.length; i++) {
           if (
@@ -105,37 +105,58 @@ map.on("load", () => {
               hostStreetsArray[i].name.toLowerCase() &&
             hostStreetsArray[i].status === 1
           ) {
-            // tilesArray[i].properties.status = 1;
-            let tileID = tilesArray[i].id;
+            tilesArray[i].properties.status = 1;
 
+            let tileID = tilesArray[i].id;
+            //* set status to true if there is light
             map.setFeatureState(
               { source: "areas", id: tileID },
               { status: true }
             );
-            // console.log(tilesArray[i].properties.hostStreet);
-            // console.log(tilesArray[i].properties.status);
           } else if (
             tilesArray[i].properties.hostStreet.toLowerCase() ===
               hostStreetsArray[i].name.toLowerCase() &&
             hostStreetsArray[i].status !== 1
           ) {
-            // tilesArray[i].properties.status = 0;
-            let tileID = tilesArray[i].id;
+            tilesArray[i].properties.status = 0;
 
+            let tileID = tilesArray[i].id;
             map.setFeatureState(
               { source: "areas", id: tileID },
               { status: false }
             );
           }
+
+          // tilesArray[i].addEventListener("click", function() {});
+          // console.log(tilesArray[i]);
         }
 
         console.log(tilesArray);
 
         //* ensures onrender occurs just once. itll otherwise keep firing
-        map.off("render", "area-colours", sortAreaData);
+        map.off("render", "area-colours", paintAreaData);
       };
 
-      map.on("render", "area-colours", sortAreaData);
+      map.on("click", f => {
+        //* creates a box around clicked point on map
+        var bbox = [
+          [f.point.x - 0.5, f.point.y - 0.5],
+          [f.point.x + 0.5, f.point.y + 0.5]
+        ];
+        var features = map.queryRenderedFeatures(bbox, {
+          layers: ["area-colours"]
+        });
+
+        console.log(features);
+        let statusUpdate = document.querySelector("p.status-update");
+        if (features[0].properties.status) {
+          statusUpdate.textContent = "Light On";
+        } else {
+          statusUpdate.textContent = "No Light";
+        }
+      });
+
+      map.on("render", "area-colours", paintAreaData);
     })
 
     .catch(function(error) {
