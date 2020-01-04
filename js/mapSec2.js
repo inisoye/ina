@@ -20,6 +20,8 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/inisoye/ck4veka1f2wnd1cr97gr3d2kt"
 });
 
+map.addControl(new mapboxgl.NavigationControl());
+
 //* Makes the map fill the container regardless of size
 map.on("load", () => {
   map.resize();
@@ -149,6 +151,8 @@ map.on("load", () => {
           }
         }
 
+        map.resize();
+
         map.on("click", f => {
           //* creates a box around clicked point on map: https://docs.mapbox.com/mapbox-gl-js/example/queryrenderedfeatures-around-point/
           var bbox = [
@@ -209,6 +213,8 @@ map.on("load", () => {
         //   map.off("render", "area-colours", paintAreaData);
         // }, 1000);
       };
+
+      map.resize();
 
       map.on("render", "area-colours", paintAreaData);
     })
