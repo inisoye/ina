@@ -20,7 +20,9 @@ var map = new mapboxgl.Map({
   style: "mapbox://styles/inisoye/ck4veka1f2wnd1cr97gr3d2kt"
 });
 
-map.addControl(new mapboxgl.NavigationControl());
+if (matchMedia("(min-width: 950px)").matches) {
+  map.addControl(new mapboxgl.NavigationControl());
+}
 
 //* Makes the map fill the container regardless of size
 map.on("load", () => {
