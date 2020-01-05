@@ -76,7 +76,7 @@ body {
 .ina-timeline-container {
   @include desktop-width-1 {
     height: 280px;
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 85%;
     margin: auto;
 

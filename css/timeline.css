@@ -34,7 +34,7 @@ body {
 @media (min-width: 950px) {
   .ina-timeline-container {
     height: 280px;
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 85%;
     margin: auto;
   }

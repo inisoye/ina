@@ -1,3 +1,4 @@
+//* dash-buttons
 let mapContainer = document.querySelector("div.map-container");
 
 mapButton.addEventListener("click", function() {
@@ -10,6 +11,31 @@ forecastButton.addEventListener("click", function() {
 
 rankingsButton.addEventListener("click", function() {
   mapContainer.style.display = "none";
+});
+
+//* view-streets modal control
+let openStreets = document.querySelector("button.view-streets");
+let closeStreets = document.querySelector("button.close-streets-modal");
+let streetsModal = document.querySelector("div.modal-streets-list"); //* actually the overlay
+let streetsModalInner = document.querySelector("div.modal-inner");
+
+openStreets.addEventListener("click", () => {
+  streetsModal.style.display = "block";
+});
+closeStreets.addEventListener("click", () => {
+  streetsModal.style.display = "none";
+});
+
+//* click outside inner modal to close
+document.addEventListener("click", event => {
+  let isClickInsideModal = streetsModal.contains(event.target);
+  let isModalOpen = streetsModal.style.display === "block";
+  let isClickInsideModalInner = streetsModalInner.contains(event.target);
+
+  //* if click within modal overlay but not within the inner modal and the modal is open, hide.
+  if (isClickInsideModal && isModalOpen && !isClickInsideModalInner) {
+    streetsModal.style.display = "none";
+  }
 });
 
 mapboxgl.accessToken =
@@ -106,6 +132,7 @@ map.on("load", () => {
         return streetObject.host.includes(streetObject.name);
       });
 
+      //* sort array alphabetically based on street names
       hostStreetsArray.sort((a, b) =>
         a.name.toLowerCase().localeCompare(b.name.toLowerCase())
       );
@@ -118,6 +145,7 @@ map.on("load", () => {
 
         let tilesArray = e.features;
 
+        //* sort array of tiles alphabetically as well to match order of "hostStreetsArray"
         tilesArray.sort((a, b) =>
           a.properties.hostStreet
             .toLowerCase()
@@ -176,6 +204,36 @@ map.on("load", () => {
           let areaUpdate = document.querySelector("p.area-update");
           areaUpdate.textContent = features[0].properties.name;
 
+          //* update area streets
+          let clickedAreaStreets = streetsArray.filter(streetObject => {
+            return streetObject.host
+              .toLowerCase()
+              .includes(features[0].properties.hostStreet.toLowerCase());
+          });
+
+          let clickedAreaStreetsArray = clickedAreaStreets.map(
+            eachStreet => `${eachStreet.name}`
+          );
+
+          let listContainer = document.querySelector(".streets-list-container");
+
+          //* empty container on each click - without innerHTML
+          while (listContainer.firstChild)
+            listContainer.removeChild(listContainer.firstChild);
+
+          for (i = 0; i < clickedAreaStreetsArray.length; i++) {
+            let newListItem = document.createElement("li");
+
+            newListItem.classList.add("street-item");
+
+            newListItem.insertAdjacentHTML(
+              "beforeend",
+              `${clickedAreaStreetsArray[i]}`
+            );
+
+            listContainer.appendChild(newListItem);
+          }
+
           //* outline clicked card
           let featureID = features[0].id;
           map.setFeatureState(
@@ -191,6 +249,7 @@ map.on("load", () => {
           }, 3000);
         });
 
+        //* function zooms into card
         map.on("click", g => {
           var bbox = [
             [g.lngLat.lng + 0.005, g.lngLat.lat + 0.005],

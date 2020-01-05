@@ -70,7 +70,10 @@ $desktop-width-1: 950px;
   font-family: $ibm-sans;
   color: $dark;
   //   border-color: $dark;
-  list-style-type: none;
+
+  ul {
+    list-style-type: none;
+  }
 }
 
 body {
@@ -859,7 +862,7 @@ div.full-page-wrapper {
         div.cards-container {
           @include desktop-width-1 {
             height: 40vh;
-            overflow-y: scroll;
+            overflow-y: auto;
 
             // padding-top: 10px;
             // padding-bottom: 15px;

@@ -72,7 +72,7 @@ div.full-page-wrapper main {
       width: 137px;
       margin-left: 5.2%;
       position: relative;
-      z-index: 50;
+      z-index: 1;
     }
 
     .map-container {
@@ -416,6 +416,92 @@ section.key-overlay {
 
     @include desktop-width-1 {
       font-size: 20px;
+    }
+  }
+}
+
+.modal-streets-list {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+  list-style-type: decimal;
+  list-style-position: inside;
+
+  .modal-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $lighter;
+    padding: 94px 30px 37.5px;
+    width: 319px;
+
+    border-radius: 4px;
+
+    @media only screen and (max-width: 372px) {
+      width: 80%;
+      padding: 20% 10% 15%;
+    }
+
+    ::-webkit-scrollbar {
+      width: 7px;
+      background-color: $accent-2;
+    }
+
+    ::-webkit-scrollbar-track {
+      background-color: $accent-2;
+      border: 0.5px solid $dark;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: $dark;
+    }
+
+    button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      background: $lighter;
+      border-radius: 0 4px 0 10px;
+      border: 0;
+      border-left: 1px solid $dark;
+      border-bottom: 1px solid $dark;
+      height: 35px;
+      width: 70px;
+      font-size: 13.5px;
+      cursor: pointer;
+
+      transition: all .5s;
+
+      &:hover {
+        background: $dark;
+        color: $lighter-2;
+      }
+    }
+
+    h3 {
+      margin-bottom: 10px;
+      padding-bottom: 1px;
+      border-bottom: 2px solid $accent;
+      font-size: 18px;
+      // text-align: right;
+    }
+
+    .streets-list-container {
+      height: 200px;
+      overflow-y: auto;
+    }
+
+    .street-item {
+      font-size: 13px;
+      padding: 7px 0;
     }
   }
 }

@@ -40,7 +40,7 @@ body {
     width: 137px;
     margin-left: 5.2%;
     position: relative;
-    z-index: 50;
+    z-index: 1;
   }
   div.full-page-wrapper main .map-container {
     -ms-grid-row: 1;
@@ -467,5 +467,92 @@ section.key-overlay div.light-key-swab {
   .info-overlay button {
     font-size: 20px;
   }
+}
+
+.modal-streets-list {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.6);
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+
+.modal-streets-list .modal-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #eaf3f8;
+  padding: 94px 30px 37.5px;
+  width: 319px;
+  border-radius: 4px;
+}
+
+@media only screen and (max-width: 372px) {
+  .modal-streets-list .modal-inner {
+    width: 80%;
+    padding: 20% 10% 15%;
+  }
+}
+
+.modal-streets-list .modal-inner ::-webkit-scrollbar {
+  width: 7px;
+  background-color: #ffffff;
+}
+
+.modal-streets-list .modal-inner ::-webkit-scrollbar-track {
+  background-color: #ffffff;
+  border: 0.5px solid #212c30;
+}
+
+.modal-streets-list .modal-inner ::-webkit-scrollbar-thumb {
+  background-color: #212c30;
+}
+
+.modal-streets-list .modal-inner button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #eaf3f8;
+  border-radius: 0 4px 0 10px;
+  border: 0;
+  border-left: 1px solid #212c30;
+  border-bottom: 1px solid #212c30;
+  height: 35px;
+  width: 70px;
+  font-size: 13.5px;
+  cursor: pointer;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.modal-streets-list .modal-inner button:hover {
+  background: #212c30;
+  color: #f4fbfd;
+}
+
+.modal-streets-list .modal-inner h3 {
+  margin-bottom: 10px;
+  padding-bottom: 1px;
+  border-bottom: 2px solid #ffc64a;
+  font-size: 18px;
+}
+
+.modal-streets-list .modal-inner .streets-list-container {
+  height: 200px;
+  overflow-y: auto;
+}
+
+.modal-streets-list .modal-inner .street-item {
+  font-size: 13px;
+  padding: 7px 0;
 }
 /*# sourceMappingURL=mapSec.css.map */
