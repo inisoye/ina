@@ -470,7 +470,6 @@ section.key-overlay div.light-key-swab {
 }
 
 .modal-streets-list {
-  display: none;
   position: fixed;
   z-index: 2;
   left: 0;
@@ -490,7 +489,7 @@ section.key-overlay div.light-key-swab {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: #eaf3f8;
+  background-color: #d0d9d8;
   padding: 94px 30px 37.5px;
   width: 319px;
   border-radius: 4px;
@@ -521,7 +520,7 @@ section.key-overlay div.light-key-swab {
   position: absolute;
   top: 0;
   right: 0;
-  background: #eaf3f8;
+  background: #e1e5e9;
   border-radius: 0 4px 0 10px;
   border: 0;
   border-left: 1px solid #212c30;
@@ -530,8 +529,8 @@ section.key-overlay div.light-key-swab {
   width: 70px;
   font-size: 13.5px;
   cursor: pointer;
-  -webkit-transition: all .5s;
-  transition: all .5s;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
 }
 
 .modal-streets-list .modal-inner button:hover {
@@ -542,7 +541,7 @@ section.key-overlay div.light-key-swab {
 .modal-streets-list .modal-inner h3 {
   margin-bottom: 10px;
   padding-bottom: 1px;
-  border-bottom: 2px solid #ffc64a;
+  border-bottom: 2px solid #ffb005;
   font-size: 18px;
 }
 
