@@ -470,6 +470,7 @@ section.key-overlay div.light-key-swab {
 }
 
 .modal-streets-list {
+  display: none;
   position: fixed;
   z-index: 2;
   left: 0;
