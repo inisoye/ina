@@ -690,7 +690,7 @@ div.full-page-wrapper {
             background-color: $lighter-2;
             color: $dark;
 
-            //* added to remove default mobile form box-shadow inset
+            //* added to remove default mobile (ios) form box-shadow inset
             -webkit-appearance: none;
 
             &:focus {

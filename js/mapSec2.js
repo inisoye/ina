@@ -234,6 +234,25 @@ map.on("load", () => {
             listContainer.appendChild(newListItem);
           }
 
+          //* filter goes here
+          //* create street filter functionality
+          let streetFilter = document.querySelector("input.streets-filter");
+          let streetItems = document.querySelectorAll("li.street-item");
+
+          streetFilter.onkeyup = () => {
+            for (i = 0; i < streetItems.length; i++) {
+              if (
+                streetItems[i].innerHTML
+                  .toLowerCase()
+                  .includes(streetFilter.value.toLowerCase())
+              ) {
+                streetItems[i].style.display = "";
+              } else {
+                streetItems[i].style.display = "none";
+              }
+            }
+          };
+
           //* outline clicked card
           let featureID = features[0].id;
           map.setFeatureState(
