@@ -62,7 +62,7 @@ h1.preloader-h1 span {
 }
 
 .ina-timeline-container {
-  height: 1131.4px;
+  height: calc(1131.4px-1em);
   overflow-y: auto;
   border-top: 5px #212c30 solid;
   border-bottom: 5px #212c30 solid;
@@ -105,6 +105,10 @@ h1.preloader-h1 span {
 
 .timeline-with-title ::-webkit-scrollbar-thumb {
   background-color: #212c30;
+}
+
+.timeline {
+  padding-bottom: 0;
 }
 
 @media (min-width: 950px) {
@@ -270,6 +274,7 @@ h1.preloader-h1 span {
   font-weight: 500;
   color: #6d8faf;
   opacity: 0.7;
+  background-color: #f4fbfd;
 }
 
 @media (min-width: 950px) {

@@ -87,7 +87,7 @@ h1.preloader-h1 span {
 
 //! Changes to dashform timeline styling begin
 .ina-timeline-container {
-  height: 1131.4px;
+  height: calc(1131.4px-1em);
   overflow-y: auto;
   border-top: 5px $dark solid;
   border-bottom: 5px $dark solid;
@@ -127,6 +127,7 @@ h1.preloader-h1 span {
 }
 
 .timeline {
+  padding-bottom: 0;
   @include desktop-width-1 {
     background-color: $bg-grey-2;
     width: 97%;
@@ -280,6 +281,7 @@ h1.preloader-h1 span {
     font-weight: 500;
     color: $text-light;
     opacity: 0.7;
+    background-color: $lighter-2;
 
     @include desktop-width-1 {
       padding: 0;
