@@ -8,14 +8,6 @@ historyButton.addEventListener("click", function() {
   }
 });
 
-// mapButton.addEventListener("click", function() {
-//   historyChartsWrapper.style.display = "none";
-// });
-
-forecastButton.addEventListener("click", function() {
-  historyChartsWrapper.style.display = "none";
-});
-
 rankingsButton.addEventListener("click", function() {
   historyChartsWrapper.style.display = "none";
 });
@@ -43,53 +35,110 @@ let thirdLabel = document.querySelector("label.label-light");
 
 let chartContainers = document.querySelectorAll("section.pie-bar-line");
 
-//* Removes transparency of charts when first input is added
-let makeChartsVisible = () => {
-  if (firstInput.value) {
-    for (let i = 0; i < chartContainers.length; i++) {
-      chartContainers[i].classList.add("pie-bar-line-visible");
-    }
-  }
+//* function that expands input label to alert user
+let labelAlert = label => {
+  label.style.fontWeight = "700";
+  label.style.fontSize = "13px";
+  label.style.color = "#e79e00";
+
+  setTimeout(function() {
+    label.style.fontWeight = "500";
+    label.style.fontSize = "10px";
+    label.style.color = "#212c30";
+  }, 500);
 };
-firstPlotButton.addEventListener("click", makeChartsVisible);
 
-//* alerts if first input is unfilled and second button is clicked
-let firstLocationFeedback = () => {
-  for (let i = 0; i < secondThirdPlotButtons.length; i++) {
-    secondThirdPlotButtons[i].addEventListener("click", () => {
-      if (!firstInput.value) {
-        firstLabel.style.fontWeight = "700";
-        firstLabel.style.fontSize = "13px";
-        firstLabel.style.color = "#e79e00";
-
-        setTimeout(function() {
-          firstLabel.style.fontWeight = "500";
-          firstLabel.style.fontSize = "11px";
-          firstLabel.style.color = "#212c30";
-        }, 500);
-      }
-    });
-  }
-};
-firstLocationFeedback();
-
-//* alerts if second input is unfilled and third button is clicked
-let secondLocationFeedback = () => {
-  thirdPlotButton.addEventListener("click", () => {
-    if (!secondInput.value) {
-      secondLabel.style.fontWeight = "700";
-      secondLabel.style.fontSize = "13px";
-      secondLabel.style.color = "#212c30";
-
-      setTimeout(function() {
-        secondLabel.style.fontWeight = "500";
-        secondLabel.style.fontSize = "11px";
-        secondLabel.style.color = "#e79e00";
-      }, 500);
+//* alerts if first input is unfilled and second (or third) button is clicked
+let firstLocationFeedback = button => {
+  button.addEventListener("click", () => {
+    if (!firstInput.value) {
+      labelAlert(firstLabel);
     }
   });
 };
-secondLocationFeedback();
+firstLocationFeedback(firstPlotButton);
+firstLocationFeedback(secondPlotButton);
+firstLocationFeedback(thirdPlotButton);
+
+//* alerts if second input is unfilled and third (or second) button is clicked
+let secondLocationFeedback = button => {
+  button.addEventListener("click", () => {
+    if (!secondInput.value) {
+      labelAlert(secondLabel);
+
+      setTimeout(function() {
+        secondLabel.style.color = "#e79e00";
+      }, 600);
+    }
+  });
+};
+secondLocationFeedback(secondPlotButton);
+secondLocationFeedback(thirdPlotButton);
+
+let thirdLocationFeedback = button => {
+  button.addEventListener("click", () => {
+    if (!thirdInput.value) {
+      labelAlert(thirdLabel);
+
+      setTimeout(function() {
+        thirdLabel.style.color = "#6d8faf";
+      }, 600);
+    }
+  });
+};
+thirdLocationFeedback(thirdPlotButton);
+
+fetch("https://checklight.pythonanywhere.com/streets")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(data => {
+    //* put streets from api in array
+    let streetsArray = data.streets.map(
+      eachStreet => `${eachStreet.name}, ${eachStreet.lga}, ${eachStreet.state}`
+    );
+
+    //* Removes transparency of charts when relevant inputs have been added
+    let makeChartsVisible = (button, input) => {
+      button.addEventListener("click", () => {
+        if (input.value && streetsArray.includes(input.value)) {
+          for (let i = 0; i < chartContainers.length; i++) {
+            chartContainers[i].classList.add("pie-bar-line-visible");
+          }
+        }
+      });
+    };
+
+    makeChartsVisible(firstPlotButton, firstInput);
+    makeChartsVisible(secondPlotButton, secondInput);
+    makeChartsVisible(thirdPlotButton, thirdInput);
+
+    let labelWrongInputs = (button, input, label, labelColour) => {
+      button.addEventListener("click", () => {
+        if (input.value && !streetsArray.includes(input.value)) {
+          label.textContent =
+            "Unknown Location. Try using dropdown suggestions";
+          label.style.color = "#b83939";
+          input.style.borderBottom = "#b83939 1px solid";
+          label.classList.add("transition-all-3s");
+
+          setTimeout(function() {
+            label.textContent = "enter your location";
+            label.style.color = labelColour;
+            input.style.borderBottom = "#6d8faf 1px solid";
+            label.classList.remove("transition-all-3s");
+          }, 3000);
+        }
+      });
+    };
+
+    labelWrongInputs(firstPlotButton, firstInput, firstLabel, "#212c30");
+    labelWrongInputs(secondPlotButton, secondInput, secondLabel, "#e79e00");
+    labelWrongInputs(thirdPlotButton, thirdInput, thirdLabel, "#6d8faf");
+  })
+  .catch(function(error) {
+    console.log(error);
+  });
 
 //* shows second input field when first is filled
 let reduceSecondButtonShowInput = () => {

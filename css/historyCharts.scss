@@ -172,6 +172,10 @@ h1.preloader-h1 span {
   }
 }
 
+.transition-all-3s {
+  transition: color .4s linear;
+}
+
 .charts-input {
   width: 77%;
   height: 34px;
@@ -215,7 +219,7 @@ h1.preloader-h1 span {
 // }
 
 .plot-button {
-  height: 34px;
+  height: 35px;
   width: 18%;
   margin-left: 1%;
   background-color: $bg-grey;

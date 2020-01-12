@@ -89,22 +89,6 @@ div.full-page-wrapper main {
   }
 }
 
-// .dash-bar-and-selector {
-//   &.dash-desktop {
-//     display: none;
-//   }
-
-//   @include desktop-width-1 {
-//     &.dash-mobile {
-//       display: none;
-//     }
-
-//     &.dash-desktop {
-//       display: flex;
-//     }
-//   }
-// }
-
 //* For preloader
 .preloader-container {
   background: $text-light;
@@ -127,15 +111,15 @@ h1.preloader-h1 span {
 }
 
 .let1 {
-  animation: letterChange 0.8s linear infinite;
+  animation: letterChange 0.9s linear infinite;
 }
 
 .let2 {
-  animation: letterChange 0.8s linear 0.4s infinite;
+  animation: letterChange 0.9s linear 0.4s infinite;
 }
 
 .let3 {
-  animation: letterChange 0.8s linear 0.8s infinite;
+  animation: letterChange 0.9s linear 0.8s infinite;
 }
 
 .let4 {
@@ -216,7 +200,7 @@ h1.preloader-h1 span {
 }
 
 .instr-overlay {
-  padding: 20px 0;
+  padding: 20px 10%;
   border-bottom: 0.5px solid $accent;
 
   @include desktop-width-1 {
@@ -231,19 +215,14 @@ h1.preloader-h1 span {
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 21px;
     font-weight: 600;
-    text-transform: lowercase;
 
     @include desktop-width-1 {
       font-size: 30px;
     }
   }
 }
-
-// .instr-overlay {
-//   // display: none;
-// }
 
 section.key-overlay {
   padding: 20px 0;
@@ -471,8 +450,8 @@ section.key-overlay {
       background: $lighter-2;
       border-radius: 0 4px 0 10px;
       border: 0;
-      border-left: 1px solid $text-light;
-      border-bottom: 1px solid $text-light;
+      // border-left: 1px solid $text-light;
+      // border-bottom: 1px solid $text-light;
       color: $text-light;
       height: 35px;
       width: 70px;
@@ -510,6 +489,10 @@ section.key-overlay {
 
       &:focus {
         border: 1px solid $text-light;
+      }
+
+      &::placeholder {
+        color: $text-light;
       }
     }
 

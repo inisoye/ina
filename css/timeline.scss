@@ -103,7 +103,6 @@ body {
 
   background: $light;
   color: rgb(50, 50, 50);
-  font-family: "IBM Plex Sans", sans-serif;
   font-size: 105%;
   line-height: 1.6em;
 
@@ -270,7 +269,7 @@ body {
   }
   .flag {
     font-size: 0.93em;
-    font-family: $metropolis, sans-serif;
+    // font-family: $metropolis;
 
     position: relative;
     display: inline;
@@ -326,7 +325,7 @@ body {
   }
   .time {
     display: inline-block;
-    padding: 4px 6px;
+    padding: 4px 12px;
     background: white;
 
     border-radius: 5px;
@@ -356,7 +355,7 @@ body {
     background: white;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
     z-index: 15;
-    width: 210px;
+    max-width: 210px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 5px;

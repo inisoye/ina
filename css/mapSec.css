@@ -100,18 +100,18 @@ h1.preloader-h1 span {
 }
 
 .let1 {
-  -webkit-animation: letterChange 0.8s linear infinite;
-          animation: letterChange 0.8s linear infinite;
+  -webkit-animation: letterChange 0.9s linear infinite;
+          animation: letterChange 0.9s linear infinite;
 }
 
 .let2 {
-  -webkit-animation: letterChange 0.8s linear 0.4s infinite;
-          animation: letterChange 0.8s linear 0.4s infinite;
+  -webkit-animation: letterChange 0.9s linear 0.4s infinite;
+          animation: letterChange 0.9s linear 0.4s infinite;
 }
 
 .let3 {
-  -webkit-animation: letterChange 0.8s linear 0.8s infinite;
-          animation: letterChange 0.8s linear 0.8s infinite;
+  -webkit-animation: letterChange 0.9s linear 0.8s infinite;
+          animation: letterChange 0.9s linear 0.8s infinite;
 }
 
 .let4 {
@@ -218,7 +218,7 @@ h1.preloader-h1 span {
 }
 
 .instr-overlay {
-  padding: 20px 0;
+  padding: 20px 10%;
   border-bottom: 0.5px solid #ffc64a;
 }
 
@@ -243,9 +243,8 @@ h1.preloader-h1 span {
 }
 
 .instr-overlay h3 {
-  font-size: 16px;
+  font-size: 21px;
   font-weight: 600;
-  text-transform: lowercase;
 }
 
 @media (min-width: 950px) {
@@ -524,8 +523,6 @@ section.key-overlay div.light-key-swab {
   background: #f4fbfd;
   border-radius: 0 4px 0 10px;
   border: 0;
-  border-left: 1px solid #6d8faf;
-  border-bottom: 1px solid #6d8faf;
   color: #6d8faf;
   height: 35px;
   width: 70px;
@@ -562,6 +559,22 @@ section.key-overlay div.light-key-swab {
 
 .modal-streets-list .modal-inner input:focus {
   border: 1px solid #6d8faf;
+}
+
+.modal-streets-list .modal-inner input::-webkit-input-placeholder {
+  color: #6d8faf;
+}
+
+.modal-streets-list .modal-inner input:-ms-input-placeholder {
+  color: #6d8faf;
+}
+
+.modal-streets-list .modal-inner input::-ms-input-placeholder {
+  color: #6d8faf;
+}
+
+.modal-streets-list .modal-inner input::placeholder {
+  color: #6d8faf;
 }
 
 .modal-streets-list .modal-inner .streets-list-container {

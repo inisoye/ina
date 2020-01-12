@@ -5,10 +5,6 @@ mapButton.addEventListener("click", function() {
   mapContainer.style.display = "grid";
 });
 
-forecastButton.addEventListener("click", function() {
-  mapContainer.style.display = "none";
-});
-
 rankingsButton.addEventListener("click", function() {
   mapContainer.style.display = "none";
 });

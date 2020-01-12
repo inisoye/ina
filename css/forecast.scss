@@ -1,0 +1,796 @@
+$ibm-sans: rubik, "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+  Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+$josefin: "Josefin Sans", "Glacial Indifference", "Glacial Indifference",
+  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+  sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$metropolis: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+  Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+  "Segoe UI Symbol";
+
+$dark: #1b2429;
+$dark: #212c30;
+// $dark: #1c2232;
+$black: #1b2429;
+$footer: #d0d9d8;
+$light: #e1e5e9;
+$link-color: #1b2429;
+// $light: #e4e8ec;
+$lighter: #eaf3f8;
+$lighter-2: #f4fbfd;
+$bg-grey: #c2ced4;
+$bg-grey-2: #d3d9df;
+$light-outline: #cadbdf;
+$text-light: #6d8faf;
+
+$text-light-2: #1d354b;
+$text-light-3: #7390ac;
+$accent: #ffc64a;
+$accent-dark: #e79e00;
+$accent-2: #ffffff;
+
+$desktop-width-1: 950px;
+
+$green: #379c6a;
+$orange: #ecae7c;
+$red: #d84c4c;
+
+@mixin desktop-width-1 {
+  @media (min-width: #{$desktop-width-1}) {
+    @content;
+  }
+}
+
+body {
+  font-family: $ibm-sans;
+}
+
+//* For preloader
+.preloader-container {
+  background: $orange;
+  background: #ffd271;
+}
+
+h1.preloader-h1 span {
+  color: $dark;
+}
+
+@keyframes letterChange {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-15px) translateX(15px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.let1 {
+  animation: letterChange 0.9s linear infinite;
+}
+
+.let2 {
+  animation: letterChange 0.9s linear 0.4s infinite;
+}
+
+.let3 {
+  animation: letterChange 0.9s linear 0.8s infinite;
+}
+
+.let4 {
+  animation: letterChange 0.8s linear 1.2s infinite;
+}
+
+//* Preloader ends
+
+//! Changes to dashform timeline styling begin
+.ina-timeline-container {
+  height: 1131.4px;
+  overflow-y: auto;
+  border-top: 5px $dark solid;
+  border-bottom: 5px $dark solid;
+  width: 260px;
+  margin: 0 auto;
+  @include desktop-width-1 {
+    height: 280px;
+    width: 100%;
+    margin: auto;
+
+    border: 0;
+    background-color: $light;
+  }
+}
+
+.timeline-title {
+  text-align: center;
+}
+
+.timeline-with-title {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    background-color: $accent-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: $accent-2;
+    border: 0.5px solid $dark;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: $dark;
+  }
+}
+
+.timeline {
+  @include desktop-width-1 {
+    background-color: $bg-grey-2;
+    width: 97%;
+    margin-right: auto;
+    margin-left: 0;
+  }
+}
+
+.direction-l {
+  .status-wrapper {
+    float: left;
+    margin-right: 1px;
+    @media (max-width: 7500px) {
+      float: none;
+      margin-right: none;
+      margin-top: 3px;
+    }
+  }
+}
+
+.direction-r {
+  .status-wrapper {
+    float: right;
+    margin-left: 1px;
+    @media (max-width: 7500px) {
+      float: none;
+      margin-right: none;
+      margin-top: 3px;
+    }
+  }
+}
+
+.flag-wrapper {
+  .flag {
+    font-family: $ibm-sans;
+  }
+}
+
+.status-wrapper {
+  display: inline;
+  line-height: 1em;
+  font-size: 0.8em;
+  color: $link-color;
+  vertical-align: middle;
+  @media (max-width: 7500px) {
+    display: block;
+    position: relative;
+    margin: 4px 0 0 0;
+    z-index: 14;
+  }
+  .status {
+    display: inline-block;
+    padding: 4px 12px;
+    background: white;
+
+    border-radius: 5px;
+
+    @media (max-width: 7500px) {
+      border-radius: 5px;
+    }
+  }
+}
+
+.desc {
+  margin: 1em 0.75em 0 0;
+  font-size: 0.75em;
+
+  line-height: 1.5em;
+
+  &.high {
+    background-color: $green;
+
+    span {
+      color: $accent-2;
+    }
+  }
+  &.medium {
+    background-color: $orange;
+
+    span {
+      color: $dark;
+    }
+  }
+  &.low {
+    background-color: $red;
+
+    span {
+      color: $accent-2;
+    }
+  }
+
+  span {
+    display: block;
+  }
+
+  @media (max-width: 7500px) {
+    position: relative;
+    margin: 1em 1em 0 1em;
+    margin-top: 2px;
+    padding: 5px;
+    background: white;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+    z-index: 15;
+    max-width: 190px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+  }
+}
+
+//* my additions
+.direction-l {
+  .status {
+    background-color: $dark;
+    color: #fff;
+  }
+}
+//! Changes to dashform timeline styling end
+
+.hide {
+  display: none;
+}
+
+.forecast-wrapper {
+  margin-top: 32px;
+  padding: 0 9%;
+
+  @include desktop-width-1 {
+    width: 100%;
+    margin: 0 0 0 10.5%;
+    // margin: 0 0 0 5%;
+    padding: 0;
+  }
+}
+
+.predict-nav {
+  width: 100%;
+  font-size: 0; //*Removes automatic gap between buttons
+  border-radius: 4px;
+
+  @include desktop-width-1 {
+    width: 332px;
+    margin-left: auto;
+  }
+
+  button {
+    width: 50%;
+    border: 0;
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: 500;
+    color: $text-light;
+    opacity: 0.7;
+
+    @include desktop-width-1 {
+      padding: 0;
+      text-align: left;
+      font-size: 22px;
+      font-weight: 700;
+      background-color: transparent;
+    }
+
+    &.predict-light-button {
+      border-right: solid 0.5px $dark;
+      border-radius: 4px 0 0 4px;
+
+      @include desktop-width-1 {
+        border-right: solid 1px $dark;
+        padding-right: 30px;
+        width: 170px;
+
+        position: relative;
+        &:hover,
+        &:focus {
+          outline: 0;
+          &:after {
+            content: "";
+            background: $accent;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 140px;
+            height: 4px;
+          }
+        }
+      }
+    }
+    &.predict-fuel-button {
+      border-left: solid 0.5px $dark;
+      border-radius: 0 4px 4px 0;
+
+      @include desktop-width-1 {
+        border-left: solid 1px $dark;
+        padding-left: 30px;
+        width: 162px;
+
+        position: relative;
+        &:hover,
+        &:focus {
+          outline: 0;
+          &:after {
+            content: "";
+            background: $accent;
+            margin-left: 30px;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 132px;
+            height: 4px;
+          }
+        }
+      }
+    }
+
+    &.selected {
+      background-color: $bg-grey;
+      color: $dark;
+      opacity: 1;
+
+      @include desktop-width-1 {
+        background-color: transparent;
+
+        &:after {
+          content: "";
+          background: $accent;
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 140px;
+          height: 4px;
+        }
+
+        &.predict-fuel-button {
+          &:after {
+            margin-left: 30px;
+            width: 132px;
+          }
+        }
+      }
+    }
+  }
+}
+
+//! Added to make both sections have the same height on desktop
+.predict-light {
+  @include desktop-width-1 {
+    padding-bottom: 18px;
+  }
+}
+
+.sect-descr {
+  font-family: $metropolis;
+  color: $text-light-2;
+  font-size: 17px;
+  font-weight: 500;
+  margin-bottom: 30px;
+  margin-top: 45px;
+  text-align: center;
+
+  @include desktop-width-1 {
+    text-align: left;
+
+    &:first-child {
+      margin-top: 20px;
+    }
+
+    &.more-details {
+      margin-top: 0;
+    }
+  }
+}
+
+.light-form,
+.fuel-form {
+  font-size: 0; //*Removes automatic gap between buttons
+  margin-top: 8px;
+}
+
+.input-label {
+  margin-bottom: 1px;
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: $dark;
+
+  padding-left: 18px;
+  text-align: left;
+
+  transition: all 0.5s ease;
+
+  @include desktop-width-1 {
+    font-size: 12px;
+  }
+}
+
+.location {
+  width: 77%;
+  height: 34px;
+  font-size: 13px;
+  font-family: $ibm-sans;
+  font-weight: 500;
+  box-shadow: none;
+  border: 0;
+  border-radius: 0px;
+  border: 0.5px solid $footer;
+  border-bottom: 1px solid $text-light;
+  // border-top: 0.5px solid $accent;
+  outline: 0;
+  padding-left: 18px;
+  text-align: left;
+  background-color: $lighter-2;
+  color: $dark;
+
+  //* added to remove default mobile form box-shadow inset
+  -webkit-appearance: none;
+
+  @include desktop-width-1 {
+    height: 40px;
+    width: 63%;
+    font-size: 15.5px;
+    padding-left: 30px;
+    text-align: left;
+  }
+
+  &:focus {
+    border: 0.5px solid $light-outline;
+    // border-top: 0.5px solid $bg-grey;
+    border-bottom: 1px solid $dark;
+    background-color: $accent-2;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 14px;
+    color: $text-light;
+  }
+}
+
+.plot-button {
+  height: 34.5px;
+  width: 22%;
+  margin-left: 1%;
+  background-color: $dark;
+  color: $accent-2;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include desktop-width-1 {
+    height: 40px;
+    font-size: 15.5px;
+    width: 15%;
+  }
+}
+
+hr.divider {
+  border: none;
+  border-top: $bg-grey solid 0.5px;
+  margin: 40px 0;
+}
+
+.timeline-opacity {
+  opacity: 0.2;
+  transition: opacity 1.5s ease;
+}
+
+.timeline-and-keys {
+  @include desktop-width-1 {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-rows: auto;
+    align-items: center;
+    justify-content: start;
+  }
+}
+
+.keys {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 40px;
+
+  @include desktop-width-1 {
+    margin-bottom: 0;
+    margin-left: 40%;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+
+    flex-direction: column;
+    align-items: start;
+    align-self: middle;
+  }
+}
+
+.status-key,
+.accuracy-key {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h4 {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100%;
+    text-align: left;
+  }
+
+  .light-section,
+  .second-third-swab {
+    margin-top: 8px;
+  }
+
+  .label-swab {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    width: 91px;
+
+    &.accu {
+      width: 145px;
+    }
+
+    .swab {
+      border-radius: 3px;
+      width: 33px;
+      height: 13px;
+
+      margin-right: 8px;
+
+      -moz-box-shadow: 3px 3px 3px 3px rgba(32, 32, 32, 0.07);
+      box-shadow: 3px 3px 3px 3px rgba(32, 32, 32, 0.07);
+    }
+
+    p {
+      font-size: 12px;
+      // color: $text-light-2;
+    }
+  }
+
+  .no-light-key-swab {
+    background-color: $black;
+  }
+
+  .light-key-swab {
+    background-color: $accent-2;
+    border: 0.5px solid $light-outline;
+  }
+
+  .high-key-swab {
+    background-color: $green;
+  }
+  .medium-key-swab {
+    background-color: $orange;
+  }
+  .low-key-swab {
+    background-color: $red;
+  }
+}
+
+.status-key {
+  @include desktop-width-1 {
+    margin-top: 50px;
+    margin-bottom: 0;
+  }
+}
+
+.fuel-more-details {
+  opacity: 0.2;
+  transition: opacity 1.5s ease;
+}
+
+.fuel-questions {
+  width: 100%;
+  * {
+    font-size: 14px;
+  }
+
+  li {
+    margin-bottom: 30px;
+    width: 100%;
+
+    @include desktop-width-1 {
+      margin-bottom: 14px;
+    }
+  }
+}
+
+.fuel-response {
+  display: block;
+  width: 100%;
+  margin-top: 10px;
+
+  * {
+    text-align: center;
+  }
+
+  input[type="number"],
+  select {
+    height: 30px;
+    width: 61.5px;
+    margin-right: 2%;
+    text-align: center;
+    text-align-last: center;
+    padding-right: 5px;
+
+    border: 0;
+    border-radius: 0px;
+    border: 0.5px solid $footer;
+    border-bottom: 1px solid $text-light;
+    background-color: $lighter-2;
+
+    //* added to remove default mobile form box-shadow inset
+    -webkit-appearance: none;
+  }
+
+  &.date-range {
+    height: 30px;
+    text-align: center;
+    width: 215.25px;
+    border-radius: 4px;
+    border: 0;
+    border-radius: 0px;
+    border: 0.5px solid $footer;
+    border-bottom: 1px solid $text-light;
+    background-color: $lighter-2;
+  }
+}
+
+.fuel-type-radios {
+  display: flex;
+  align-items: center;
+
+  div {
+    display: flex;
+    align-items: center;
+
+    &:first-child {
+      margin-right: 15%;
+    }
+  }
+  input {
+    height: initial;
+    margin-right: 15%;
+  }
+}
+
+.calendar-button {
+  height: 25px;
+  width: 55px;
+  // margin-left: 1%;
+  background-color: $footer;
+  color: $dark;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include desktop-width-1 {
+    height: 40px;
+    font-size: 15.5px;
+    width: 15%;
+  }
+}
+
+.view-estimation {
+  height: 44.5px;
+  width: 100%;
+  display: block;
+  margin-top: 30px;
+  background-color: $dark;
+  color: $accent-2;
+  border: 0;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 16px;
+
+  @media (min-width: 414px) {
+    width: 339.5px;
+    margin: 30px auto 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.estimation-alert {
+  font-family: $metropolis;
+  color: $text-light;
+  margin-top: 10px;
+  font-size: 13px;
+
+  @media (min-width: 414px) {
+    text-align: center;
+  }
+}
+
+.fuel-output {
+  background-color: $accent;
+  padding: 50px;
+  border-radius: 4px;
+
+  display: none;
+
+  @include desktop-width-1 {
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    opacity: 0.2;
+    transition: opacity 1.5s ease;
+  }
+}
+
+.fuel-output-para {
+  font-size: 17px;
+  line-height: 160%;
+
+  &:first-child {
+    margin-bottom: 30px;
+
+    @include desktop-width-1 {
+      margin-bottom: 40px;
+    }
+  }
+
+  strong {
+    font-size: 25px;
+    display: block;
+    margin-top: 5px;
+  }
+}
+
+.fuel-desktop-grid {
+  @include desktop-width-1 {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    align-items: center;
+  }
+}
+
+.view-estimation {
+  @include desktop-width-1 {
+    display: inline;
+    margin-top: 16px;
+    width: 200px;
+    font-size: 15px;
+  }
+}

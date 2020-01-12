@@ -9,6 +9,8 @@
           box-sizing: border-box;
   font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   color: #212c30;
+  -webkit-font-feature-settings: "salt" on;
+          font-feature-settings: "salt" on;
 }
 
 * ul {
@@ -126,8 +128,9 @@ div.full-page-wrapper header#page-header nav ul li.nav-list-item.sign-up a {
   transition: border-bottom 0.3s ease, color 0.3s ease;
 }
 
-div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover,
-div.full-page-wrapper header#page-header nav ul li.nav-list-item.sign-up a:hover {
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover, div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:focus,
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.sign-up a:hover,
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.sign-up a:focus {
   color: #6d8faf;
   border-bottom: #ffc64a solid 2px;
 }
@@ -143,7 +146,7 @@ div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a {
   transition: background-color 0.15s ease, color 0.3s ease, border-left 0.26s linear, border-right 0.26s linear, border-top 0.26s linear, border-bottom 0.26s linear;
 }
 
-div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover {
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover, div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:focus {
   color: #6d8faf;
   border: solid #ffc64a 1px;
   background-color: transparent;
@@ -381,12 +384,12 @@ div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-bu
 }
 
 @media (min-width: 950px) {
-  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover {
+  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover, div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:focus {
     background-color: #ffffff;
     text-align: left;
     border: #ffc64a 1.5px solid;
   }
-  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover .button-title {
+  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover .button-title, div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:focus .button-title {
     display: block;
     width: 80%;
     -ms-grid-column-align: left;
@@ -396,10 +399,10 @@ div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-bu
     font-size: 21px;
     font-weight: normal;
   }
-  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover img {
+  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover img, div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:focus img {
     display: none;
   }
-  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover .button-hover-text {
+  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:hover .button-hover-text, div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button:focus .button-hover-text {
     display: block;
     width: 80%;
     margin: 5px 10px 0;
@@ -544,12 +547,12 @@ div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-bu
 }
 
 @media (min-width: 950px) {
-  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button.selected:hover .button-title {
+  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button.selected:hover .button-title, div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button.selected:focus .button-title {
     font-weight: 500;
     color: #1d354b;
     letter-spacing: -0em;
   }
-  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button.selected:hover .button-hover-text {
+  div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button.selected:hover .button-hover-text, div.full-page-wrapper main div.dash-bar-and-selector div.dash-bar button.dash-button.selected:focus .button-hover-text {
     color: #1d354b;
   }
 }
@@ -904,7 +907,7 @@ div.full-page-wrapper main div.forms-and-results section.results div.cards-secti
           box-shadow: rgba(0, 0, 0, 0.082) 0px 2px 5px 0px;
 }
 
-div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.card:hover {
+div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.card:hover, div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.card:focus {
   -webkit-transform: scale(1.02) translateZ(0);
           transform: scale(1.02) translateZ(0);
   -webkit-backface-visibility: hidden;
@@ -1079,12 +1082,12 @@ div.full-page-wrapper main div.forms-and-results section.results div.cards-secti
   transition: transform 0.7s ease, border-right 0.5s ease, -webkit-transform 0.7s ease;
 }
 
-div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.white-card:hover {
+div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.white-card:hover, div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.white-card:focus {
   border-bottom: #6d8faf solid 3px;
 }
 
 @media (min-width: 950px) {
-  div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.white-card:hover {
+  div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.white-card:hover, div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.white-card:focus {
     border-right: #6d8faf solid 8px;
     border-bottom: none;
   }
@@ -1126,12 +1129,12 @@ div.full-page-wrapper main div.forms-and-results section.results div.cards-secti
   transition: transform 0.7s ease, border-right 0.5s ease, -webkit-transform 0.7s ease;
 }
 
-div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.black-card:hover {
+div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.black-card:hover, div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.black-card:focus {
   border-bottom: #ffc64a solid 3px;
 }
 
 @media (min-width: 950px) {
-  div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.black-card:hover {
+  div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.black-card:hover, div.full-page-wrapper main div.forms-and-results section.results div.cards-section a.black-card:focus {
     border-right: #ffc64a solid 8px;
     border-bottom: none;
   }
@@ -1234,7 +1237,7 @@ div.full-page-wrapper main section.card-details div.enlarged-card button.enlarge
   font-weight: 500;
 }
 
-div.full-page-wrapper main section.card-details div.enlarged-card button.enlarged-card-close:hover {
+div.full-page-wrapper main section.card-details div.enlarged-card button.enlarged-card-close:hover, div.full-page-wrapper main section.card-details div.enlarged-card button.enlarged-card-close:focus {
   opacity: 0.8;
 }
 
@@ -1359,7 +1362,7 @@ div.full-page-wrapper main section.card-details section.charts-bit {
 div.full-page-wrapper main section.card-details section.charts-bit .mobile-select-chart-type {
   margin-bottom: 20px;
   font-size: 12px;
-  font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 @media (min-width: 950px) {
@@ -1387,6 +1390,7 @@ div.full-page-wrapper main section.card-details section.charts-bit h3 {
 }
 
 div.full-page-wrapper main section.card-details section.charts-bit h3 .select-chart-type {
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   padding-bottom: 3.5px;
 }
 
@@ -1424,7 +1428,7 @@ div.full-page-wrapper main section.card-details section.charts-bit h3 a {
   width: max-content;
   padding-bottom: 3.5px;
   cursor: pointer;
-  font-family: rubik, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Work Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 div.full-page-wrapper main section.card-details section.charts-bit h3 a.ina-timeline-choice {

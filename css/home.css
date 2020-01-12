@@ -641,7 +641,7 @@ div.mobile-menu ul.mobile-menu-list li.mobile-menu-item:after {
   font-weight: 500;
   font-size: 2.52rem;
   line-height: 115%;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.02em;
   opacity: 0;
   -webkit-animation: fadeInLeft 0.5s ease 0s forwards;
           animation: fadeInLeft 0.5s ease 0s forwards;

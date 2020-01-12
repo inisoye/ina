@@ -17,7 +17,6 @@
     />
 
     <link rel="stylesheet" href="css/dashForm.css" />
-    <link rel="stylesheet" href="css/timeline.css" />
     <link rel="stylesheet" href="css/errorMessages.css" />
     <link rel="stylesheet" href="css/preloader.css" />
     <link rel="stylesheet" href="css/mapSec.css" />
@@ -107,7 +106,11 @@
               />
             </button>
 
-            <button class="forecast-button dash-button" id="forecast-button">
+            <button
+              onclick="location.href='forecast.html';"
+              class="forecast-button dash-button"
+              id="forecast-button"
+            >
               <span class="button-title">forecast</span>
               <span class="button-hover-text"
                 >View predictions of future power outages.</span
@@ -137,7 +140,7 @@
           <div id="map"></div>
           <div class="map-overlay">
             <div class="instr-overlay">
-              <h3>zoom in and click on a coloured area</h3>
+              <h3>Zoom in and click on a coloured area</h3>
             </div>
 
             <section class="key-overlay">

@@ -9,12 +9,23 @@
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 
-    <link rel="stylesheet" href="css/horsey.css" />
+    <!-- *jquery ui autocomplete bit starts -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- *jquery ui autocomplete searchboxes bit ends -->
+
     <link rel="stylesheet" href="css/dashForm.css" />
-    <link rel="stylesheet" href="css/timeline.css" />
     <link rel="stylesheet" href="css/errorMessages.css" />
     <link rel="stylesheet" href="css/preloader.css" />
     <link rel="stylesheet" href="css/historyCharts.css" />
+    <link rel="stylesheet" href="css/autoComplete.css" />
   </head>
   <body>
     <div class="preloader-container">
@@ -105,7 +116,11 @@
               />
             </button>
 
-            <button class="forecast-button dash-button" id="forecast-button">
+            <button 
+            onclick="location.href='forecast.html';" 
+            class="forecast-button dash-button" 
+            id="forecast-button"
+            >
               <span class="button-title">forecast</span>
               <span class="button-hover-text"
                 >View predictions of future power outages.</span
@@ -292,8 +307,7 @@
     <script type="text/javascript" src="js/historyBar.js"></script>
     <script type="text/javascript" src="js/historyLine.js"></script>
     <script type="text/javascript" src="js/historyCharts.js"></script>
-    <script type="text/javascript" src="js/autoComplete.js"></script>
+    <script type="text/javascript" src="js/autoComplete2.js"></script>
     <!-- *For Autocomplete -->
-    <script type="text/javascript" src="js/horsey.js"></script>
   </body>
 </html>

@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+    />
+    <title>iná.</title>
+
+    <!-- *Date range picker starts -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"
+    />
+    <!-- *Date range picker ends -->
+
+    <!-- *jquery ui autocomplete bit starts -->
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- *jquery ui autocomplete searchboxes bit ends -->
+
+    
+    <link rel="stylesheet" href="css/dashForm.css" />
+    <link rel="stylesheet" href="css/timeline.css" />
+    <link rel="stylesheet" href="css/errorMessages.css" />
+    <link rel="stylesheet" href="css/preloader.css" />
+    <link rel="stylesheet" href="css/forecast.css" />
+    <link rel="stylesheet" href="css/autoComplete.css" />
+  </head>
+  <body>
+    <div class="preloader-container">
+      <h1 class="preloader-h1">
+        <span class="let1">i</span>
+        <span class="let2">n</span>
+        <span class="let3">á</span>
+        <span class="let4">.</span>
+      </h1>
+    </div>
+    <div class="full-page-wrapper">
+      <header id="page-header">
+        <a href="index.html" class="title-link"
+          ><h2 class="page-title">iná.</h2></a
+        >
+
+        <nav>
+          <ul class="">
+            <li class="nav-list-item sign-up">
+              <a href="#" title="Coming soon." class="nav-link">login</a>
+            </li>
+            <li class="nav-list-item contact">
+              <a href="#" title="Coming soon." class="nav-link">sign up</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <!-- *empty containers to prevent dashForm JS from breaking/generating errors -->
+        <div style="display: none;">
+          <div id="forms-and-results"></div>
+          <div id="card-details"></div>
+          <div id="street-selector"></div>
+          <div class="history-message"></div>
+          <div class="history-message"></div>
+          <button class="enlarged-card-close"></button>
+          <a class="ina-timeline-choice"></a>
+          <a class="chart-choice"></a>
+        </div>
+        <!-- *empty containers to prevent JS from breaking ENDs -->
+
+        <div class="dash-bar-and-selector">
+          <!-- <div class="desktop-selector show-desktop" id="desktop-selector"></div> -->
+
+          <div class="dash-bar">
+            <button
+              onclick="location.href='dashForm.html';"
+              class="status-button dash-button"
+              id="status-button"
+            >
+              <span class="button-title">status</span>
+              <span class="button-hover-text"
+                >Find out if there is light in a particular location.</span
+              >
+              <img
+                src="images/Status4final.svg"
+                alt="bulb icon with question mark"
+              />
+            </button>
+
+            <button
+              onclick="location.href='historyCharts.html';"
+              class="history-button dash-button"
+              id="history-button"
+            >
+              <span class="button-title">history</span>
+              <span class="button-hover-text"
+                >Examine and compare historical power supply data.</span
+              >
+              <img
+                src="images/History.svg"
+                alt="clock icon with rewind (anti-clockwise) arrow"
+              />
+            </button>
+
+            <button
+              onclick="location.href='mapSec.html';"
+              class="maps-button dash-button"
+              id="maps-button"
+            >
+              <span class="button-title">map</span>
+              <span class="button-hover-text"
+                >Visualise how much of your city has no light.</span
+              >
+              <img
+                src="images/Maps.svg"
+                alt="map icon with pin-point location"
+              />
+            </button>
+
+            <button
+              class="forecast-button dash-button selected"
+              id="forecast-button"
+            >
+              <span class="button-title">forecast</span>
+              <span class="button-hover-text"
+                >View predictions of future power outages.</span
+              >
+              <img src="images/Binoculars.svg" alt="binoculars icon" />
+            </button>
+
+            <button class="rankings-button dash-button" id="rankings-button">
+              <span class="button-title">rankings</span>
+              <span class="button-hover-text"
+                >Locate the parts of your city with the best power supply.</span
+              >
+              <img src="images/Ranking2.svg" alt="olympic podium icon" />
+            </button>
+
+            <!--* dash buttons only ends -->
+          </div>
+
+          <button class="collapse-button show-desktop" id="collapse-button">
+            <img src="images/Chevron3.svg" alt="double arrow symbol" />
+          </button>
+
+          <!-- <div class="mobile-selector hide-mobile" id="mobile-selector"></div> -->
+        </div>
+
+        <div class="forecast-wrapper">
+          <nav class="predict-nav">
+            <button class="predict-light-button selected">Predict light</button>
+            <button class="predict-fuel-button">Predict fuel</button>
+          </nav>
+
+          <section class="predict-light">
+            <h3 class="sect-descr">What location are you predicting for?</h3>
+            <div class="light-form form">
+              <label for="light-location" class="input-label light-label"
+                >enter your location
+              </label>
+              <input
+                id="light-location"
+                class="location location-light"
+                placeholder='e.g. "Ivy Close"'
+              />
+              <button class="plot-button plot-button-light">predict</button>
+            </div>
+
+            <hr class="divider" />
+
+            <h3 class="sect-descr timeline-opacity">Your Predicted Timeline</h3>
+            <div class="timeline-and-keys timeline-opacity">
+              <div class="keys">
+                <div class="accuracy-key">
+                  <h4>accuracy key:</h4>
+                  <div class="high-section accu label-swab">
+                    <div class="high-key-swab swab"></div>
+                    <p>high accuracy</p>
+                  </div>
+
+                  <div class="medium-section accu second-third-swab label-swab">
+                    <div class="medium-key-swab swab"></div>
+                    <p>medium accuracy</p>
+                  </div>
+
+                  <div class="low-section accu second-third-swab label-swab">
+                    <div class="low-key-swab swab"></div>
+                    <p>low accuracy</p>
+                  </div>
+                </div>
+                <div class="status-key">
+                  <h4>status key:</h4>
+                  <div class="no-light-section label-swab">
+                    <div class="no-light-key-swab swab"></div>
+                    <p>no light</p>
+                  </div>
+
+                  <div class="light-section label-swab">
+                    <div class="light-key-swab swab"></div>
+                    <p>light on</p>
+                  </div>
+                </div>
+              </div>
+              <div class="timeline-with-title">
+                <h5 class="timeline-title big-text-color">
+                  Hourly predictions over the next 10 hours
+                </h5>
+                <div class="ina-timeline-container">
+                  <ul class="timeline">
+                    <!-- Item 1 -->
+                    <li>
+                      <div class="direction-r">
+                        <div class="flag-wrapper">
+                          <span class="flag flag-1">11:00 AM</span>
+                          <span class="status-wrapper"
+                            ><span class="status status-1">Light on</span></span
+                          >
+                        </div>
+                        <div class="desc medium">
+                          <span class="accuracy accuracy-1"
+                            >Prediction accuracy: medium</span
+                          >
+                          <!-- <span>Date: Oct 23, 2019</span> -->
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Item 2 -->
+                    <li>
+                      <div class="direction-l">
+                        <div class="flag-wrapper">
+                          <span class="flag flag-1">12:00 PM</span>
+                          <span class="status-wrapper"
+                            ><span class="status status-1"
+                              >Light off</span
+                            ></span
+                          >
+                        </div>
+                        <div class="desc high">
+                          <span class="accuracy accuracy-1"
+                            >Prediction accuracy: high</span
+                          >
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Item 3 -->
+                    <li>
+                      <div class="direction-l">
+                        <div class="flag-wrapper">
+                          <span class="flag flag-1">1:00 PM</span>
+                          <span class="status-wrapper"
+                            ><span class="status status-1"
+                              >Light off</span
+                            ></span
+                          >
+                        </div>
+                        <div class="desc high">
+                          <span class="accuracy accuracy-1"
+                            >Prediction accuracy: high</span
+                          >
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Item 4 -->
+                    <li>
+                      <div class="direction-r">
+                        <div class="flag-wrapper">
+                          <span class="flag flag-1">2:00 PM</span>
+                          <span class="status-wrapper"
+                            ><span class="status status-1">Light on</span></span
+                          >
+                        </div>
+                        <div class="desc low">
+                          <span class="accuracy accuracy-1"
+                            >Prediction accuracy: low</span
+                          >
+                        </div>
+                      </div>
+                    </li>
+
+                    <!-- Item 5 -->
+                    <li>
+                      <div class="direction-r">
+                        <div class="flag-wrapper">
+                          <span class="flag flag-1">3:00 PM</span>
+                          <span class="status-wrapper"
+                            ><span class="status status-1">Light on</span></span
+                          >
+                        </div>
+                        <div class="desc low">
+                          <span class="accuracy accuracy-1"
+                            >Prediction accuracy: low</span
+                          >
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="predict-fuel hide">
+            <h3 class="sect-descr">What location are you predicting for?</h3>
+            <div class="fuel-form form">
+              <label for="fuel-location" class="input-label fuel-label"
+                >enter your location
+              </label>
+              <input
+                id="fuel-location"
+                class="location  location-fuel"
+                placeholder='e.g. "Ivy Close"'
+              />
+              <button class="plot-button plot-button-fuel">predict</button>
+            </div>
+
+            <hr class="divider" />
+
+            <div class="fuel-desktop-grid">
+              <div class="fuel-more-details">
+                <h3 class="sect-descr more-details">
+                  We'll need a few more details
+                </h3>
+                <ol class="fuel-questions">
+                  <li>
+                    <span
+                      >For how many hours do you use your generator daily?</span
+                    >
+                    <div class="fuel-response">
+                      <select name="gen-hrs" id="gen-hrs">
+                        <option value=""></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option> </select
+                      ><span>hr(s)</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span>What fuel does your generator use?</span>
+                    <div class="fuel-response fuel-type-radios">
+                      <div>
+                        <input
+                          type="radio"
+                          id="petrol"
+                          name="fuel-type"
+                          value="petrol"
+                          class="petrol-radio"
+                        />
+                        <label for="petrol">Petrol</label>
+                      </div>
+                      <div>
+                        <input
+                          type="radio"
+                          id="diesel"
+                          name="fuel-type"
+                          value="diesel"
+                          class="petrol-radio"
+                        />
+                        <label for="diesel">Diesel</label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <span>What is the power rating of your generator?</span>
+                    <div class="fuel-response">
+                      <input
+                        type="number"
+                        name="gen-rating"
+                        id="gen-rating"
+                      /><span>kVA</span>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="date-range-span"
+                      >Select a date range for your prediction</span
+                    >
+                    <input
+                      type="text"
+                      class="fuel-response date-range"
+                      name="date-range"
+                      id="date-range"
+                      placeholder="enter a date range"
+                    />
+
+                    <script>
+                      $(function() {
+                        $('input[name="date-range"]').daterangepicker(
+                          {
+                            opens: "center",
+                            drops: "up",
+                            buttonClasses: "calendar-button"
+                          },
+                          function(start, end, label) {
+                            console.log(
+                              "A new date selection was made: " +
+                                start.format("YYYY-MM-DD") +
+                                " to " +
+                                end.format("YYYY-MM-DD")
+                            );
+                          }
+                        );
+                      });
+                    </script>
+                  </li>
+                </ol>
+                <button class="view-estimation">View fuel estimation</button>
+                <p class="estimation-alert hide-mobile">
+                  Results for your estimation are provided below
+                </p>
+              </div>
+
+              <hr class="divider hide-mobile" />
+
+              <div class="fuel-output">
+                <p class="fuel-output-para">
+                  At <span class="fuel-street">Ivy Close</span>, between
+                  <span class="fuel-start-date">January 11, 2020</span> and
+                  <span class="fuel-end-date">January 12, 2020</span>, your
+                  generator will consume:
+                  <strong
+                    ><span class="fuel-litres">some</span> litres of
+                    <span class="petrol-or-diesel">petrol</span>.</strong
+                  >
+                </p>
+                <p class="fuel-output-para">
+                  That should cost you:
+                  <strong><span class="fuel-naira">some</span> Naira.</strong>
+                </p>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div style="display:none" class="error-message map-message">
+          <div class="hands-wrapper error-message-image-wrapper">
+            <img
+              class="error-message-image ogas-key"
+              src="images/ogasKeys.svg"
+              alt="hand holding keys"
+            />
+          </div>
+
+          <div class="error-message-text">
+            <h2>
+              The key to this section is in the hand of the Oga at the top.
+            </h2>
+
+            <p>
+              A glorious map will be shown here when he hands the key back to
+              us.
+            </p>
+          </div>
+        </div>
+
+        <div style="display:none" class="error-message forecast-message">
+          <div class="gen-wrapper error-message-image-wrapper">
+            <img
+              class="error-message-image"
+              src="images/faultyGen.svg"
+              alt="hand holding keys"
+            />
+          </div>
+
+          <div class="error-message-text">
+            <h2 class="multiple-h2s">
+              The generator that powers forecasts is currently faulty.
+            </h2>
+            <h2>
+              The fault is an apparent dizziness.
+            </h2>
+
+            <p>Forecasts will be possible after our gen guy has fixed it.</p>
+          </div>
+        </div>
+
+        <div style="display:none" class="error-message rankings-message">
+          <div class="victor-wrapper error-message-image-wrapper">
+            <img
+              class="error-message-image"
+              src="images/victor.svg"
+              alt="hand holding keys"
+            />
+          </div>
+
+          <div class="error-message-text">
+            <h2 class="multiple-h2s">
+              Oya. No jokes. The rankings are not ready yet.
+            </h2>
+            <h2>
+              We need iná in more locations. Wanna help?
+              <a href="mailto:ina.energyteam@gmail.com">Contact us</a>.
+            </h2>
+
+            <p>
+              If you have no help to offer, well, Victor (above) could play you
+              an imaginary tune 😉.
+            </p>
+          </div>
+        </div>
+      </main>
+
+      <footer>
+        <div class="left-links">
+          <ul>
+            <li class="attribution"><a href="#">attribution</a></li>
+            <li class="divider">|</li>
+            <li class="help"><a href="#">help</a></li>
+          </ul>
+        </div>
+
+        <div class="right-content">
+          <p>© iná 2019. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="js/preloader.js"></script>
+    <script type="text/javascript" src="js/dashForm.js"></script>
+    <script type="text/javascript" src="js/autoComplete2.js"></script>
+    <script type="text/javascript" src="js/forecast.js"></script>
+  </body>
+</html>
