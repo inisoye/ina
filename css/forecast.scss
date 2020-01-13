@@ -411,7 +411,7 @@ h1.preloader-h1 span {
 .input-label {
   margin-bottom: 1px;
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   color: $dark;
 
@@ -419,10 +419,6 @@ h1.preloader-h1 span {
   text-align: left;
 
   transition: all 0.5s ease;
-
-  @include desktop-width-1 {
-    font-size: 12px;
-  }
 }
 
 .location {

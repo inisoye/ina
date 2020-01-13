@@ -403,19 +403,13 @@ h1.preloader-h1 span {
 .input-label {
   margin-bottom: 1px;
   display: block;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   color: #212c30;
   padding-left: 18px;
   text-align: left;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
-}
-
-@media (min-width: 950px) {
-  .input-label {
-    font-size: 12px;
-  }
 }
 
 .location {

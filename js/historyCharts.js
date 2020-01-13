@@ -43,7 +43,7 @@ let labelAlert = label => {
 
   setTimeout(function() {
     label.style.fontWeight = "500";
-    label.style.fontSize = "10px";
+    label.style.fontSize = "11px";
     label.style.color = "#212c30";
   }, 500);
 };
