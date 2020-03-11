@@ -128,7 +128,8 @@ div.full-page-wrapper header#page-header nav ul li.nav-list-item.sign-up a {
   transition: border-bottom 0.3s ease, color 0.3s ease;
 }
 
-div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover, div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:focus,
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover,
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:focus,
 div.full-page-wrapper header#page-header nav ul li.nav-list-item.sign-up a:hover,
 div.full-page-wrapper header#page-header nav ul li.nav-list-item.sign-up a:focus {
   color: #6d8faf;
@@ -146,7 +147,8 @@ div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a {
   transition: background-color 0.15s ease, color 0.3s ease, border-left 0.26s linear, border-right 0.26s linear, border-top 0.26s linear, border-bottom 0.26s linear;
 }
 
-div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover, div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:focus {
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:hover,
+div.full-page-wrapper header#page-header nav ul li.nav-list-item.contact a:focus {
   color: #6d8faf;
   border: solid #ffc64a 1px;
   background-color: transparent;

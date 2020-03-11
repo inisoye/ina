@@ -435,7 +435,7 @@ h1.preloader-h1 span {
 @media (min-width: 950px) {
   .location {
     height: 40px;
-    width: 63%;
+    width: 50%;
     font-size: 15.5px;
     padding-left: 30px;
     text-align: left;
@@ -492,7 +492,7 @@ h1.preloader-h1 span {
   .plot-button {
     height: 40px;
     font-size: 15.5px;
-    width: 15%;
+    width: 10%;
   }
 }
 

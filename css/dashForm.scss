@@ -166,7 +166,8 @@ div.full-page-wrapper {
             transition: border-bottom 0.3s ease, color 0.3s ease;
           }
 
-          a:hover, a:focus {
+          a:hover,
+          a:focus {
             color: $text-light;
             border-bottom: $accent solid 2px;
           }
@@ -187,7 +188,8 @@ div.full-page-wrapper {
               border-top 0.26s linear, border-bottom 0.26s linear;
           }
 
-          a:hover, a:focus {
+          a:hover,
+          a:focus {
             color: $text-light;
             border: solid $accent 1px;
             background-color: transparent;
@@ -418,7 +420,8 @@ div.full-page-wrapper {
           }
 
           @include desktop-width-1 {
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               background-color: $accent-2;
               text-align: left;
 
@@ -571,7 +574,8 @@ div.full-page-wrapper {
           }
 
           @include desktop-width-1 {
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               // border: $text-light 2.5px solid;
 
               .button-title {
@@ -794,7 +798,7 @@ div.full-page-wrapper {
             color: $text-light-2;
             // text-align: center;
             font-family: $metropolis;
-            
+
             letter-spacing: -0.015em;
 
             // @include desktop-width-1 {
@@ -917,7 +921,8 @@ div.full-page-wrapper {
 
             box-shadow: rgba(0, 0, 0, 0.082) 0px 2px 5px 0px;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               transform: scale(1.02) translateZ(0);
               backface-visibility: hidden;
 
@@ -1039,7 +1044,8 @@ div.full-page-wrapper {
             background-color: $accent-2;
             transition: transform 0.7s ease, border-right 0.5s ease;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               border-bottom: $text-light solid 3px;
               @include desktop-width-1 {
                 border-right: $text-light solid 8px;
@@ -1080,7 +1086,8 @@ div.full-page-wrapper {
             border: none;
             transition: transform 0.7s ease, border-right 0.5s ease;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
               border-bottom: $accent solid 3px;
               @include desktop-width-1 {
                 border-right: $accent solid 8px;
@@ -1191,7 +1198,8 @@ div.full-page-wrapper {
           font-size: 15px;
           font-weight: 500;
 
-          &:hover, &:focus {
+          &:hover,
+          &:focus {
             opacity: 0.8;
           }
 
